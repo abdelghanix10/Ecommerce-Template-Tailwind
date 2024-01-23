@@ -1,1 +1,1107 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Ecommerce</title>
+    <!-- Icon -->
+    <link
+      rel="shortcut icon"
+      href="./assests/img/electronic-store-logo.svg"
+      type="image/x-icon"
+    />
 
+    <!-- CSS -->
+    <link rel="stylesheet" href="./assests/css/style.css" />
+    <!-- Tailwind -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Font Awesome -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
+      integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+  </head>
+  <body>
+    <div class="page">
+      <!-- Nav -->
+      <div class="nav hidden lg:block bg-blue-700">
+        <div class="container mx-auto">
+          <nav
+            class="flex justify-between items-center p-1 px-4 text-white text-sm"
+          >
+            <p>
+              24/7 Customer service
+              <span class="font-semibold hover:underline">1-800-234-5678</span>
+            </p>
+            <div class="links flex justify-between items-center gap-4">
+              <a href="#" class="hover:underline">Shipping & return</a>
+              <a href="#" class="hover:underline">Track order</a>
+            </div>
+          </nav>
+        </div>
+      </div>
+      <!-- End Nav -->
+      <!-- Header -->
+      <div class="header bg-blue-600">
+        <!-- Container -->
+        <div class="container mx-auto">
+          <header class="flex justify-between items-center p-4 text-white">
+            <div class="nav flex justify-between items-center gap-4">
+              <div class="menu lg:hidden cursor-pointer">
+                <span class="spanone"></span><span class="spantwo"></span
+                ><span class="spanthree"></span>
+              </div>
+              <div class="logo text-xl font-bold">
+                <a href="#"
+                  ><img src="assests/img/electronic-store-logo.svg" alt="Logo"
+                /></a>
+              </div>
+            </div>
+            <div class="search">
+              <div class="cart-icon px-4 cursor-pointer lg:hidden">
+                <i class="fa-solid fa-basket-shopping"></i>
+                <span class="badge text-xs bg-white rounded-full text-blue-600"
+                  >0</span
+                >
+              </div>
+              <div
+                class="search-cart hidden lg:flex justify-center items-center"
+              >
+                <input
+                  class="px-4 py-1 border-0 outline-none text-slate-600"
+                  type="text"
+                  placeholder="Search Products"
+                />
+                <i class="fa-solid fa-magnifying-glass text-blue-600"></i>
+              </div>
+            </div>
+          </header>
+        </div>
+        <!-- End Container -->
+        <hr class="border-b-0 border-gray-600" />
+        <!-- Menu -->
+        <nav
+          class="nav-menu hidden desactive lg:block bg-white lg:bg-blue-600 font-bold text-blue-500 lg:text-white"
+        >
+          <!-- Container -->
+          <div class="container mx-auto">
+            <div class="p-4 lg:flex justify-between items-center">
+              <div>
+                <ul
+                  class="menu-items flex flex-col lg:flex-row gap-4 justify-between"
+                >
+                  <li class="flex flex-col justify-between items-start gap-2">
+                    <div
+                      class="subMenu cursor-pointer text flex-row gap-4 justify-between"
+                    >
+                      All Products
+                      <i
+                        class="fa-solid fa-angle-down rotate-90 transition-all"
+                      ></i>
+                    </div>
+                    <ul
+                      class="sub-menu truncate h-0 lg:h-auto flex-col justify-between items-start px-4 lg:py-3 lg:bg-blue-600 gap-4"
+                    >
+                      <li>
+                        <a href="#" class="hover:underline">- All Products</a>
+                      </li>
+                      <li>
+                        <a href="#" class="hover:underline"
+                          >- Home Appliances</a
+                        >
+                      </li>
+                      <li>
+                        <a href="#" class="hover:underline">- Audio & Video</a>
+                      </li>
+                      <li>
+                        <a href="#" class="hover:underline">- Refrigerator</a>
+                      </li>
+                    </ul>
+                  </li>
+                  <li>
+                    <a href="#" class="hover:underline">Home Appliances</a>
+                  </li>
+                  <li><a href="#" class="hover:underline">Audio & Video</a></li>
+                  <li><a href="#" class="hover:underline">Refrigerator</a></li>
+                  <li><a href="#" class="hover:underline">New Arrivals</a></li>
+                  <li><a href="#" class="hover:underline">Today's Deals</a></li>
+                  <li><a href="#" class="hover:underline">Gift Cards</a></li>
+                </ul>
+              </div>
+              <div
+                class="cart-login flex justify-end lg:justify-between items-center"
+              >
+                <div class="cart-icon px-4 cursor-pointer">
+                  <i class="fa-solid fa-basket-shopping"></i>
+                  <span
+                    class="badge text-xs bg-white rounded-full text-blue-600"
+                    >0</span
+                  >
+                </div>
+                <a href="#" class="text-lg px-4 hover:underline">Log In</a>
+              </div>
+            </div>
+          </div>
+          <!-- End Container -->
+        </nav>
+        <!-- End Menu -->
+      </div>
+      <!-- End Header -->
+      <!-- Loading -->
+      <div class="loading">
+        <div class="container mx-auto">
+          <div class="section p-4 w-9/12 lg:w-2/12">
+            <div
+              class="product xl:!w-2/5 px-6 py-10 flex flex-col gap-3 items-start justify-between bg-white"
+            >
+              <div class="logo text-xl font-bold">
+                <img
+                  src="./assests/img/electronic-store-brand-logo-00.png"
+                  alt="Brand Logo"
+                />
+              </div>
+              <h2 class="text-3xl lg:text-4xl font-bold">
+                The best home entertainment system is here
+              </h2>
+              <p class="text-gray-500">
+                Sit diam odio eget rhoncus volutpat est nibh velit posuere
+                egestas.
+              </p>
+              <a href="#" class="text-blue-600 text-lg font-bold">Shop now</a>
+            </div>
+          </div>
+        </div>
+      </div>
+      <!-- End Loading -->
+      <div class="content bg-gray-100 bg-opacity-75 pt-5">
+        <div class="container mx-auto">
+          <!-- Details -->
+          <div
+            class="deatails p-4 md:p-8 grid grid-cols-2 md:grid-cols-4 border-2 m-4 md:m-0 bg-white text-center"
+          >
+            <div
+              class="box p-4 flex flex-col lg:flex-row justify-center gap-4 items-center"
+            >
+              <i class="fas fa-truck sm:text-2xl text-blue-600"></i>
+              <div class="info flex-col justify-center items-center">
+                <h3 class="font-bold">Free Shipping</h3>
+                <p class="text-gray-500">When you spend $80 or more</p>
+              </div>
+            </div>
+            <div
+              class="box p-4 flex flex-col lg:flex-row justify-center gap-4 items-center"
+            >
+              <i class="fas fa-solid fa-phone sm:text-2xl text-blue-600"></i>
+              <div class="info flex-col justify-center items-center">
+                <h3 class="font-bold">We are avaible 24/7</h3>
+                <p class="text-gray-500">Need help? contact us anytime</p>
+              </div>
+            </div>
+            <div
+              class="box p-4 flex flex-col lg:flex-row justify-center gap-4 items-center"
+            >
+              <i class="fas fa-arrow-left sm:text-2xl text-blue-600"></i>
+              <div class="info flex-col justify-center items-center">
+                <h3 class="font-bold">Statisfied or return</h3>
+                <p class="text-gray-500">Easy 30-day return policy</p>
+              </div>
+            </div>
+            <div
+              class="box p-4 flex flex-col lg:flex-row justify-center gap-4 items-center"
+            >
+              <i class="fas fa-credit-card sm:text-2xl text-blue-600"></i>
+              <div class="info flex-col justify-center items-center">
+                <h3 class="font-bold">100% secure payments</h3>
+                <p class="text-gray-500">Visa, Mastercard, Stripe, PayPal</p>
+              </div>
+            </div>
+          </div>
+          <!-- End Details -->
+          <!-- Categories -->
+          <div
+            class="categories grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 gap-4 p-4 border-2 m-4 md:mt-40 lg:mt-28 xl:mt-20 my-10 bg-white text-center"
+          >
+            <a href="#">
+              <div class="box flex flex-col justify-center items-center">
+                <div class="img">
+                  <img
+                    src="./assests/img/electronic-store-category-image-01.jpg"
+                    alt="Category"
+                  />
+                </div>
+                <div class="font-bold">AIR CONDITIONER</div>
+                <p class="text-gray-500 font-medium">4 Products</p>
+              </div></a
+            >
+            <a href="#"
+              ><div class="box flex flex-col justify-center items-center">
+                <div class="img">
+                  <img
+                    src="./assests/img/electronic-store-category-image-02.jpg"
+                    alt="Category"
+                  />
+                </div>
+                <div class="font-bold">Audeio & Video</div>
+                <p class="text-gray-500 font-medium">10 Products</p>
+              </div></a
+            >
+            <a href="#"
+              ><div class="box flex flex-col justify-center items-center">
+                <div class="img">
+                  <img
+                    src="./assests/img/electronic-store-category-image-03.jpg"
+                    alt="Category"
+                  />
+                </div>
+                <div class="font-bold">Phone</div>
+                <p class="text-gray-500 font-medium">19 Products</p>
+              </div></a
+            >
+            <a href="#"
+              ><div class="box flex flex-col justify-center items-center">
+                <div class="img">
+                  <img
+                    src="./assests/img/electronic-store-category-image-04.jpg"
+                    alt="Category"
+                  />
+                </div>
+                <div class="font-bold">Home Appliances</div>
+                <p class="text-gray-500 font-medium">3 Products</p>
+              </div></a
+            >
+            <a href="#"
+              ><div class="box flex flex-col justify-center items-center">
+                <div class="img">
+                  <img
+                    src="./assests/img/electronic-store-category-image-05.jpg"
+                    alt="Category"
+                  />
+                </div>
+                <div class="font-bold">Kitchen Appliances</div>
+                <p class="text-gray-500 font-medium">52 Products</p>
+              </div></a
+            >
+            <a href="#"
+              ><div class="box flex flex-col justify-center items-center">
+                <div class="img">
+                  <img
+                    src="./assests/img/electronic-store-category-image-06.jpg"
+                    alt="Category"
+                  />
+                </div>
+                <div class="font-bold">Pcs & Laptop</div>
+                <p class="text-gray-500 font-medium">34 Products</p>
+              </div></a
+            >
+            <a href="#"
+              ><div class="box flex flex-col justify-center items-center">
+                <div class="img">
+                  <img
+                    src="./assests/img/electronic-store-category-image-07.jpg"
+                    alt="Category"
+                  />
+                </div>
+                <div class="font-bold">Smart Home</div>
+                <p class="text-gray-500 font-medium">6 Products</p>
+              </div></a
+            >
+            <a href="#"
+              ><div class="box flex flex-col justify-center items-center">
+                <div class="img">
+                  <img
+                    src="./assests/img/electronic-store-category-image-08.jpg"
+                    alt="Category"
+                  />
+                </div>
+                <div class="font-bold">Washing Machine</div>
+                <p class="text-gray-500 font-medium">10 Products</p>
+              </div></a
+            >
+          </div>
+          <!-- End Categories -->
+          <!-- Deals of the day -->
+          <!-- <div
+            class="deals m-4 my-10 flex flex-col gap-4 md:flex-row justify-center items-center"
+          >
+            <div
+              class="dealsOne w-full flex flex-col justify-center items-start p-4 text-white bg-slate-400"
+            >
+              <h2 class="font-bold text-xl">The only case<br />you need.</h2>
+              <button class="btn font-medium">Shop Now</button>
+            </div>
+            <div
+              class="dealsOne w-full flex flex-col justify-center items-center p-4 text-white bg-red-200"
+            >
+              <h4 class="font-bold">BRAND DAY</h4>
+              <h2 class="font-bold text-xl">Get 30% OFF</h2>
+              <button class="btn font-medium">Shop Now</button>
+            </div>
+          </div> -->
+
+          <div
+            class="deals m-4 my-10 flex flex-col gap-4 md:flex-row justify-center items-center"
+          >
+            <div
+              class="dealsOne w-full flex flex-col justify-center items-start text-white bg-slate-400"
+            >
+              <a class="w-full" href="#">
+                <img
+                  class="w-full"
+                  src="./assests/img/electronic-store-promotional-banner-1.jpg"
+                  alt="Banner"
+              /></a>
+            </div>
+            <div
+              class="dealsOne w-full flex flex-col justify-center items-center text-white bg-red-200"
+            >
+              <a class="w-full" href="#">
+                <img
+                  class="w-full"
+                  src="./assests/img/electronic-store-promotional-banner-2.jpg"
+                  alt="Banner"
+              /></a>
+            </div>
+          </div>
+          <!-- End Deals of the day -->
+          <!-- Today's Deals -->
+          <div
+            class="todayDeals m-4 my-10 p-4 flex flex-col gap-4 justify-center bg-white border-2"
+          >
+            <div class="header flex justify-between items-center">
+              <h2 class="font-bold text-2xl">Today's Deals</h2>
+              <button class="btn font-bold text-blue-600">View All</button>
+            </div>
+            <div
+              class="body grid grid-cols-2 sm:grid-cols-3 md:p-4 lg:grid-cols-4 gap-4"
+            >
+              <div class="product flex flex-col justify-center gap-2">
+                <div class="img">
+                  <a href="#">
+                    <img
+                      src="./assests/img/electronic-store-product-image-1-300x300.jpg"
+                      alt=""
+                    />
+                  </a>
+                </div>
+                <div class="inf flex flex-col gap-1 p-4">
+                  <div
+                    class="rating text-sm sm:text-base flex justify-start items-center text-yellow-400"
+                  >
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                  </div>
+                  <h3 class="name font-medium text-lg sm:text-xl">
+                    <a href="#" class="hover:underline">Product Name</a>
+                  </h3>
+                  <div class="price flex justify-start items-center gap-1">
+                    <span
+                      class="old text-gray-500 text-sm sm:text-base line-through"
+                      >$49.00</span
+                    >
+                    <span class="new sm:text-lg font-medium">$44.00</span>
+                  </div>
+                </div>
+              </div>
+              <div class="product flex flex-col justify-center gap-2">
+                <div class="img">
+                  <a href="#">
+                    <img
+                      src="./assests/img/electronic-store-product-image-2-300x300.jpg"
+                      alt=""
+                    />
+                  </a>
+                </div>
+                <div class="inf flex flex-col gap-1 p-4">
+                  <div
+                    class="rating text-sm sm:text-base flex justify-start items-center text-yellow-400"
+                  >
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                  </div>
+                  <h3 class="name font-medium text-lg sm:text-xl">
+                    <a href="#" class="hover:underline">Product Name</a>
+                  </h3>
+                  <div class="price flex justify-start items-center gap-1">
+                    <span
+                      class="old text-gray-500 text-sm sm:text-base line-through"
+                      >$49.00</span
+                    >
+                    <span class="new sm:text-lg font-medium">$44.00</span>
+                  </div>
+                </div>
+              </div>
+              <div class="product flex flex-col justify-center gap-2">
+                <div class="img">
+                  <a href="#">
+                    <img
+                      src="./assests/img/electronic-store-product-image-4-300x300.jpg"
+                      alt=""
+                    />
+                  </a>
+                </div>
+                <div class="inf flex flex-col gap-1 p-4">
+                  <div
+                    class="rating text-sm sm:text-base flex justify-start items-center text-yellow-400"
+                  >
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                  </div>
+                  <h3 class="name font-medium text-lg sm:text-xl">
+                    <a href="#" class="hover:underline">Product Name</a>
+                  </h3>
+                  <div class="price flex justify-start items-center gap-1">
+                    <span
+                      class="old text-gray-500 text-sm sm:text-base line-through"
+                      >$49.00</span
+                    >
+                    <span class="new sm:text-lg font-medium">$44.00</span>
+                  </div>
+                </div>
+              </div>
+              <div class="product flex flex-col justify-center gap-2">
+                <div class="img">
+                  <a href="#">
+                    <img
+                      src="./assests/img/electronic-store-product-image-5-300x300.jpg"
+                      alt=""
+                    />
+                  </a>
+                </div>
+                <div class="inf flex flex-col gap-1 p-4">
+                  <div
+                    class="rating text-sm sm:text-base flex justify-start items-center text-yellow-400"
+                  >
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                  </div>
+                  <h3 class="name font-medium text-lg sm:text-xl">
+                    <a href="#" class="hover:underline">Product Name</a>
+                  </h3>
+                  <div class="price flex justify-start items-center gap-1">
+                    <span
+                      class="old text-gray-500 text-sm sm:text-base line-through"
+                      >$49.00</span
+                    >
+                    <span class="new sm:text-lg font-medium">$44.00</span>
+                  </div>
+                </div>
+              </div>
+              <div class="product flex flex-col justify-center gap-2">
+                <div class="img">
+                  <a href="#">
+                    <img
+                      src="./assests/img/electronic-store-product-image-3-300x300.jpg"
+                      alt=""
+                    />
+                  </a>
+                </div>
+                <div class="inf flex flex-col gap-1 p-4">
+                  <div
+                    class="rating text-sm sm:text-base flex justify-start items-center text-yellow-400"
+                  >
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                  </div>
+                  <h3 class="name font-medium text-lg sm:text-xl">
+                    <a href="#" class="hover:underline">Product Name</a>
+                  </h3>
+                  <div class="price flex justify-start items-center gap-1">
+                    <span
+                      class="old text-gray-500 text-sm sm:text-base line-through"
+                      >$49.00</span
+                    >
+                    <span class="new sm:text-lg font-medium">$44.00</span>
+                  </div>
+                </div>
+              </div>
+              <div class="product flex flex-col justify-center gap-2">
+                <div class="img">
+                  <a href="#">
+                    <img
+                      src="./assests/img/electronic-store-product-image-6-300x300.jpg"
+                      alt=""
+                    />
+                  </a>
+                </div>
+                <div class="inf flex flex-col gap-1 p-4">
+                  <div
+                    class="rating text-sm sm:text-base flex justify-start items-center text-yellow-400"
+                  >
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                  </div>
+                  <h3 class="name font-medium text-lg sm:text-xl">
+                    <a href="#" class="hover:underline">Product Name</a>
+                  </h3>
+                  <div class="price flex justify-start items-center gap-1">
+                    <span
+                      class="old text-gray-500 text-sm sm:text-base line-through"
+                      >$49.00</span
+                    >
+                    <span class="new sm:text-lg font-medium">$44.00</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <!-- End Today's Deals -->
+          <!-- Best Deals -->
+          <div
+            class="bestDeals m-4 my-10 grid grid-cols-1 md:grid-cols-3 md:gap-4 gap-8 justify-center"
+          >
+            <div
+              class="deal bg-gradient-to-b from-slate-200 from-70% to-75% p-4 flex justify-between items-start"
+            >
+              <div
+                class="info flex flex-col gap-2 justify-center items-start h-2/3"
+              >
+                <h2 class="font-bold text-2xl">Wireless Headphone</h2>
+                <p class="text-gray-500 font-medium">Starting at $49</p>
+                <button class="btn font-bold text-blue-600">Shop Now</button>
+              </div>
+              <div class="img h-full grid place-items-center">
+                <img
+                  src="./assests/img/electronic-store-grooming.png"
+                  alt="Store"
+                />
+              </div>
+            </div>
+            <div
+              class="deal bg-gradient-to-b from-gray-300 from-70% to-75% p-4 flex justify-between items-start"
+            >
+              <div
+                class="info flex flex-col gap-2 justify-center items-start h-2/3"
+              >
+                <h2 class="font-bold text-2xl">Wireless Headphone</h2>
+                <p class="text-gray-500 font-medium">Starting at $49</p>
+                <button class="btn font-bold text-blue-600">Shop Now</button>
+              </div>
+              <div class="img h-full grid place-items-center">
+                <img
+                  src="./assests/img/electronic-store-video-games.png"
+                  alt="Store"
+                />
+              </div>
+            </div>
+            <div
+              class="deal bg-gradient-to-b from-yellow-100 from-70% to-75% p-4 flex justify-between items-start"
+            >
+              <div
+                class="info flex flex-col gap-2 justify-center items-start h-2/3"
+              >
+                <h2 class="font-bold text-2xl">Wireless Headphone</h2>
+                <p class="text-gray-500 font-medium">Starting at $49</p>
+                <button class="btn font-bold text-blue-600">Shop Now</button>
+              </div>
+              <div class="img h-full grid place-items-center">
+                <img
+                  src="./assests/img/electronic-store-wireless-headphone.png"
+                  alt="Store"
+                />
+              </div>
+            </div>
+          </div>
+          <!-- End Best Deals -->
+        </div>
+        <!-- End Container -->
+        <!-- Ad -->
+        <div class="container mx-auto">
+          <div
+            class="ad my-10 sm:mx-4 p-4 text-white flex justify-between lg:justify-around items-center gap-4 bg-blue-400"
+          >
+            <div class="info">
+              <h3 class="font-extrabold text-2xl">CREATE. PLAY.</h3>
+              <p class="text-lg font-light">
+                Adipiscing ultricies arcu id tortor enim
+              </p>
+            </div>
+            <button
+              class="px-3 py-2 font-bold rounded-sm border-2 hover:bg-white hover:text-black transition-all"
+            >
+              Order Now
+            </button>
+            <div class="img h-20">
+              <img class="h-full" src="./assests/img/Ad1.png" alt="AD" />
+            </div>
+            <div class="img h-20">
+              <img class="h-full" src="./assests/img/Ad2.png" alt="AD" />
+            </div>
+          </div>
+        </div>
+        <!-- End Ad -->
+        <!-- Ad -->
+        <div class="container mx-auto">
+          <div
+            class="ad my-10 sm:mx-4 p-4 text-white flex justify-around items-center gap-4 bg-blue-700"
+          >
+            <div class="img h-20">
+              <img class="h-full" src="./assests/img/Ad Card.png" alt="AD" />
+            </div>
+            <div class="info">
+              <p class="text-sm lg:text-xl font-normal lg:font-medium">
+                Apply today and get
+              </p>
+              <h3 class="font-extrabold text-base lg:text-2xl text-yellow-300">
+                10% back
+              </h3>
+            </div>
+            <p class="text-xs lg:text-lg">
+              amet consectetur adipisicing elit. Possimus, quo perferendis!
+              Veniam atque
+            </p>
+            <button
+              class="px-2 text-xs font-bold rounded-sm h-9 min-w-max border-2 bg-white text-black hover:bg-black hover:text-white transition-all"
+            >
+              Learn More
+            </button>
+          </div>
+        </div>
+        <!-- End Ad -->
+        <!-- Container -->
+        <div class="container mx-auto">
+          <!-- Brand Deal -->
+          <div
+            class="brandDeal flex flex-col md:flex-row m-4 my-10 gap-4 justify-center bg-white"
+          >
+            <div
+              class="info p-4 md:p-8 flex flex-col gap-4 justify-start items-start md:basis-1/2"
+            >
+              <h4 class="text-lg font-bold text-gray-400">BRAND'S DEAL</h4>
+              <h2 class="text-xl lg:text-4xl font-bold">
+                Save up to $200 on select Samsung washing machine
+              </h2>
+              <p class="text-gray-500 text-base lg:text-xl">
+                Tortor purus et quis aenean tempus tellus fames.
+              </p>
+              <button class="font-bold text-lg text-blue-600">Shop Now</button>
+            </div>
+            <div class="img md:basis-1/2">
+              <img
+                class="h-full w-full object-cover"
+                src="./assests/img/electronic-store-promotional-banner-hwidth-1.jpg"
+                alt="Deal"
+              />
+            </div>
+          </div>
+          <!-- End Brand Deal -->
+          <!-- Top Brands -->
+          <div class="Brands m-4 my-10 flex flex-col gap-4">
+            <h3 class="font-bold text-xl">Top Brands</h3>
+            <div
+              class="topBrands bg-white border grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6"
+            >
+              <div class="barnd flex justify-center items-center p-4 border">
+                <img
+                  src="./assests/img/electronic-store-top-brand-logo-1.svg"
+                  alt="Brand"
+                />
+              </div>
+              <div class="barnd flex justify-center items-center p-4 border">
+                <img
+                  src="./assests/img/electronic-store-top-brand-logo-2.svg"
+                  alt="Brand"
+                />
+              </div>
+              <div class="barnd flex justify-center items-center p-4 border">
+                <img
+                  src="./assests/img/electronic-store-top-brand-logo-3.svg"
+                  alt="Brand"
+                />
+              </div>
+              <div class="barnd flex justify-center items-center p-4 border">
+                <img
+                  src="./assests/img/electronic-store-top-brand-logo-4.svg"
+                  alt="Brand"
+                />
+              </div>
+              <div class="barnd flex justify-center items-center p-4 border">
+                <img
+                  src="./assests/img/electronic-store-top-brand-logo-5.svg"
+                  alt="Brand"
+                />
+              </div>
+              <div class="barnd flex justify-center items-center p-4 border">
+                <img
+                  src="./assests/img/electronic-store-top-brand-logo-6.svg"
+                  alt="Brand"
+                />
+              </div>
+            </div>
+          </div>
+          <!-- End Top Brands -->
+          <!-- Reviews -->
+          <div class="reviews flex flex-col gap-4 m-4 my-10">
+            <h3 class="font-bold text-xl">What is everyone saying?</h3>
+            <div class="reviews grid grid-cols-1 md:grid-cols-3 gap-2">
+              <div
+                class="review flex flex-col gap-2 justify-center items-center p-4 bg-white"
+              >
+                <p class="text-center text-gray-600">
+                  Dolores porro laboriosam molestias est quo. Et et eos. Ab
+                  error modi labore sed eaque est. Quaerat aut est fugiat.
+                </p>
+                <div
+                  class="rating flex justify-start items-center text-yellow-400"
+                >
+                  <i class="fas fa-star"></i>
+                  <i class="fas fa-star"></i>
+                  <i class="fas fa-star"></i>
+                  <i class="fas fa-star"></i>
+                  <i class="fas fa-star"></i>
+                </div>
+                <div class="img w-12 h-12 rounded-full truncate">
+                  <img
+                    src="./assests/img/electronic-store-reviewer-avatar-image-1.jpg"
+                    alt="Avatar Reviewer"
+                  />
+                </div>
+                <h4 class="text-lg font-semibold">Priscilla Jacobson</h4>
+              </div>
+              <div
+                class="review flex flex-col gap-2 justify-center items-center p-4 bg-white"
+              >
+                <p class="text-center text-gray-600">
+                  Dolorem et cumque consequuntur consequuntur cumque eligendi
+                  voluptate. Tempore accusamus tempore consectetur dolor
+                  aliquid.
+                </p>
+                <div
+                  class="rating flex justify-start items-center text-yellow-400"
+                >
+                  <i class="fas fa-star"></i>
+                  <i class="fas fa-star"></i>
+                  <i class="fas fa-star"></i>
+                  <i class="fas fa-star"></i>
+                  <i class="fas fa-star"></i>
+                </div>
+                <div class="img w-12 h-12 rounded-full truncate">
+                  <img
+                    src="./assests/img/electronic-store-reviewer-avatar-image-2.jpg"
+                    alt="Avatar Reviewer"
+                  />
+                </div>
+                <h4 class="text-lg font-semibold">Priscilla Jacobson</h4>
+              </div>
+              <div
+                class="review flex flex-col gap-2 justify-center items-center p-4 bg-white"
+              >
+                <p class="text-center text-gray-600">
+                  Et eum neque ipsum quaerat ratione qui dolore eos. Numquam quo
+                  vel amet expedita eius facere minima. Dolor et saepe
+                  consequuntur.
+                </p>
+                <div
+                  class="rating flex justify-start items-center text-yellow-400"
+                >
+                  <i class="fas fa-star"></i>
+                  <i class="fas fa-star"></i>
+                  <i class="fas fa-star"></i>
+                  <i class="fas fa-star"></i>
+                  <i class="fas fa-star"></i>
+                </div>
+                <div class="img w-12 h-12 rounded-full truncate">
+                  <img
+                    src="./assests/img/electronic-store-reviewer-avatar-image-3.jpg"
+                    alt="Avatar Reviewer"
+                  />
+                </div>
+                <h4 class="text-lg font-semibold">Priscilla Jacobson</h4>
+              </div>
+              <div
+                class="review flex flex-col gap-2 justify-center items-center p-4 bg-white"
+              >
+                <p class="text-center text-gray-600">
+                  Saepe doloribus deserunt in. At beatae neque pariatur harum
+                  vel.
+                </p>
+                <div
+                  class="rating flex justify-start items-center text-yellow-400"
+                >
+                  <i class="fas fa-star"></i>
+                  <i class="fas fa-star"></i>
+                  <i class="fas fa-star"></i>
+                  <i class="fas fa-star"></i>
+                  <i class="fas fa-star"></i>
+                </div>
+                <div class="img w-12 h-12 rounded-full truncate">
+                  <img
+                    src="./assests/img/electronic-store-reviewer-avatar-image-4.jpg"
+                    alt="Avatar Reviewer"
+                  />
+                </div>
+                <h4 class="text-lg font-semibold">Priscilla Jacobson</h4>
+              </div>
+              <div
+                class="review flex flex-col gap-2 justify-center items-center p-4 bg-white"
+              >
+                <p class="text-center text-gray-600">
+                  Itaque dicta rerum aliquam sit corporis iste omnis. Officia
+                  veritatis vel labore et dolor iste velit distinctio.
+                </p>
+                <div
+                  class="rating flex justify-start items-center text-yellow-400"
+                >
+                  <i class="fas fa-star"></i>
+                  <i class="fas fa-star"></i>
+                  <i class="fas fa-star"></i>
+                  <i class="fas fa-star"></i>
+                  <i class="fas fa-star"></i>
+                </div>
+                <div class="img w-12 h-12 rounded-full truncate">
+                  <img
+                    src="./assests/img/electronic-store-reviewer-avatar-image-5.jpg"
+                    alt="Avatar Reviewer"
+                  />
+                </div>
+                <h4 class="text-lg font-semibold">Priscilla Jacobson</h4>
+              </div>
+              <div
+                class="review flex flex-col gap-2 justify-center items-center p-4 bg-white"
+              >
+                <p class="text-center text-gray-600">
+                  In saepe veniam. Rerum excepturi dolor voluptatibus asperiores
+                  ad ut. Veniam molestiae tenetur velit voluptatum.
+                </p>
+                <div
+                  class="rating flex justify-start items-center text-yellow-400"
+                >
+                  <i class="fas fa-star"></i>
+                  <i class="fas fa-star"></i>
+                  <i class="fas fa-star"></i>
+                  <i class="fas fa-star"></i>
+                  <i class="fas fa-star"></i>
+                </div>
+                <div class="img w-12 h-12 rounded-full truncate">
+                  <img
+                    src="./assests/img/electronic-store-reviewer-avatar-image-6.jpg"
+                    alt="Avatar Reviewer"
+                  />
+                </div>
+                <h4 class="text-lg font-semibold">Priscilla Jacobson</h4>
+              </div>
+            </div>
+          </div>
+          <!-- End Reviews -->
+          <!-- Contact -->
+          <div
+            class="contact grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 m-4 my-10 text-center md:text-start"
+          >
+            <div class="img flex justify-center">
+              <img
+                src="./assests/img/electronic-store-support-team.png"
+                alt="Support Team"
+              />
+            </div>
+            <div class="contact flex flex-col gap-2 py-6 border-t">
+              <a
+                href="#"
+                class="text-gray-600 underline hover:no-underline transition-all"
+                >Have any questions?</a
+              >
+              <h3 class="text-3xl text-slate-700 font-semibold">Contact us</h3>
+            </div>
+            <div class="contact flex flex-col gap-2 py-6 border-t">
+              <a
+                href="#"
+                class="text-gray-600 underline hover:no-underline transition-all"
+                >Customer service</a
+              >
+              <h3 class="text-3xl text-slate-700 font-semibold">
+                1-222-345-6789
+              </h3>
+            </div>
+            <div class="contact flex flex-col gap-2 py-6 border-t">
+              <a
+                href="#"
+                class="text-gray-600 underline hover:no-underline transition-all"
+                >Expert advice</a
+              >
+              <h3 class="text-3xl text-slate-700 font-semibold">
+                123-456-7890
+              </h3>
+            </div>
+          </div>
+          <!-- Contact -->
+          <!-- Newsletter -->
+          <div
+            class="newsletter my-10 bg-white p-4 md:p-8 py-10 flex flex-col lg:flex-row justify-center items-center gap-4"
+          >
+            <div
+              class="icon text-center md:text-start flex flex-col gap-4 md:flex-row justify-center items-center"
+            >
+              <i class="fas fa-envelope-open text-5xl text-slate-700"></i>
+              <h3
+                class="text-3xl text-slate-700 pr-4 font-semibold lg:text-center"
+              >
+                Subscribe to our newsletter
+              </h3>
+              <p class="text-gray-600">
+                Sign up for all the latest news and special offers
+              </p>
+            </div>
+            <form
+              action="#"
+              class="flex flex-col lg:flex-row justify-center items-center gap-4 w-full lg:w-1/2"
+            >
+              <input
+                class="py-2 px-4 w-full outline-none lg:w-3/5 2xl:w-4/5 border border-slate-300"
+                placeholder="Enter your email address"
+              />
+              <button
+                class="py-2 px-4 w-full lg:w-2/5 2xl:w-1/5 bg-slate-700 text-white font-bold hover:bg-blue-600 transition-all"
+              >
+                Subscribe
+              </button>
+            </form>
+          </div>
+          <!-- End Newsletter -->
+          <hr />
+          <!-- Footer -->
+          <div
+            class="footer m-4 my-10 grid grid-cols-1 md:grid-cols-4 justify-center items-center gap-8 text-center"
+          >
+            <div class="logo">
+              <img
+                src="./assests/img/electronic-store-logo-mono.svg"
+                alt="Logo"
+              />
+            </div>
+            <div
+              class="shop flex flex-col justify-center items-center lg:items-start gap-6"
+            >
+              <h3 class="text-2xl font-semibold lg:font-bold">Shop</h3>
+              <div
+                class="links flex flex-col justify-center items-center lg:items-start gap-1"
+              >
+                <a
+                  href="#"
+                  class="text-blue-600 underline hover:no-underline text-sm lg:text-base transition-all"
+                  >Hot deals</a
+                >
+                <a
+                  href="#"
+                  class="text-blue-600 underline hover:no-underline text-sm lg:text-base transition-all"
+                  >Categories</a
+                >
+                <a
+                  href="#"
+                  class="text-blue-600 underline hover:no-underline text-sm lg:text-base transition-all"
+                  >Brands</a
+                >
+                <a
+                  href="#"
+                  class="text-blue-600 underline hover:no-underline text-sm lg:text-base transition-all"
+                  >Rebates</a
+                >
+                <a
+                  href="#"
+                  class="text-blue-600 underline hover:no-underline text-sm lg:text-base transition-all"
+                  >Weekly deals</a
+                >
+              </div>
+            </div>
+            <div
+              class="shop flex flex-col justify-center items-center lg:items-start gap-6"
+            >
+              <h3 class="text-2xl font-semibold lg:font-bold">Need help?</h3>
+              <div
+                class="links flex flex-col justify-center items-center lg:items-start gap-1"
+              >
+                <a
+                  href="#"
+                  class="text-blue-600 underline hover:no-underline text-sm lg:text-base transition-all"
+                  >Contact</a
+                >
+                <a
+                  href="#"
+                  class="text-blue-600 underline hover:no-underline text-sm lg:text-base transition-all"
+                  >Order tracking</a
+                >
+                <a
+                  href="#"
+                  class="text-blue-600 underline hover:no-underline text-sm lg:text-base transition-all"
+                  >FAQs</a
+                >
+                <a
+                  href="#"
+                  class="text-blue-600 underline hover:no-underline text-sm lg:text-base transition-all"
+                  >Return policy</a
+                >
+                <a
+                  href="#"
+                  class="text-blue-600 underline hover:no-underline text-sm lg:text-base transition-all"
+                  >Privacy policy</a
+                >
+              </div>
+            </div>
+            <div
+              class="shop flex flex-col justify-center items-center lg:items-start gap-6"
+            >
+              <h3 class="text-2xl font-semibold lg:font-bold">Contact</h3>
+              <div
+                class="links flex flex-col justify-center items-center lg:items-start lg:text-start gap-1"
+              >
+                <a href="#" class="text-blue-600 text-sm lg:text-base"
+                  >123 Fifth Avenue, New York, NY 10160</a
+                >
+                <a href="#" class="text-blue-600 text-sm lg:text-base"
+                  >contact@info.com</a
+                >
+                <a href="#" class="text-blue-600 text-sm lg:text-base"
+                  >929-242-6868</a
+                >
+              </div>
+            </div>
+          </div>
+          <!-- End Footer -->
+        </div>
+        <!-- End Container -->
+        <!-- Footer Two -->
+        <div class="footerTwo bg-slate-800">
+          <div
+            class="container mx-auto text-center px-4 md:p-8 py-8 flex flex-col md:flex-row justify-center md:justify-between items-center gap-4"
+          >
+            <p class="text-gray-400">
+              © 2024 Electronic Store. Powered by Electronic Store
+            </p>
+            <div class="img">
+              <img
+                src="./assests/img/electronic-store-footer-payment-gateway-icon.png"
+                alt="Payment"
+              />
+            </div>
+          </div>
+        </div>
+        <!-- End Footer Two -->
+      </div>
+    </div>
+
+    <!-- Script JS -->
+    <script src="./assests/js/main.js"></script>
+  </body>
+</html>
