@@ -1,6 +1,6 @@
 # Ecommerce Template
 
-Leon Template A responsive HTML5 website template built with CSS and JavaScript. \
+Ecommerce Template A responsive HTML5 website template built with Tailwind CSS and JavaScript. \
 Design UI/UX: https://www.graphberry.com/item/leon-psd-agency-template
 
 ## Overview
