@@ -1,0 +1,517 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Image Carousel Styles */
+.thumbnail-btn.active {
+  border-color: #2563eb !important;
+  border-width: 3px !important;
+  transform: scale(1.05);
+  box-shadow: 0 4px 12px rgba(37, 99, 235, 0.3);
+}
+
+.thumbnail-btn {
+  transition: all 0.3s ease;
+}
+
+.thumbnail-btn:hover {
+  transform: scale(1.02);
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
+}
+
+#mainProductImage {
+  transition: opacity 0.3s ease, transform 0.3s ease;
+  aspect-ratio: 1/1;
+  object-fit: cover;
+}
+
+.image:hover #mainProductImage {
+  transform: scale(1.02);
+}
+
+/* Main image container responsive */
+.image {
+  aspect-ratio: 1/1;
+  min-height: 300px;
+}
+
+@media (min-width: 1024px) {
+  .image {
+    min-height: 400px;
+  }
+}
+
+/* Responsive carousel improvements */
+.carousel {
+  scroll-behavior: smooth;
+  scrollbar-width: thin;
+  scrollbar-color: #cbd5e1 #f1f5f9;
+}
+
+.carousel::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+
+.carousel::-webkit-scrollbar-track {
+  background: #f1f5f9;
+  border-radius: 3px;
+}
+
+.carousel::-webkit-scrollbar-thumb {
+  background: #cbd5e1;
+  border-radius: 3px;
+}
+
+.carousel::-webkit-scrollbar-thumb:hover {
+  background: #94a3b8;
+}
+
+/* Mobile carousel padding and spacing */
+@media (max-width: 1023px) {
+  .carousel {
+    padding-left: 0.5rem;
+    padding-right: 0.5rem;
+  }
+  
+  .imagesCarousel {
+    padding-left: 0.25rem;
+    padding-right: 0.25rem;
+    gap: 0.5rem;
+  }
+  
+  .thumbnail-btn {
+    flex-shrink: 0;
+    min-width: 5rem;
+    width: 5rem;
+    height: 5rem;
+  }
+}
+
+/* Desktop carousel */
+@media (min-width: 1024px) {
+  .carousel {
+    max-height: 400px;
+  }
+  
+  .thumbnail-btn {
+    min-width: 6rem;
+    width: 6rem;
+    height: 6rem;
+  }
+}
+
+/* Smooth scrolling for carousel items */
+.imagesCarousel {
+  scroll-snap-type: x mandatory;
+}
+
+.thumbnail-btn {
+  scroll-snap-align: start;
+}
+
+/* Enhanced Buy Section Styles */
+.add-to-cart, .buy-now {
+  background: linear-gradient(135deg, var(--tw-gradient-from), var(--tw-gradient-to));
+  position: relative;
+  overflow: hidden;
+}
+
+.add-to-cart::before, .buy-now::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(90deg, transparent, rgba(255,255,255,0.2), transparent);
+  transition: left 0.5s;
+}
+
+.add-to-cart:hover::before, .buy-now:hover::before {
+  left: 100%;
+}
+
+/* Tab Styles */
+.tab-btn.active {
+  border-bottom-width: 2px;
+}
+
+.tab-pane {
+  animation: fadeIn 0.3s ease-in-out;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(10px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+/* Responsive Tab Navigation */
+@media (max-width: 640px) {
+  .tab-navigation .head {
+    border-bottom: 1px solid #e5e7eb;
+  }
+  
+  .tab-btn {
+    font-size: 0.875rem;
+    padding: 0.75rem 0.75rem;
+    min-width: auto;
+  }
+  
+  .tab-btn.active {
+    border-bottom-width: 2px;
+  }
+}
+
+/* Review Styles */
+.review-item {
+  transition: all 0.3s ease;
+}
+
+.review-item:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.1);
+}
+
+.stars i {
+  transition: transform 0.2s ease;
+}
+
+.stars:hover i {
+  transform: scale(1.1);
+}
+
+/* Trust Badge Animations */
+.trust-badges .badge {
+  animation: pulse 2s infinite;
+}
+
+@keyframes pulse {
+  0%, 100% { transform: scale(1); }
+  50% { transform: scale(1.05); }
+}
+
+/* Feature Grid Hover Effects */
+.feature-item {
+  transition: all 0.3s ease;
+}
+
+.feature-item:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+/* Secondary Actions Hover */
+.secondary-actions button {
+  position: relative;
+  overflow: hidden;
+}
+
+.secondary-actions button::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(90deg, transparent, rgba(59, 130, 246, 0.1), transparent);
+  transition: left 0.3s;
+}
+
+.secondary-actions button:hover::before {
+  left: 100%;
+}
+
+/* Loading Animation */
+@keyframes spin {
+  from { transform: rotate(0deg); }
+  to { transform: rotate(360deg); }
+}
+
+.fa-spin {
+  animation: spin 1s linear infinite;
+}
+
+/* Custom styles */
+@media (max-width: 1024px) {
+  .page {
+    position: relative;
+  }
+
+  .header {
+    position: relative;
+    width: 100%;
+    z-index: 100;
+  }
+
+  nav {
+    position: absolute;
+    left: 0;
+    width: 100%;
+    z-index: 100;
+  }
+
+  .active {
+    animation: animate 0.5s forwards;
+    display: block;
+  }
+
+  @keyframes animate {
+    from {
+      opacity: 0;
+      top: 130px;
+    }
+    to {
+      opacity: 1;
+      top: 60px;
+    }
+  }
+
+  .desactive {
+    animation: desactive 0.5s forwards;
+  }
+
+  @keyframes desactive {
+    from {
+      opacity: 1;
+      top: 60px;
+    }
+    to {
+      opacity: 0;
+      top: 130px;
+      display: none;
+    }
+  }
+}
+
+header .nav {
+  height: 28px;
+}
+
+.menu {
+  height: 50%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.menu span {
+  display: inline;
+  width: 20px;
+  height: 2px;
+  background-color: #eee;
+  transition: 0.5s;
+}
+
+.one {
+  rotate: -45deg;
+  position: relative;
+  top: 6.45px;
+}
+
+.three {
+  rotate: 45deg;
+  position: relative;
+  top: -6.45px;
+}
+
+.two {
+  display: none !important;
+}
+
+.search {
+  position: relative;
+}
+
+.search i {
+  position: absolute;
+  right: 15px;
+  top: 50%;
+  transform: translateY(-50%);
+}
+
+.menu-items {
+  position: relative;
+}
+
+@media (min-width: 1024px) {
+  .menu-items li:hover > .subMenu > i {
+    transform: rotate(0deg);
+  }
+}
+
+.sub-menu {
+  position: relative;
+}
+
+@media (min-width: 1024px) {
+  .menu-items {
+    position: relative;
+  }
+
+  .sub-menu {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    z-index: 1;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+    display: none;
+  }
+
+  .menu-items li:first-child:hover .sub-menu {
+    display: flex;
+  }
+}
+
+.cart-login a {
+  position: relative;
+}
+
+.cart-login a::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 2px;
+  height: 100%;
+  background-color: #eee;
+}
+
+.cart-login .cart-icon {
+  position: relative;
+}
+
+.badge {
+  position: absolute;
+  top: -10px;
+  right: 10px;
+  width: 15px;
+  height: 15px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.loading {
+  background-image: url("../img/electronic-store-hero-image.jpg");
+  background-position: center center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  z-index: 0;
+  height: 600px;
+}
+
+.loading .section {
+  width: 100%;
+  height: 600px;
+  display: flex;
+  justify-content: flex-end;
+  align-items: flex-end;
+}
+
+.loading .product {
+  width: 100%;
+  height: 60%;
+  margin: 0 auto 2rem auto;
+  max-width: 1500px;
+  z-index: 1;
+}
+
+@media (min-width: 768px) {
+  .loading .product {
+    width: 60%;
+    height: 60%;
+    margin: 0 0 6rem 0;
+  }
+}
+
+@media (min-width: 768px) {
+  .content {
+    position: relative;
+  }
+
+  .deatails {
+    position: absolute;
+    top: -100px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 90%;
+    max-width: 1500px;
+  }
+
+  .deatails .box {
+    position: relative;
+  }
+
+  .deatails .box:not(:last-child)::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 2px;
+    height: 100%;
+    background-color: #eee;
+  }
+
+  .newsletter h3 {
+    position: relative;
+  }
+
+  .newsletter h3::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 2px;
+    height: 100%;
+    background-color: #eee;
+  }
+}
+
+/* Review Responsive Improvements */
+@media (max-width: 640px) {
+  .review-item {
+    padding: 1rem;
+  }
+  
+  .reviewer-info img {
+    width: 2.5rem;
+    height: 2.5rem;
+  }
+  
+  .review-photos img {
+    width: 3rem;
+    height: 3rem;
+  }
+  
+  .rating-breakdown .breakdown-item {
+    gap: 0.5rem;
+  }
+  
+  .rating-breakdown .breakdown-item span:first-child {
+    width: 1.5rem;
+    font-size: 0.75rem;
+  }
+  
+  .rating-breakdown .breakdown-item span:last-child {
+    width: 2rem;
+    font-size: 0.75rem;
+  }
+}
+
+/* Filter buttons responsive */
+.review-filters .filters {
+  scrollbar-width: none;
+  -ms-overflow-style: none;
+}
+
+.review-filters .filters::-webkit-scrollbar {
+  display: none;
+}
+
+@media (max-width: 640px) {
+  .filter-btn {
+    font-size: 0.75rem;
+    padding: 0.5rem 0.75rem;
+  }
+}

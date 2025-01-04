@@ -1,5 +1,15 @@
 {
+  "name": "ecommerce-template-tailwind",
+  "version": "1.0.0",
+  "description": "E-commerce template built with Tailwind CSS",
+  "scripts": {
+    "dev": "tailwindcss -i ./assests/css/input.css -o ./assests/css/style.css --watch",
+    "build": "tailwindcss -i ./assests/css/input.css -o ./assests/css/style.css --minify",
+    "serve": "npx serve .",
+    "start": "npm run dev"
+  },
   "devDependencies": {
-    "tailwindcss": "^3.4.1"
+    "tailwindcss": "^3.4.1",
+    "serve": "^14.2.1"
   }
 }
