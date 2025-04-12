@@ -26,10 +26,22 @@
   <body>
     <div class="page">
       <!-- Top Bar -->
-      <div class="top-bar hidden lg:block bg-blue-700 text-white text-sm">
+      <div class="top-bar hidden lg:block bg-gradient-to-r from-blue-700 to-blue-800 text-white">
         <div class="container mx-auto">
-          <nav class="flex justify-between items-center py-2 px-4">
-            <div class="left-links flex items-center gap-6">
+          <nav class="flex justify-between items-center py-2 px-4 text-sm">
+            <div class="contact-info flex items-center gap-6">
+              <div class="flex items-center gap-2">
+                <i class="fas fa-phone text-blue-200"></i>
+                <span class="whitespace-nowrap">24/7 Support: <a href="tel:1-800-234-5678"
+                    class="font-semibold hover:text-blue-200 transition-colors">1-800-234-5678</a></span>
+              </div>
+              <div class="flex items-center gap-2">
+                <i class="fas fa-envelope text-blue-200"></i>
+                <a href="mailto:support@electronicstore.com"
+                  class="hover:text-blue-200 transition-colors whitespace-nowrap">support@electronicstore.com</a>
+              </div>
+            </div>
+            <div class="quick-links flex items-center gap-4">
               <a href="#" class="flex items-center gap-1 hover:text-blue-200 transition-colors whitespace-nowrap">
                 <i class="fas fa-truck text-xs"></i>
                 <span>Free Shipping</span>
@@ -38,7 +50,8 @@
                 <i class="fas fa-undo text-xs"></i>
                 <span>Easy Returns</span>
               </a>
-              <a href="track-order.html" class="flex items-center gap-1 hover:text-blue-200 transition-colors whitespace-nowrap">
+              <a href="track-order.html"
+                class="flex items-center gap-1 hover:text-blue-200 transition-colors whitespace-nowrap">
                 <i class="fas fa-map-marker-alt text-xs"></i>
                 <span>Track Order</span>
               </a>
@@ -54,7 +67,8 @@
           <header class="flex justify-between items-center py-4 px-4">
             <!-- Mobile Menu & Logo -->
             <div class="nav flex justify-between items-center gap-4">
-              <button class="menu lg:hidden cursor-pointer p-2 hover:bg-gray-100 rounded-lg transition-colors" id="mobileMenuBtn">
+              <button class="menu lg:hidden cursor-pointer p-2 hover:bg-gray-100 rounded-lg transition-colors"
+                id="mobileMenuBtn">
                 <div class="space-y-1">
                   <span class="block w-6 h-0.5 bg-gray-600 transition-all"></span>
                   <span class="block w-6 h-0.5 bg-gray-600 transition-all"></span>
@@ -63,75 +77,81 @@
               </button>
               <div class="logo">
                 <a href="index.html" class="flex items-center gap-2">
-                  <img src="assests/img/electronic-store-logo.svg" alt="Electronic Store Logo" class="h-10 w-auto" />
-                  <span class="hidden xl:block text-3xl lg:text-4xl font-bold bg-gradient-to-r from-blue-600 to-blue-800 bg-clip-text text-transparent whitespace-nowrap tracking-wide hover:from-blue-700 hover:to-blue-900 transition-all duration-300 cursor-pointer">Electronic Store</span>
+                  <img src="assests/img/electronic-store-logo.svg" alt="Electronic Store Logo"
+                    class="h-10 w-auto filter brightness-0" />
+                  <span
+                    class="hidden xl:block text-3xl lg:text-4xl font-bold bg-gradient-to-r from-blue-600 to-blue-800 bg-clip-text text-transparent whitespace-nowrap tracking-wide hover:from-blue-700 hover:to-blue-900 transition-all duration-300 cursor-pointer">Electronic
+                    Store</span>
                 </a>
               </div>
             </div>
-
+      
             <!-- Search Bar (Desktop) -->
             <div class="search-section hidden lg:flex flex-1 max-w-2xl mx-8">
               <div class="relative w-full">
-                <input
-                  type="text"
+                <input type="text"
                   class="w-full py-3 px-4 pr-12 border-2 border-gray-200 rounded-l-lg focus:border-blue-500 focus:outline-none transition-colors"
-                  placeholder="Search for products, brands, categories..."
-                  id="searchInput"
-                />
-                <button class="absolute right-0 top-0 h-full px-4 bg-blue-600 text-white rounded-r-lg hover:bg-blue-700 transition-colors">
+                  placeholder="Search for products, brands, categories..." id="searchInput" />
+                <button
+                  class="absolute right-0 top-0 h-full px-4 bg-blue-600 text-white rounded-r-lg hover:bg-blue-700 transition-colors">
                   <i class="fas fa-search"></i>
                 </button>
               </div>
             </div>
-
+      
             <!-- Right Section -->
             <div class="header-actions flex items-center gap-2">
               <!-- Mobile Search Icon -->
               <button class="lg:hidden p-2 hover:bg-gray-100 rounded-lg transition-colors" id="mobileSearchBtn">
                 <i class="fas fa-search text-gray-600 text-lg"></i>
               </button>
-
+      
               <!-- Wishlist -->
-              <a href="#" class="hidden sm:flex flex-col items-center p-2 hover:bg-gray-100 rounded-lg transition-colors group">
+              <a href="#"
+                class="hidden sm:flex flex-col items-center p-2 hover:bg-gray-100 rounded-lg transition-colors group">
                 <div class="relative">
                   <i class="fas fa-heart text-gray-600 group-hover:text-red-500 text-lg transition-colors"></i>
-                  <span class="absolute -top-2 -right-2 bg-red-500 text-white text-xs rounded-full h-5 w-5 flex items-center justify-center">3</span>
+                  <span
+                    class="absolute -top-2 -right-2 bg-red-500 text-white text-xs rounded-full h-5 w-5 flex items-center justify-center">3</span>
                 </div>
                 <span class="text-xs text-gray-600 mt-1 whitespace-nowrap">Wishlist</span>
               </a>
-
+      
               <!-- Cart -->
-              <a href="#" class="flex flex-col items-center p-2 hover:bg-gray-100 rounded-lg transition-colors group relative">
+              <a href="#"
+                class="flex flex-col items-center p-2 hover:bg-gray-100 rounded-lg transition-colors group relative">
                 <div class="relative">
                   <i class="fas fa-shopping-cart text-gray-600 group-hover:text-blue-600 text-lg transition-colors"></i>
-                  <span class="absolute -top-2 -right-2 bg-blue-600 text-white text-xs rounded-full h-5 w-5 flex items-center justify-center" id="cartCount">0</span>
+                  <span
+                    class="absolute -top-2 -right-2 bg-blue-600 text-white text-xs rounded-full h-5 w-5 flex items-center justify-center"
+                    id="cartCount">0</span>
                 </div>
                 <span class="text-xs text-gray-600 mt-1 hidden sm:block whitespace-nowrap">Cart</span>
               </a>
-
+      
               <!-- Auth Links -->
               <div class="auth-links flex items-center gap-1 ml-2">
-                <a href="signin.html" class="text-sm px-3 py-2 bg-blue-600 text-white hover:bg-blue-700 rounded-lg transition-colors whitespace-nowrap">
+                <a href="signin.html"
+                  class="text-sm px-3 py-2 text-gray-700 hover:text-blue-600 hover:bg-blue-50 rounded-lg transition-colors whitespace-nowrap">
                   <i class="fas fa-sign-in-alt mr-1"></i>
                   <span class="hidden sm:inline">Sign In</span>
                 </a>
                 <span class="text-gray-300 hidden sm:inline">|</span>
-                <a href="signup.html" class="text-sm px-3 py-2 text-gray-700 hover:text-blue-600 hover:bg-blue-50 rounded-lg transition-colors whitespace-nowrap">
+                <a href="signup.html"
+                  class="text-sm px-3 py-2 bg-blue-600 text-white hover:bg-blue-700 rounded-lg transition-colors whitespace-nowrap">
                   <i class="fas fa-user-plus mr-1"></i>
                   <span class="hidden sm:inline">Sign Up</span>
                 </a>
               </div>
             </div>
           </header>
-
+      
           <!-- Mobile Search Bar -->
           <div class="mobile-search hidden lg:hidden border-t bg-gray-50 p-4" id="mobileSearchBar">
             <div class="relative">
-              <input
-                type="text"
+              <input type="text"
                 class="w-full py-3 px-4 pr-12 border border-gray-300 rounded-lg focus:border-blue-500 focus:outline-none"
-                placeholder="Search products..."
-              />
+                placeholder="Search products..." />
               <button class="absolute right-3 top-1/2 transform -translate-y-1/2 text-gray-400">
                 <i class="fas fa-search"></i>
               </button>
@@ -139,46 +159,55 @@
           </div>
         </div>
         <!-- End Container -->
-        
+      
         <!-- Mobile Categories Button (shown on mobile only) -->
         <div class="mobile-categories lg:hidden bg-blue-600 border-t border-blue-500">
           <div class="container mx-auto">
             <div class="categories-dropdown relative">
-              <button class="flex items-center gap-2 px-6 py-4 bg-blue-700 hover:bg-blue-800 transition-colors w-full text-sm md:text-base whitespace-nowrap" id="mobileCategoriesBtn">
+              <button
+                class="flex items-center gap-2 px-6 py-4 bg-blue-700 hover:bg-blue-800 transition-colors w-full text-sm md:text-base whitespace-nowrap"
+                id="mobileCategoriesBtn">
                 <i class="fas fa-bars text-sm md:text-base"></i>
                 <span class="font-medium text-sm md:text-base text-white">All Categories</span>
-                <i class="fas fa-chevron-down ml-auto transition-transform text-sm md:text-base text-white" id="mobileCategoriesIcon"></i>
+                <i class="fas fa-chevron-down ml-auto transition-transform text-sm md:text-base text-white"
+                  id="mobileCategoriesIcon"></i>
               </button>
-              
+      
               <!-- Mobile Categories Dropdown Menu -->
               <div class="categories-menu hidden bg-white shadow-xl w-full z-50" id="mobileCategoriesDropdown">
                 <div class="border-t-2 border-blue-600">
-                  <a href="#" class="flex items-center gap-3 px-6 py-3 text-gray-700 hover:bg-blue-50 hover:text-blue-600 transition-colors border-b border-gray-100">
+                  <a href="#"
+                    class="flex items-center gap-3 px-6 py-3 text-gray-700 hover:bg-blue-50 hover:text-blue-600 transition-colors border-b border-gray-100">
                     <i class="fas fa-snowflake text-blue-500 w-4"></i>
                     <span class="whitespace-nowrap">Air Conditioner</span>
                     <span class="ml-auto text-xs text-gray-400">(4)</span>
                   </a>
-                  <a href="#" class="flex items-center gap-3 px-6 py-3 text-gray-700 hover:bg-blue-50 hover:text-blue-600 transition-colors border-b border-gray-100">
+                  <a href="#"
+                    class="flex items-center gap-3 px-6 py-3 text-gray-700 hover:bg-blue-50 hover:text-blue-600 transition-colors border-b border-gray-100">
                     <i class="fas fa-headphones text-blue-500 w-4"></i>
                     <span class="whitespace-nowrap">Audio & Video</span>
                     <span class="ml-auto text-xs text-gray-400">(10)</span>
                   </a>
-                  <a href="#" class="flex items-center gap-3 px-6 py-3 text-gray-700 hover:bg-blue-50 hover:text-blue-600 transition-colors border-b border-gray-100">
+                  <a href="#"
+                    class="flex items-center gap-3 px-6 py-3 text-gray-700 hover:bg-blue-50 hover:text-blue-600 transition-colors border-b border-gray-100">
                     <i class="fas fa-mobile-alt text-blue-500 w-4"></i>
                     <span class="whitespace-nowrap">Mobile Phones</span>
                     <span class="ml-auto text-xs text-gray-400">(19)</span>
                   </a>
-                  <a href="#" class="flex items-center gap-3 px-6 py-3 text-gray-700 hover:bg-blue-50 hover:text-blue-600 transition-colors border-b border-gray-100">
+                  <a href="#"
+                    class="flex items-center gap-3 px-6 py-3 text-gray-700 hover:bg-blue-50 hover:text-blue-600 transition-colors border-b border-gray-100">
                     <i class="fas fa-blender text-blue-500 w-4"></i>
                     <span class="whitespace-nowrap">Home Appliances</span>
                     <span class="ml-auto text-xs text-gray-400">(3)</span>
                   </a>
-                  <a href="#" class="flex items-center gap-3 px-6 py-3 text-gray-700 hover:bg-blue-50 hover:text-blue-600 transition-colors border-b border-gray-100">
+                  <a href="#"
+                    class="flex items-center gap-3 px-6 py-3 text-gray-700 hover:bg-blue-50 hover:text-blue-600 transition-colors border-b border-gray-100">
                     <i class="fas fa-laptop text-blue-500 w-4"></i>
                     <span class="whitespace-nowrap">Computers & Laptops</span>
                     <span class="ml-auto text-xs text-gray-400">(34)</span>
                   </a>
-                  <a href="#" class="flex items-center gap-3 px-6 py-3 text-gray-700 hover:bg-blue-50 hover:text-blue-600 transition-colors">
+                  <a href="#"
+                    class="flex items-center gap-3 px-6 py-3 text-gray-700 hover:bg-blue-50 hover:text-blue-600 transition-colors">
                     <i class="fas fa-home text-blue-500 w-4"></i>
                     <span class="whitespace-nowrap">Smart Home</span>
                     <span class="ml-auto text-xs text-gray-400">(6)</span>
@@ -188,48 +217,111 @@
             </div>
           </div>
         </div>
-        
+      
+        <!-- Mobile Main Navigation (shown on mobile only) -->
+        <div class="mobile-nav lg:hidden bg-blue-600">
+          <div class="container mx-auto">
+            <div class="navigation-dropdown relative">
+              <button
+                class="flex items-center gap-2 px-6 py-4 bg-blue-700 hover:bg-blue-800 transition-colors w-full text-sm md:text-base whitespace-nowrap"
+                id="mobileNavBtn">
+                <i class="fas fa-compass text-sm md:text-base"></i>
+                <span class="font-medium text-sm md:text-base text-white">Main Menu</span>
+                <i class="fas fa-chevron-down ml-auto transition-transform text-sm md:text-base text-white"
+                  id="mobileNavIcon"></i>
+              </button>
+      
+              <!-- Mobile Navigation Dropdown Menu -->
+              <div class="navigation-menu hidden bg-white shadow-xl w-full z-50" id="mobileNavDropdown">
+                <div class="border-t-2 border-blue-600">
+                  <a href="index.html"
+                    class="flex items-center gap-3 px-6 py-3 bg-blue-50 text-blue-600 transition-colors border-b border-gray-100">
+                    <i class="fas fa-home text-blue-500 w-4"></i>
+                    <span class="whitespace-nowrap font-medium">Home</span>
+                  </a>
+                  <a href="shop.html"
+                    class="flex items-center gap-3 px-6 py-3 text-gray-700 hover:bg-blue-50 hover:text-blue-600 transition-colors border-b border-gray-100">
+                    <i class="fas fa-store text-blue-500 w-4"></i>
+                    <span class="whitespace-nowrap">Shop</span>
+                  </a>
+                  <a href="products.html"
+                    class="flex items-center gap-3 px-6 py-3 text-gray-700 hover:bg-blue-50 hover:text-blue-600 transition-colors border-b border-gray-100">
+                    <i class="fas fa-box text-blue-500 w-4"></i>
+                    <span class="whitespace-nowrap">Products</span>
+                  </a>
+                  <a href="categories.html"
+                    class="flex items-center gap-3 px-6 py-3 text-gray-700 hover:bg-blue-50 hover:text-blue-600 transition-colors border-b border-gray-100">
+                    <i class="fas fa-th-large text-blue-500 w-4"></i>
+                    <span class="whitespace-nowrap">Categories</span>
+                  </a>
+                  <a href="brands.html"
+                    class="flex items-center gap-3 px-6 py-3 text-gray-700 hover:bg-blue-50 hover:text-blue-600 transition-colors border-b border-gray-100">
+                    <i class="fas fa-tags text-blue-500 w-4"></i>
+                    <span class="whitespace-nowrap">Brands</span>
+                  </a>
+                  <a href="contact.html"
+                    class="flex items-center gap-3 px-6 py-3 text-gray-700 hover:bg-blue-50 hover:text-blue-600 transition-colors">
+                    <i class="fas fa-envelope text-blue-500 w-4"></i>
+                    <span class="whitespace-nowrap">Contact</span>
+                  </a>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      
         <!-- Navigation Menu -->
         <nav class="nav-menu bg-blue-600 text-white border-t border-blue-500" id="navigationMenu">
           <div class="container mx-auto">
             <div class="flex flex-col lg:flex-row lg:justify-between lg:items-center">
               <!-- Categories Dropdown -->
               <div class="categories-dropdown relative w-full lg:w-auto">
-                <button class="flex items-center gap-2 px-6 py-4 bg-blue-700 hover:bg-blue-800 transition-colors w-full lg:w-auto text-sm md:text-base whitespace-nowrap" id="categoriesBtn">
+                <button
+                  class="flex items-center gap-2 px-6 py-4 bg-blue-700 hover:bg-blue-800 transition-colors w-full lg:w-auto text-sm md:text-base whitespace-nowrap"
+                  id="categoriesBtn">
                   <i class="fas fa-bars text-sm md:text-base"></i>
                   <span class="font-medium text-sm md:text-base">All Categories</span>
-                  <i class="fas fa-chevron-down ml-auto lg:ml-2 transition-transform text-sm md:text-base" id="categoriesIcon"></i>
+                  <i class="fas fa-chevron-down ml-auto lg:ml-2 transition-transform text-sm md:text-base"
+                    id="categoriesIcon"></i>
                 </button>
-                
+      
                 <!-- Categories Dropdown Menu -->
-                <div class="categories-menu hidden bg-white shadow-xl rounded-b-lg lg:min-w-64 w-full lg:absolute lg:top-full lg:left-0 z-50" id="categoriesDropdown">
+                <div
+                  class="categories-menu hidden bg-white shadow-xl rounded-b-lg lg:min-w-64 w-full lg:absolute lg:top-full lg:left-0 z-50"
+                  id="categoriesDropdown">
                   <div class="border-t-2 border-blue-600">
-                    <a href="#" class="flex items-center gap-3 px-6 py-3 text-gray-700 hover:bg-blue-50 hover:text-blue-600 transition-colors border-b border-gray-100">
+                    <a href="#"
+                      class="flex items-center gap-3 px-6 py-3 text-gray-700 hover:bg-blue-50 hover:text-blue-600 transition-colors border-b border-gray-100">
                       <i class="fas fa-snowflake text-blue-500 w-4"></i>
                       <span class="whitespace-nowrap">Air Conditioner</span>
                       <span class="ml-auto text-xs text-gray-400">(4)</span>
                     </a>
-                    <a href="#" class="flex items-center gap-3 px-6 py-3 text-gray-700 hover:bg-blue-50 hover:text-blue-600 transition-colors border-b border-gray-100">
+                    <a href="#"
+                      class="flex items-center gap-3 px-6 py-3 text-gray-700 hover:bg-blue-50 hover:text-blue-600 transition-colors border-b border-gray-100">
                       <i class="fas fa-headphones text-blue-500 w-4"></i>
                       <span class="whitespace-nowrap">Audio & Video</span>
                       <span class="ml-auto text-xs text-gray-400">(10)</span>
                     </a>
-                    <a href="#" class="flex items-center gap-3 px-6 py-3 text-gray-700 hover:bg-blue-50 hover:text-blue-600 transition-colors border-b border-gray-100">
+                    <a href="#"
+                      class="flex items-center gap-3 px-6 py-3 text-gray-700 hover:bg-blue-50 hover:text-blue-600 transition-colors border-b border-gray-100">
                       <i class="fas fa-mobile-alt text-blue-500 w-4"></i>
                       <span class="whitespace-nowrap">Mobile Phones</span>
                       <span class="ml-auto text-xs text-gray-400">(19)</span>
                     </a>
-                    <a href="#" class="flex items-center gap-3 px-6 py-3 text-gray-700 hover:bg-blue-50 hover:text-blue-600 transition-colors border-b border-gray-100">
+                    <a href="#"
+                      class="flex items-center gap-3 px-6 py-3 text-gray-700 hover:bg-blue-50 hover:text-blue-600 transition-colors border-b border-gray-100">
                       <i class="fas fa-blender text-blue-500 w-4"></i>
                       <span class="whitespace-nowrap">Home Appliances</span>
                       <span class="ml-auto text-xs text-gray-400">(3)</span>
                     </a>
-                    <a href="#" class="flex items-center gap-3 px-6 py-3 text-gray-700 hover:bg-blue-50 hover:text-blue-600 transition-colors border-b border-gray-100">
+                    <a href="#"
+                      class="flex items-center gap-3 px-6 py-3 text-gray-700 hover:bg-blue-50 hover:text-blue-600 transition-colors border-b border-gray-100">
                       <i class="fas fa-laptop text-blue-500 w-4"></i>
                       <span class="whitespace-nowrap">Computers & Laptops</span>
                       <span class="ml-auto text-xs text-gray-400">(34)</span>
                     </a>
-                    <a href="#" class="flex items-center gap-3 px-6 py-3 text-gray-700 hover:bg-blue-50 hover:text-blue-600 transition-colors">
+                    <a href="#"
+                      class="flex items-center gap-3 px-6 py-3 text-gray-700 hover:bg-blue-50 hover:text-blue-600 transition-colors">
                       <i class="fas fa-home text-blue-500 w-4"></i>
                       <span class="whitespace-nowrap">Smart Home</span>
                       <span class="ml-auto text-xs text-gray-400">(6)</span>
@@ -237,19 +329,31 @@
                   </div>
                 </div>
               </div>
-
+      
               <!-- Main Navigation -->
-              <div class="main-nav flex-1">
-                <ul class="menu-items flex flex-col lg:flex-row lg:justify-center lg:gap-8">
-                  <li><a href="index.html" class="block px-6 py-4 lg:py-4 lg:px-4 hover:bg-blue-700 lg:hover:bg-transparent lg:hover:text-blue-200 transition-colors font-medium text-sm md:text-base whitespace-nowrap">Home</a></li>
-                  <li><a href="#" class="block px-6 py-4 lg:py-4 lg:px-4 hover:bg-blue-700 lg:hover:bg-transparent lg:hover:text-blue-200 transition-colors font-medium text-sm md:text-base whitespace-nowrap">Shop</a></li>
-                  <li><a href="products.html" class="block px-6 py-4 lg:py-4 lg:px-4 hover:bg-blue-700 lg:hover:bg-transparent lg:hover:text-blue-200 transition-colors font-medium text-sm md:text-base whitespace-nowrap">Products</a></li>
-                  <li><a href="#" class="block px-6 py-4 lg:py-4 lg:px-4 hover:bg-blue-700 lg:hover:bg-transparent lg:hover:text-blue-200 transition-colors font-medium text-sm md:text-base whitespace-nowrap">New Arrivals</a></li>
-                  <li><a href="#" class="block px-6 py-4 lg:py-4 lg:px-4 hover:bg-blue-700 lg:hover:bg-transparent lg:hover:text-blue-200 transition-colors font-medium text-sm md:text-base whitespace-nowrap">Today's Deals</a></li>
-                  <li><a href="#" class="block px-6 py-4 lg:py-4 lg:px-4 hover:bg-blue-700 lg:hover:bg-transparent lg:hover:text-blue-200 transition-colors font-medium text-sm md:text-base whitespace-nowrap">Contact</a></li>
+              <div class="main-nav flex-1 hidden lg:block">
+                <ul class="menu-items flex flex-row justify-center gap-8">
+                  <li><a href="index.html"
+                      class="block py-4 px-4 text-blue-200 transition-colors font-medium text-base whitespace-nowrap">Home</a>
+                  </li>
+                  <li><a href="shop.html"
+                      class="block py-4 px-4 hover:text-blue-200 transition-colors font-medium text-base whitespace-nowrap">Shop</a>
+                  </li>
+                  <li><a href="products.html"
+                      class="block py-4 px-4 hover:text-blue-200 transition-colors font-medium text-base whitespace-nowrap">Products</a>
+                  </li>
+                  <li><a href="categories.html"
+                      class="block py-4 px-4 hover:text-blue-200 transition-colors font-medium text-base whitespace-nowrap">Categories</a>
+                  </li>
+                  <li><a href="brands.html"
+                      class="block py-4 px-4 hover:text-blue-200 transition-colors font-medium text-base whitespace-nowrap">Brands</a>
+                  </li>
+                  <li><a href="contact.html"
+                      class="block py-4 px-4 hover:text-blue-200 transition-colors font-medium text-base whitespace-nowrap">Contact</a>
+                  </li>
                 </ul>
               </div>
-
+      
               <!-- Right Side Actions -->
               <div class="nav-actions hidden lg:flex items-center gap-4 px-6">
                 <div class="help-info hidden xl:flex items-center gap-2 text-xs lg:text-sm">
@@ -263,15 +367,18 @@
             </div>
           </div>
         </nav>
-
+      
         <!-- Mobile Menu Overlay -->
-        <div class="mobile-menu-overlay hidden fixed inset-0 bg-black bg-opacity-50 z-40 lg:hidden" id="mobileMenuOverlay"></div>
-        
+        <div class="mobile-menu-overlay hidden fixed inset-0 bg-black bg-opacity-50 z-40 lg:hidden" id="mobileMenuOverlay">
+        </div>
+      
         <!-- Mobile Menu -->
-        <div class="mobile-menu fixed left-0 top-0 h-full w-80 bg-white transform -translate-x-full transition-transform duration-300 z-50 lg:hidden" id="mobileMenu">
+        <div
+          class="mobile-menu fixed left-0 top-0 h-full w-80 bg-white transform -translate-x-full transition-transform duration-300 z-50 lg:hidden"
+          id="mobileMenu">
           <div class="p-6 border-b">
             <div class="flex items-center justify-between">
-              <img src="assests/img/electronic-store-logo.svg" alt="Logo" class="h-8" />
+              <img src="assests/img/electronic-store-logo.svg" alt="Logo" class="h-8 filter brightness-0" />
               <button class="p-2 hover:bg-gray-100 rounded-lg" id="closeMobileMenu">
                 <i class="fas fa-times text-gray-600"></i>
               </button>
@@ -280,15 +387,15 @@
           <div class="p-6">
             <div class="space-y-4">
               <a href="index.html" class="block py-2 text-gray-700 hover:text-blue-600 font-medium">Home</a>
-              <a href="#" class="block py-2 text-gray-700 hover:text-blue-600 font-medium">Shop</a>
+              <a href="shop.html" class="block py-2 text-gray-700 hover:text-blue-600 font-medium">Shop</a>
               <a href="products.html" class="block py-2 text-gray-700 hover:text-blue-600 font-medium">Products</a>
-              <a href="#" class="block py-2 text-gray-700 hover:text-blue-600 font-medium">New Arrivals</a>
-              <a href="#" class="block py-2 text-gray-700 hover:text-blue-600 font-medium">Today's Deals</a>
-              <a href="#" class="block py-2 text-gray-700 hover:text-blue-600 font-medium">Contact</a>
+              <a href="categories.html" class="block py-2 text-gray-700 hover:text-blue-600 font-medium">Categories</a>
+              <a href="brands.html" class="block py-2 text-gray-700 hover:text-blue-600 font-medium">Brands</a>
+              <a href="contact.html" class="block py-2 text-gray-700 hover:text-blue-600 font-medium">Contact</a>
             </div>
             <div class="mt-8 pt-6 border-t">
               <div class="space-y-3">
-                <a href="signin.html" class="flex items-center gap-3 py-2 text-blue-600 font-medium">
+                <a href="signin.html" class="flex items-center gap-3 py-2 text-gray-700 hover:text-blue-600">
                   <i class="fas fa-sign-in-alt"></i>
                   <span>Sign In</span>
                 </a>
