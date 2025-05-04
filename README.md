@@ -20,6 +20,12 @@ A modern, responsive HTML5 ecommerce website template built with Tailwind CSS an
 ```
 ├── index.html              # Main homepage
 ├── productPage.html         # Product detail page
+├── shop.html               # Shop page with product grid
+├── products.html           # Products listing page
+├── categories.html         # Categories page
+├── brands.html             # Brands page
+├── contact.html            # Contact us page
+├── track-order.html        # Order tracking page
 ├── package.json            # Dependencies and scripts
 ├── tailwind.config.js      # Tailwind CSS configuration
 ├── assests/                 # Main assests directory
@@ -93,6 +99,42 @@ A modern, responsive HTML5 ecommerce website template built with Tailwind CSS an
   - Product information
   - Add to cart functionality
   - Related products
+
+- **Shop Page (`shop.html`)** - Product listing and shopping with:
+  - Product grid layout
+  - Filters and sorting
+  - Pagination
+  - Category sidebar
+
+- **Products Page (`products.html`)** - Featured products showcase with:
+  - Product categories
+  - New arrivals section
+  - Special offers
+  - Product recommendations
+
+- **Categories Page (`categories.html`)** - Browse by categories with:
+  - Category grid display
+  - Featured categories
+  - Product count per category
+  - Modern card layouts
+
+- **Brands Page (`brands.html`)** - Brand showcase with:
+  - Brand logos and information
+  - Featured brands section
+  - Brand categories
+  - Professional layouts
+
+- **Contact Page (`contact.html`)** - Customer support and contact with:
+  - Contact form
+  - Business information
+  - Map integration
+  - Support features
+
+- **Track Order Page (`track-order.html`)** - Order tracking functionality with:
+  - Order number lookup
+  - Real-time tracking timeline
+  - Delivery status updates
+  - Order details and items
 
 ## 🔧 Development Scripts
 

@@ -1,0 +1,792 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Track Your Order - Electronic Store</title>
+    <!-- Icon -->
+    <link
+      rel="shortcut icon"
+      href="./assests/img/electronic-store-logo.svg"
+      type="image/x-icon"
+    />
+
+    <!-- CSS -->
+    <link rel="stylesheet" href="./assests/css/style.css" />
+    <!-- Tailwind -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Font Awesome -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
+      integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+  </head>
+  <body>
+    <div class="page">
+      <!-- Top Bar -->
+      <div class="top-bar hidden lg:block bg-gradient-to-r from-blue-700 to-blue-800 text-white">
+        <div class="container mx-auto">
+          <nav class="flex justify-between items-center py-2 px-4 text-sm">
+            <div class="contact-info flex items-center gap-6">
+              <div class="flex items-center gap-2">
+                <i class="fas fa-phone text-blue-200"></i>
+                <span class="whitespace-nowrap">24/7 Support: <a href="tel:1-800-234-5678" class="font-semibold hover:text-blue-200 transition-colors">1-800-234-5678</a></span>
+              </div>
+              <div class="flex items-center gap-2">
+                <i class="fas fa-envelope text-blue-200"></i>
+                <a href="mailto:support@electronicstore.com" class="hover:text-blue-200 transition-colors whitespace-nowrap">support@electronicstore.com</a>
+              </div>
+            </div>
+            <div class="quick-links flex items-center gap-4">
+              <a href="#" class="flex items-center gap-1 hover:text-blue-200 transition-colors whitespace-nowrap">
+                <i class="fas fa-truck text-xs"></i>
+                <span>Free Shipping</span>
+              </a>
+              <a href="#" class="flex items-center gap-1 hover:text-blue-200 transition-colors whitespace-nowrap">
+                <i class="fas fa-undo text-xs"></i>
+                <span>Easy Returns</span>
+              </a>
+              <a href="track-order.html" class="flex items-center gap-1 hover:text-blue-200 transition-colors whitespace-nowrap">
+                <i class="fas fa-map-marker-alt text-xs"></i>
+                <span>Track Order</span>
+              </a>
+            </div>
+          </nav>
+        </div>
+      </div>
+      <!-- End Top Bar -->
+
+      <!-- Main Header -->
+      <div class="header bg-white shadow-lg sticky top-0 z-50">
+        <!-- Container -->
+        <div class="container mx-auto">
+          <header class="flex justify-between items-center py-4 px-4">
+            <!-- Mobile Menu & Logo -->
+            <div class="nav flex justify-between items-center gap-4">
+              <button class="menu lg:hidden cursor-pointer p-2 hover:bg-gray-100 rounded-lg transition-colors" id="mobileMenuBtn">
+                <div class="space-y-1">
+                  <span class="block w-6 h-0.5 bg-gray-600 transition-all"></span>
+                  <span class="block w-6 h-0.5 bg-gray-600 transition-all"></span>
+                  <span class="block w-6 h-0.5 bg-gray-600 transition-all"></span>
+                </div>
+              </button>
+              <div class="logo">
+                <a href="index.html" class="flex items-center gap-2">
+                  <img src="assests/img/electronic-store-logo.svg" alt="Electronic Store Logo" class="h-10 w-auto filter brightness-0" />
+                  <span class="hidden xl:block text-3xl lg:text-4xl font-bold bg-gradient-to-r from-blue-600 to-blue-800 bg-clip-text text-transparent whitespace-nowrap tracking-wide hover:from-blue-700 hover:to-blue-900 transition-all duration-300 cursor-pointer">Electronic Store</span>
+                </a>
+              </div>
+            </div>
+
+            <!-- Search Bar (Desktop) -->
+            <div class="search-section hidden lg:flex flex-1 max-w-2xl mx-8">
+              <div class="relative w-full">
+                <input type="text" class="w-full py-3 px-4 pr-12 border-2 border-gray-200 rounded-l-lg focus:border-blue-500 focus:outline-none transition-colors" placeholder="Search for products, brands, categories..." id="searchInput" />
+                <button class="absolute right-0 top-0 h-full px-4 bg-blue-600 text-white rounded-r-lg hover:bg-blue-700 transition-colors">
+                  <i class="fas fa-search"></i>
+                </button>
+              </div>
+            </div>
+
+            <!-- Right Section -->
+            <div class="header-actions flex items-center gap-2">
+              <!-- Mobile Search Icon -->
+              <button class="lg:hidden p-2 hover:bg-gray-100 rounded-lg transition-colors" id="mobileSearchBtn">
+                <i class="fas fa-search text-gray-600 text-lg"></i>
+              </button>
+
+              <!-- Wishlist -->
+              <a href="#" class="hidden sm:flex flex-col items-center p-2 hover:bg-gray-100 rounded-lg transition-colors group">
+                <div class="relative">
+                  <i class="fas fa-heart text-gray-600 group-hover:text-red-500 text-lg transition-colors"></i>
+                  <span class="absolute -top-2 -right-2 bg-red-500 text-white text-xs rounded-full h-5 w-5 flex items-center justify-center">3</span>
+                </div>
+                <span class="text-xs text-gray-600 mt-1 whitespace-nowrap">Wishlist</span>
+              </a>
+
+              <!-- Cart -->
+              <a href="#" class="flex flex-col items-center p-2 hover:bg-gray-100 rounded-lg transition-colors group relative">
+                <div class="relative">
+                  <i class="fas fa-shopping-cart text-gray-600 group-hover:text-blue-600 text-lg transition-colors"></i>
+                  <span class="absolute -top-2 -right-2 bg-blue-600 text-white text-xs rounded-full h-5 w-5 flex items-center justify-center" id="cartCount">0</span>
+                </div>
+                <span class="text-xs text-gray-600 mt-1 hidden sm:block whitespace-nowrap">Cart</span>
+              </a>
+
+              <!-- Auth Links -->
+              <div class="auth-links flex items-center gap-1 ml-2">
+                <a href="signin.html" class="text-sm px-3 py-2 text-gray-700 hover:text-blue-600 hover:bg-blue-50 rounded-lg transition-colors whitespace-nowrap">
+                  <i class="fas fa-sign-in-alt mr-1"></i>
+                  <span class="hidden sm:inline">Sign In</span>
+                </a>
+                <span class="text-gray-300 hidden sm:inline">|</span>
+                <a href="signup.html" class="text-sm px-3 py-2 bg-blue-600 text-white hover:bg-blue-700 rounded-lg transition-colors whitespace-nowrap">
+                  <i class="fas fa-user-plus mr-1"></i>
+                  <span class="hidden sm:inline">Sign Up</span>
+                </a>
+              </div>
+            </div>
+          </header>
+
+          <!-- Mobile Search Bar -->
+          <div class="mobile-search hidden lg:hidden border-t bg-gray-50 p-4" id="mobileSearchBar">
+            <div class="relative">
+              <input type="text" class="w-full py-3 px-4 pr-12 border border-gray-300 rounded-lg focus:border-blue-500 focus:outline-none" placeholder="Search products..." />
+              <button class="absolute right-3 top-1/2 transform -translate-y-1/2 text-gray-400">
+                <i class="fas fa-search"></i>
+              </button>
+            </div>
+          </div>
+        </div>
+        <!-- End Container -->
+      </div>
+      <!-- End Main Header -->
+
+      <!-- Main Navigation -->
+      <nav class="main-navigation bg-blue-600 shadow-lg">
+        <div class="container mx-auto">
+          <div class="flex items-center">
+            <!-- Categories Dropdown (Desktop) -->
+            <div class="categories-dropdown relative hidden lg:block">
+              <button class="flex items-center gap-2 px-6 py-4 bg-blue-700 hover:bg-blue-800 transition-colors text-sm md:text-base whitespace-nowrap" id="categoriesBtn">
+                <i class="fas fa-bars text-sm md:text-base"></i>
+                <span class="font-medium text-sm md:text-base text-white">All Categories</span>
+                <i class="fas fa-chevron-down transition-transform text-sm md:text-base text-white" id="categoriesIcon"></i>
+              </button>
+
+              <!-- Categories Dropdown Menu -->
+              <div class="categories-menu hidden absolute top-full left-0 bg-white shadow-xl w-80 z-50" id="categoriesDropdown">
+                <div class="border-t-2 border-blue-600">
+                  <a href="#" class="flex items-center gap-3 px-6 py-3 text-gray-700 hover:bg-blue-50 hover:text-blue-600 transition-colors border-b border-gray-100">
+                    <i class="fas fa-snowflake text-blue-500 w-4"></i>
+                    <span class="whitespace-nowrap">Air Conditioner</span>
+                    <span class="ml-auto text-xs text-gray-400">(4)</span>
+                  </a>
+                  <a href="#" class="flex items-center gap-3 px-6 py-3 text-gray-700 hover:bg-blue-50 hover:text-blue-600 transition-colors border-b border-gray-100">
+                    <i class="fas fa-headphones text-blue-500 w-4"></i>
+                    <span class="whitespace-nowrap">Audio & Video</span>
+                    <span class="ml-auto text-xs text-gray-400">(10)</span>
+                  </a>
+                  <a href="#" class="flex items-center gap-3 px-6 py-3 text-gray-700 hover:bg-blue-50 hover:text-blue-600 transition-colors border-b border-gray-100">
+                    <i class="fas fa-mobile-alt text-blue-500 w-4"></i>
+                    <span class="whitespace-nowrap">Mobile Phones</span>
+                    <span class="ml-auto text-xs text-gray-400">(19)</span>
+                  </a>
+                  <a href="#" class="flex items-center gap-3 px-6 py-3 text-gray-700 hover:bg-blue-50 hover:text-blue-600 transition-colors border-b border-gray-100">
+                    <i class="fas fa-blender text-blue-500 w-4"></i>
+                    <span class="whitespace-nowrap">Home Appliances</span>
+                    <span class="ml-auto text-xs text-gray-400">(3)</span>
+                  </a>
+                  <a href="#" class="flex items-center gap-3 px-6 py-3 text-gray-700 hover:bg-blue-50 hover:text-blue-600 transition-colors border-b border-gray-100">
+                    <i class="fas fa-laptop text-blue-500 w-4"></i>
+                    <span class="whitespace-nowrap">Computers & Laptop</span>
+                    <span class="ml-auto text-xs text-gray-400">(6)</span>
+                  </a>
+                </div>
+              </div>
+            </div>
+
+            <!-- Main Navigation -->
+            <div class="main-nav flex-1">
+              <ul class="menu-items flex flex-col lg:flex-row lg:justify-center lg:gap-8">
+                <li><a href="index.html" class="block px-6 py-4 lg:py-4 lg:px-4 hover:bg-blue-700 lg:hover:bg-transparent lg:hover:text-blue-200 transition-colors font-medium text-sm md:text-base whitespace-nowrap text-white">Home</a></li>
+                <li><a href="shop.html" class="block px-6 py-4 lg:py-4 lg:px-4 hover:bg-blue-700 lg:hover:bg-transparent lg:hover:text-blue-200 transition-colors font-medium text-sm md:text-base whitespace-nowrap text-white">Shop</a></li>
+                <li><a href="products.html" class="block px-6 py-4 lg:py-4 lg:px-4 hover:bg-blue-700 lg:hover:bg-transparent lg:hover:text-blue-200 transition-colors font-medium text-sm md:text-base whitespace-nowrap text-white">Products</a></li>
+                <li><a href="categories.html" class="block px-6 py-4 lg:py-4 lg:px-4 hover:bg-blue-700 lg:hover:bg-transparent lg:hover:text-blue-200 transition-colors font-medium text-sm md:text-base whitespace-nowrap text-white">Categories</a></li>
+                <li><a href="brands.html" class="block px-6 py-4 lg:py-4 lg:px-4 hover:bg-blue-700 lg:hover:bg-transparent lg:hover:text-blue-200 transition-colors font-medium text-sm md:text-base whitespace-nowrap text-white">Brands</a></li>
+                <li><a href="contact.html" class="block px-6 py-4 lg:py-4 lg:px-4 hover:bg-blue-700 lg:hover:bg-transparent lg:hover:text-blue-200 transition-colors font-medium text-sm md:text-base whitespace-nowrap text-white">Contact</a></li>
+              </ul>
+            </div>
+
+            <!-- Right Side Actions -->
+            <div class="nav-actions hidden lg:flex items-center gap-4 px-6">
+              <div class="help-info hidden xl:flex items-center gap-2 text-xs lg:text-sm">
+                <i class="fas fa-phone text-blue-200 text-xs lg:text-sm"></i>
+                <div>
+                  <div class="text-blue-200 text-xs whitespace-nowrap">Need Help?</div>
+                  <div class="font-semibold text-xs lg:text-sm whitespace-nowrap text-white">1-800-234-5678</div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </nav>
+
+      <!-- Mobile Menu Overlay -->
+      <div class="mobile-menu-overlay hidden fixed inset-0 bg-black bg-opacity-50 z-40 lg:hidden" id="mobileMenuOverlay"></div>
+
+      <!-- Mobile Menu -->
+      <div class="mobile-menu fixed left-0 top-0 h-full w-80 bg-white transform -translate-x-full transition-transform duration-300 z-50 lg:hidden" id="mobileMenu">
+        <div class="flex flex-col h-full">
+          <!-- Mobile Menu Header -->
+          <div class="flex items-center justify-between p-4 border-b bg-blue-600">
+            <div class="flex items-center gap-2">
+              <img src="assests/img/electronic-store-logo.svg" alt="Logo" class="h-8 w-auto filter brightness-0 invert" />
+              <span class="text-white font-bold text-lg">Menu</span>
+            </div>
+            <button class="text-white hover:text-blue-200 transition-colors" id="closeMobileMenu">
+              <i class="fas fa-times text-xl"></i>
+            </button>
+          </div>
+
+          <!-- Mobile Menu Content -->
+          <div class="flex-1 overflow-y-auto">
+            <!-- Navigation Links -->
+            <div class="py-4">
+              <a href="index.html" class="flex items-center gap-3 px-6 py-3 text-gray-700 hover:bg-blue-50 hover:text-blue-600 transition-colors">
+                <i class="fas fa-home text-blue-500 w-4"></i>
+                <span>Home</span>
+              </a>
+              <a href="shop.html" class="flex items-center gap-3 px-6 py-3 text-gray-700 hover:bg-blue-50 hover:text-blue-600 transition-colors">
+                <i class="fas fa-shopping-bag text-blue-500 w-4"></i>
+                <span>Shop</span>
+              </a>
+              <a href="products.html" class="flex items-center gap-3 px-6 py-3 text-gray-700 hover:bg-blue-50 hover:text-blue-600 transition-colors">
+                <i class="fas fa-cube text-blue-500 w-4"></i>
+                <span>Products</span>
+              </a>
+              <a href="categories.html" class="flex items-center gap-3 px-6 py-3 text-gray-700 hover:bg-blue-50 hover:text-blue-600 transition-colors">
+                <i class="fas fa-th-large text-blue-500 w-4"></i>
+                <span>Categories</span>
+              </a>
+              <a href="brands.html" class="flex items-center gap-3 px-6 py-3 text-gray-700 hover:bg-blue-50 hover:text-blue-600 transition-colors">
+                <i class="fas fa-star text-blue-500 w-4"></i>
+                <span>Brands</span>
+              </a>
+              <a href="contact.html" class="flex items-center gap-3 px-6 py-3 text-gray-700 hover:bg-blue-50 hover:text-blue-600 transition-colors">
+                <i class="fas fa-envelope text-blue-500 w-4"></i>
+                <span>Contact</span>
+              </a>
+              <a href="track-order.html" class="flex items-center gap-3 px-6 py-3 hover:bg-blue-50 hover:text-blue-600 transition-colors bg-blue-50 text-blue-600">
+                <i class="fas fa-map-marker-alt text-blue-500 w-4"></i>
+                <span>Track Order</span>
+              </a>
+            </div>
+
+            <!-- Auth Section -->
+            <div class="border-t border-gray-200 py-4">
+              <a href="signin.html" class="flex items-center gap-3 px-6 py-3 text-gray-700 hover:bg-blue-50 hover:text-blue-600 transition-colors">
+                <i class="fas fa-sign-in-alt text-blue-500 w-4"></i>
+                <span>Sign In</span>
+              </a>
+              <a href="signup.html" class="flex items-center gap-3 px-6 py-3 text-gray-700 hover:bg-blue-50 hover:text-blue-600 transition-colors">
+                <i class="fas fa-user-plus text-blue-500 w-4"></i>
+                <span>Sign Up</span>
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Main Content -->
+      <main class="main-content">
+        <!-- Breadcrumb -->
+        <section class="breadcrumb bg-gray-100 py-4">
+          <div class="container mx-auto px-4">
+            <nav class="flex items-center gap-2 text-sm">
+              <a href="index.html" class="text-blue-600 hover:text-blue-800 transition-colors">Home</a>
+              <i class="fas fa-chevron-right text-gray-400 text-xs"></i>
+              <span class="text-gray-600">Track Order</span>
+            </nav>
+          </div>
+        </section>
+
+        <!-- Page Header -->
+        <section class="page-header bg-gradient-to-r from-blue-600 to-blue-800 text-white py-12">
+          <div class="container mx-auto px-4 text-center">
+            <h1 class="text-4xl font-bold mb-4">Track Your Order</h1>
+            <p class="text-xl text-blue-100">Stay updated on your order status and delivery progress</p>
+          </div>
+        </section>
+
+        <!-- Order Tracking Form -->
+        <section class="tracking-form py-16 bg-white">
+          <div class="container mx-auto px-4">
+            <div class="max-w-2xl mx-auto">
+              <div class="bg-white rounded-xl shadow-xl p-8 border border-gray-100">
+                <div class="text-center mb-8">
+                  <div class="inline-flex items-center justify-center w-16 h-16 bg-blue-600 text-white rounded-full mb-4">
+                    <i class="fas fa-search text-2xl"></i>
+                  </div>
+                  <h2 class="text-2xl font-bold text-gray-800 mb-2">Enter Your Order Details</h2>
+                  <p class="text-gray-600">Enter your order number and email to track your shipment</p>
+                </div>
+
+                <form class="space-y-6" id="trackingForm">
+                  <div>
+                    <label for="orderNumber" class="block text-sm font-medium text-gray-700 mb-2">Order Number</label>
+                    <input type="text" id="orderNumber" name="orderNumber" class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent outline-none transition-colors" placeholder="e.g., ES123456789" required>
+                    <p class="text-xs text-gray-500 mt-1">You can find your order number in your confirmation email</p>
+                  </div>
+                  
+                  <div>
+                    <label for="email" class="block text-sm font-medium text-gray-700 mb-2">Email Address</label>
+                    <input type="email" id="email" name="email" class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent outline-none transition-colors" placeholder="Enter your email address" required>
+                  </div>
+                  
+                  <button type="submit" class="w-full bg-blue-600 text-white py-3 px-6 rounded-lg font-semibold hover:bg-blue-700 focus:ring-4 focus:ring-blue-500 focus:ring-opacity-50 transition-colors">
+                    <i class="fas fa-search mr-2"></i>
+                    Track My Order
+                  </button>
+                </form>
+
+                <!-- Quick Access for Recent Orders -->
+                <div class="mt-8 pt-6 border-t border-gray-200">
+                  <h3 class="text-lg font-semibold text-gray-800 mb-4">Recent Orders</h3>
+                  <div class="space-y-3">
+                    <div class="flex items-center justify-between p-3 bg-gray-50 rounded-lg hover:bg-gray-100 transition-colors cursor-pointer">
+                      <div class="flex items-center gap-3">
+                        <div class="w-2 h-2 bg-green-500 rounded-full"></div>
+                        <div>
+                          <p class="font-medium text-gray-800">Order #ES123456789</p>
+                          <p class="text-sm text-gray-600">Delivered - Jan 15, 2025</p>
+                        </div>
+                      </div>
+                      <i class="fas fa-chevron-right text-gray-400"></i>
+                    </div>
+                    <div class="flex items-center justify-between p-3 bg-gray-50 rounded-lg hover:bg-gray-100 transition-colors cursor-pointer">
+                      <div class="flex items-center gap-3">
+                        <div class="w-2 h-2 bg-blue-500 rounded-full animate-pulse"></div>
+                        <div>
+                          <p class="font-medium text-gray-800">Order #ES987654321</p>
+                          <p class="text-sm text-gray-600">In Transit - Expected Jan 20, 2025</p>
+                        </div>
+                      </div>
+                      <i class="fas fa-chevron-right text-gray-400"></i>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <!-- Sample Order Tracking Results (Hidden by default) -->
+        <section class="tracking-results py-16 bg-gray-50 hidden" id="trackingResults">
+          <div class="container mx-auto px-4">
+            <div class="max-w-4xl mx-auto">
+              <!-- Order Summary -->
+              <div class="bg-white rounded-xl shadow-lg p-8 mb-8">
+                <div class="flex flex-col lg:flex-row justify-between items-start lg:items-center mb-6">
+                  <div>
+                    <h2 class="text-2xl font-bold text-gray-800 mb-2">Order #ES123456789</h2>
+                    <p class="text-gray-600">Placed on January 12, 2025</p>
+                  </div>
+                  <div class="mt-4 lg:mt-0">
+                    <span class="inline-flex items-center px-4 py-2 bg-green-100 text-green-800 text-sm font-medium rounded-full">
+                      <i class="fas fa-truck mr-2"></i>
+                      In Transit
+                    </span>
+                  </div>
+                </div>
+
+                <!-- Delivery Info -->
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-6 mb-6">
+                  <div class="bg-blue-50 p-4 rounded-lg">
+                    <h3 class="font-semibold text-gray-800 mb-2 flex items-center gap-2">
+                      <i class="fas fa-map-marker-alt text-blue-600"></i>
+                      Delivery Address
+                    </h3>
+                    <p class="text-gray-700 text-sm">
+                      John Doe<br>
+                      123 Main Street, Apt 4B<br>
+                      New York, NY 10001<br>
+                      United States
+                    </p>
+                  </div>
+                  <div class="bg-green-50 p-4 rounded-lg">
+                    <h3 class="font-semibold text-gray-800 mb-2 flex items-center gap-2">
+                      <i class="fas fa-calendar text-green-600"></i>
+                      Estimated Delivery
+                    </h3>
+                    <p class="text-gray-700 text-sm">
+                      <span class="font-semibold">January 20, 2025</span><br>
+                      Between 9:00 AM - 6:00 PM<br>
+                      Standard Delivery
+                    </p>
+                  </div>
+                </div>
+
+                <!-- Tracking Timeline -->
+                <div class="tracking-timeline">
+                  <h3 class="text-lg font-semibold text-gray-800 mb-6">Tracking Timeline</h3>
+                  <div class="relative">
+                    <!-- Timeline Line -->
+                    <div class="absolute left-6 top-0 bottom-0 w-0.5 bg-gray-300"></div>
+                    
+                    <!-- Timeline Items -->
+                    <div class="space-y-8">
+                      <!-- Item 1 - Completed -->
+                      <div class="flex items-start gap-4">
+                        <div class="flex items-center justify-center w-12 h-12 bg-green-600 text-white rounded-full shadow-lg z-10">
+                          <i class="fas fa-check"></i>
+                        </div>
+                        <div class="flex-1 min-w-0">
+                          <div class="flex flex-col sm:flex-row sm:items-center sm:justify-between">
+                            <div>
+                              <h4 class="font-semibold text-gray-800">Order Confirmed</h4>
+                              <p class="text-gray-600 text-sm">Your order has been received and confirmed</p>
+                            </div>
+                            <div class="text-sm text-gray-500 mt-1 sm:mt-0">
+                              Jan 12, 2025 - 2:30 PM
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+
+                      <!-- Item 2 - Completed -->
+                      <div class="flex items-start gap-4">
+                        <div class="flex items-center justify-center w-12 h-12 bg-green-600 text-white rounded-full shadow-lg z-10">
+                          <i class="fas fa-box"></i>
+                        </div>
+                        <div class="flex-1 min-w-0">
+                          <div class="flex flex-col sm:flex-row sm:items-center sm:justify-between">
+                            <div>
+                              <h4 class="font-semibold text-gray-800">Order Processed</h4>
+                              <p class="text-gray-600 text-sm">Your items have been picked and packed</p>
+                            </div>
+                            <div class="text-sm text-gray-500 mt-1 sm:mt-0">
+                              Jan 13, 2025 - 10:15 AM
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+
+                      <!-- Item 3 - Completed -->
+                      <div class="flex items-start gap-4">
+                        <div class="flex items-center justify-center w-12 h-12 bg-green-600 text-white rounded-full shadow-lg z-10">
+                          <i class="fas fa-shipping-fast"></i>
+                        </div>
+                        <div class="flex-1 min-w-0">
+                          <div class="flex flex-col sm:flex-row sm:items-center sm:justify-between">
+                            <div>
+                              <h4 class="font-semibold text-gray-800">Shipped</h4>
+                              <p class="text-gray-600 text-sm">Package has left our facility</p>
+                              <p class="text-blue-600 text-sm font-medium">Tracking: 1Z999AA1234567890</p>
+                            </div>
+                            <div class="text-sm text-gray-500 mt-1 sm:mt-0">
+                              Jan 14, 2025 - 8:45 AM
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+
+                      <!-- Item 4 - Current -->
+                      <div class="flex items-start gap-4">
+                        <div class="flex items-center justify-center w-12 h-12 bg-blue-600 text-white rounded-full shadow-lg z-10 animate-pulse">
+                          <i class="fas fa-truck"></i>
+                        </div>
+                        <div class="flex-1 min-w-0">
+                          <div class="flex flex-col sm:flex-row sm:items-center sm:justify-between">
+                            <div>
+                              <h4 class="font-semibold text-gray-800">In Transit</h4>
+                              <p class="text-gray-600 text-sm">Package is on its way to your location</p>
+                              <p class="text-blue-600 text-sm font-medium">Current Location: Distribution Center, NJ</p>
+                            </div>
+                            <div class="text-sm text-gray-500 mt-1 sm:mt-0">
+                              Jan 18, 2025 - 3:20 PM
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+
+                      <!-- Item 5 - Pending -->
+                      <div class="flex items-start gap-4">
+                        <div class="flex items-center justify-center w-12 h-12 bg-gray-300 text-gray-600 rounded-full shadow-lg z-10">
+                          <i class="fas fa-home"></i>
+                        </div>
+                        <div class="flex-1 min-w-0">
+                          <div class="flex flex-col sm:flex-row sm:items-center sm:justify-between">
+                            <div>
+                              <h4 class="font-medium text-gray-600">Out for Delivery</h4>
+                              <p class="text-gray-500 text-sm">Package will be delivered today</p>
+                            </div>
+                            <div class="text-sm text-gray-400 mt-1 sm:mt-0">
+                              Expected: Jan 20, 2025
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+
+                      <!-- Item 6 - Pending -->
+                      <div class="flex items-start gap-4">
+                        <div class="flex items-center justify-center w-12 h-12 bg-gray-300 text-gray-600 rounded-full shadow-lg z-10">
+                          <i class="fas fa-check-circle"></i>
+                        </div>
+                        <div class="flex-1 min-w-0">
+                          <div class="flex flex-col sm:flex-row sm:items-center sm:justify-between">
+                            <div>
+                              <h4 class="font-medium text-gray-600">Delivered</h4>
+                              <p class="text-gray-500 text-sm">Package has been delivered successfully</p>
+                            </div>
+                            <div class="text-sm text-gray-400 mt-1 sm:mt-0">
+                              Expected: Jan 20, 2025
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Order Items -->
+              <div class="bg-white rounded-xl shadow-lg p-8">
+                <h3 class="text-lg font-semibold text-gray-800 mb-6">Order Items</h3>
+                <div class="space-y-4">
+                  <!-- Item 1 -->
+                  <div class="flex items-center gap-4 p-4 border border-gray-200 rounded-lg">
+                    <img src="assests/img/electronic-store-product-image-1-300x300.jpg" alt="PlayStation 5" class="w-16 h-16 object-cover rounded-lg">
+                    <div class="flex-1">
+                      <h4 class="font-medium text-gray-800">PlayStation 5 Console</h4>
+                      <p class="text-gray-600 text-sm">Quantity: 1</p>
+                    </div>
+                    <div class="text-right">
+                      <p class="font-semibold text-gray-800">$499.00</p>
+                    </div>
+                  </div>
+                  <!-- Item 2 -->
+                  <div class="flex items-center gap-4 p-4 border border-gray-200 rounded-lg">
+                    <img src="assests/img/electronic-store-product-image-2-300x300.jpg" alt="DualSense Controller" class="w-16 h-16 object-cover rounded-lg">
+                    <div class="flex-1">
+                      <h4 class="font-medium text-gray-800">DualSense Wireless Controller</h4>
+                      <p class="text-gray-600 text-sm">Quantity: 2</p>
+                    </div>
+                    <div class="text-right">
+                      <p class="font-semibold text-gray-800">$139.98</p>
+                    </div>
+                  </div>
+                </div>
+
+                <!-- Order Summary -->
+                <div class="mt-6 pt-6 border-t border-gray-200">
+                  <div class="space-y-2">
+                    <div class="flex justify-between">
+                      <span class="text-gray-600">Subtotal:</span>
+                      <span class="text-gray-800">$638.98</span>
+                    </div>
+                    <div class="flex justify-between">
+                      <span class="text-gray-600">Shipping:</span>
+                      <span class="text-green-600">Free</span>
+                    </div>
+                    <div class="flex justify-between">
+                      <span class="text-gray-600">Tax:</span>
+                      <span class="text-gray-800">$51.12</span>
+                    </div>
+                    <div class="flex justify-between font-semibold text-lg border-t pt-2">
+                      <span class="text-gray-800">Total:</span>
+                      <span class="text-gray-800">$690.10</span>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Actions -->
+              <div class="mt-8 flex flex-col sm:flex-row gap-4">
+                <button class="flex-1 bg-blue-600 text-white py-3 px-6 rounded-lg font-semibold hover:bg-blue-700 transition-colors">
+                  <i class="fas fa-print mr-2"></i>
+                  Print Receipt
+                </button>
+                <button class="flex-1 border-2 border-blue-600 text-blue-600 py-3 px-6 rounded-lg font-semibold hover:bg-blue-50 transition-colors">
+                  <i class="fas fa-envelope mr-2"></i>
+                  Email Updates
+                </button>
+                <button class="flex-1 border-2 border-gray-300 text-gray-700 py-3 px-6 rounded-lg font-semibold hover:bg-gray-50 transition-colors">
+                  <i class="fas fa-headset mr-2"></i>
+                  Contact Support
+                </button>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <!-- Help Section -->
+        <section class="help-section py-16 bg-white">
+          <div class="container mx-auto px-4">
+            <div class="text-center mb-12">
+              <h2 class="text-3xl font-bold text-gray-800 mb-4">Need Help with Your Order?</h2>
+              <p class="text-gray-600 max-w-2xl mx-auto">Find answers to common questions or get in touch with our support team</p>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+              <!-- FAQ -->
+              <div class="text-center p-6 bg-blue-50 rounded-xl hover:bg-blue-100 transition-colors">
+                <div class="inline-flex items-center justify-center w-12 h-12 bg-blue-600 text-white rounded-full mb-4">
+                  <i class="fas fa-question-circle"></i>
+                </div>
+                <h3 class="text-lg font-semibold text-gray-800 mb-2">FAQ</h3>
+                <p class="text-gray-600 text-sm mb-4">Find answers to frequently asked questions about orders and shipping</p>
+                <a href="#" class="text-blue-600 font-medium hover:text-blue-800 transition-colors">View FAQ</a>
+              </div>
+
+              <!-- Live Chat -->
+              <div class="text-center p-6 bg-green-50 rounded-xl hover:bg-green-100 transition-colors">
+                <div class="inline-flex items-center justify-center w-12 h-12 bg-green-600 text-white rounded-full mb-4">
+                  <i class="fas fa-comments"></i>
+                </div>
+                <h3 class="text-lg font-semibold text-gray-800 mb-2">Live Chat</h3>
+                <p class="text-gray-600 text-sm mb-4">Chat with our support team for immediate assistance</p>
+                <a href="#" class="text-green-600 font-medium hover:text-green-800 transition-colors">Start Chat</a>
+              </div>
+
+              <!-- Contact Support -->
+              <div class="text-center p-6 bg-purple-50 rounded-xl hover:bg-purple-100 transition-colors">
+                <div class="inline-flex items-center justify-center w-12 h-12 bg-purple-600 text-white rounded-full mb-4">
+                  <i class="fas fa-headset"></i>
+                </div>
+                <h3 class="text-lg font-semibold text-gray-800 mb-2">Phone Support</h3>
+                <p class="text-gray-600 text-sm mb-4">Call our support team for personalized assistance</p>
+                <a href="tel:1-800-234-5678" class="text-purple-600 font-medium hover:text-purple-800 transition-colors">1-800-234-5678</a>
+              </div>
+            </div>
+          </div>
+        </section>
+      </main>
+
+      <!-- Footer -->
+      <footer class="footer bg-gray-900 text-white">
+        <!-- Main Footer -->
+        <div class="main-footer py-16">
+          <div class="container mx-auto px-4">
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+              <!-- Company Info -->
+              <div class="footer-section">
+                <div class="footer-brand mb-6">
+                  <div class="flex items-center gap-2 mb-4">
+                    <img src="assests/img/electronic-store-logo.svg" alt="Electronic Store Logo" class="h-10 w-auto filter brightness-0 invert" />
+                    <span class="text-xl font-bold">Electronic Store</span>
+                  </div>
+                  <p class="text-gray-400 text-sm leading-relaxed mb-4">Your trusted partner for high-quality electronics and exceptional customer service. We bring you the latest in technology with unbeatable prices.</p>
+                  <div class="social-links flex gap-3">
+                    <a href="#" class="w-8 h-8 bg-blue-600 rounded-full flex items-center justify-center hover:bg-blue-700 transition-colors">
+                      <i class="fab fa-facebook-f text-sm"></i>
+                    </a>
+                    <a href="#" class="w-8 h-8 bg-blue-400 rounded-full flex items-center justify-center hover:bg-blue-500 transition-colors">
+                      <i class="fab fa-twitter text-sm"></i>
+                    </a>
+                    <a href="#" class="w-8 h-8 bg-pink-600 rounded-full flex items-center justify-center hover:bg-pink-700 transition-colors">
+                      <i class="fab fa-instagram text-sm"></i>
+                    </a>
+                    <a href="#" class="w-8 h-8 bg-blue-800 rounded-full flex items-center justify-center hover:bg-blue-900 transition-colors">
+                      <i class="fab fa-linkedin-in text-sm"></i>
+                    </a>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Quick Links -->
+              <div class="footer-section">
+                <h3 class="text-lg font-semibold mb-6 text-white">Quick Links</h3>
+                <ul class="space-y-3">
+                  <li><a href="index.html" class="text-gray-400 hover:text-white transition-colors text-sm flex items-center gap-2"><i class="fas fa-chevron-right text-xs"></i>Home</a></li>
+                  <li><a href="shop.html" class="text-gray-400 hover:text-white transition-colors text-sm flex items-center gap-2"><i class="fas fa-chevron-right text-xs"></i>Shop</a></li>
+                  <li><a href="products.html" class="text-gray-400 hover:text-white transition-colors text-sm flex items-center gap-2"><i class="fas fa-chevron-right text-xs"></i>Products</a></li>
+                  <li><a href="categories.html" class="text-gray-400 hover:text-white transition-colors text-sm flex items-center gap-2"><i class="fas fa-chevron-right text-xs"></i>Categories</a></li>
+                  <li><a href="brands.html" class="text-gray-400 hover:text-white transition-colors text-sm flex items-center gap-2"><i class="fas fa-chevron-right text-xs"></i>Brands</a></li>
+                  <li><a href="contact.html" class="text-gray-400 hover:text-white transition-colors text-sm flex items-center gap-2"><i class="fas fa-chevron-right text-xs"></i>Contact</a></li>
+                </ul>
+              </div>
+
+              <!-- Customer Service -->
+              <div class="footer-section">
+                <h3 class="text-lg font-semibold mb-6 text-white">Customer Service</h3>
+                <ul class="space-y-3">
+                  <li><a href="#" class="text-gray-400 hover:text-white transition-colors text-sm flex items-center gap-2"><i class="fas fa-chevron-right text-xs"></i>Help Center</a></li>
+                  <li><a href="track-order.html" class="text-gray-400 hover:text-white transition-colors text-sm flex items-center gap-2"><i class="fas fa-chevron-right text-xs"></i>Track Your Order</a></li>
+                  <li><a href="#" class="text-gray-400 hover:text-white transition-colors text-sm flex items-center gap-2"><i class="fas fa-chevron-right text-xs"></i>Shipping & Returns</a></li>
+                  <li><a href="#" class="text-gray-400 hover:text-white transition-colors text-sm flex items-center gap-2"><i class="fas fa-chevron-right text-xs"></i>Size Guide</a></li>
+                  <li><a href="#" class="text-gray-400 hover:text-white transition-colors text-sm flex items-center gap-2"><i class="fas fa-chevron-right text-xs"></i>Customer Reviews</a></li>
+                  <li><a href="#" class="text-gray-400 hover:text-white transition-colors text-sm flex items-center gap-2"><i class="fas fa-chevron-right text-xs"></i>Contact Support</a></li>
+                </ul>
+              </div>
+
+              <!-- Contact Info -->
+              <div class="footer-section">
+                <h3 class="text-lg font-semibold mb-6 text-white">Contact Info</h3>
+                <div class="contact-info space-y-4">
+                  <div class="flex items-start gap-3">
+                    <i class="fas fa-map-marker-alt text-blue-500 mt-1 text-sm"></i>
+                    <div>
+                      <p class="text-gray-400 text-sm">123 Electronic Street</p>
+                      <p class="text-gray-400 text-sm">Tech City, TC 12345</p>
+                    </div>
+                  </div>
+                  <div class="flex items-center gap-3">
+                    <i class="fas fa-phone text-blue-500 text-sm"></i>
+                    <a href="tel:1-800-234-5678" class="text-gray-400 hover:text-white transition-colors text-sm">1-800-234-5678</a>
+                  </div>
+                  <div class="flex items-center gap-3">
+                    <i class="fas fa-envelope text-blue-500 text-sm"></i>
+                    <a href="mailto:support@electronicstore.com" class="text-gray-400 hover:text-white transition-colors text-sm">support@electronicstore.com</a>
+                  </div>
+                  <div class="flex items-center gap-3">
+                    <i class="fas fa-clock text-blue-500 text-sm"></i>
+                    <span class="text-gray-400 text-sm">24/7 Customer Support</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Bottom Footer -->
+        <div class="bottom-footer border-t border-gray-700 py-6">
+          <div class="container mx-auto px-4">
+            <div class="flex flex-col md:flex-row justify-between items-center gap-4">
+              <div class="copyright text-gray-400 text-sm text-center md:text-left">
+                <p>&copy; 2024 Electronic Store. All rights reserved. | Privacy Policy | Terms of Service</p>
+              </div>
+              <div class="payment-methods flex items-center gap-4">
+                <span class="text-gray-400 text-sm">We Accept:</span>
+                <div class="flex gap-2">
+                  <img src="assests/img/electronic-store-footer-payment-gateway-icon.png" alt="Payment Methods" class="h-6 opacity-80" />
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </footer>
+    </div>
+
+    <!-- JavaScript -->
+    <script src="assests/js/main.js"></script>
+    <script>
+      // Track Order Form Functionality
+      document.getElementById('trackingForm').addEventListener('submit', function(e) {
+        e.preventDefault();
+        
+        // Show loading state
+        const submitBtn = e.target.querySelector('button[type="submit"]');
+        const originalText = submitBtn.innerHTML;
+        submitBtn.innerHTML = '<i class="fas fa-spinner fa-spin mr-2"></i>Tracking...';
+        submitBtn.disabled = true;
+        
+        // Simulate API call
+        setTimeout(() => {
+          // Hide form section and show results
+          document.querySelector('.tracking-form').style.display = 'none';
+          document.getElementById('trackingResults').classList.remove('hidden');
+          
+          // Scroll to results
+          document.getElementById('trackingResults').scrollIntoView({ behavior: 'smooth' });
+        }, 2000);
+      });
+
+      // Demo: Show tracking results for recent orders
+      document.querySelectorAll('.cursor-pointer').forEach(item => {
+        item.addEventListener('click', function() {
+          document.querySelector('.tracking-form').style.display = 'none';
+          document.getElementById('trackingResults').classList.remove('hidden');
+          document.getElementById('trackingResults').scrollIntoView({ behavior: 'smooth' });
+        });
+      });
+    </script>
+  </body>
+</html>
