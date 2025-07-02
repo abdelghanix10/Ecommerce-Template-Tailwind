@@ -1,956 +1,1432 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Ecommerce</title>
-    <!-- Icon -->
-    <link
-      rel="shortcut icon"
-      href="./assests/img/electronic-store-logo.svg"
-      type="image/x-icon"
-    />
-    <!-- CSS -->
-    <link rel="stylesheet" href="./assests/css/style.css" />
-    <!-- Tailwind -->
-    <script src="https://cdn.tailwindcss.com"></script>
-    <!-- Font Awesome -->
-    <link
-      rel="stylesheet"
-      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css"
-    />
-    <link
-      rel="stylesheet"
-      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
-      integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA=="
-      crossorigin="anonymous"
-      referrerpolicy="no-referrer"
-    />
-  </head>
-  <body>
-    <div class="page">
-      <!-- Nav -->
-      <div class="nav hidden lg:block bg-blue-700">
-        <div class="container mx-auto">
-          <nav
-            class="flex justify-between items-center p-1 px-4 text-white text-sm"
-          >
-            <p>
-              24/7 Customer service
-              <span class="font-semibold hover:underline">1-800-234-5678</span>
-            </p>
-            <div class="links flex justify-between items-center gap-4">
-              <a href="#" class="hover:underline">Shipping & return</a>
-              <a href="#" class="hover:underline">Track order</a>
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Ecommerce</title>
+  <!-- Icon -->
+  <link rel="shortcut icon" href="./assests/img/electronic-store-logo.svg" type="image/x-icon" />
+  <!-- CSS -->
+  <link rel="stylesheet" href="./assests/css/style.css" />
+  <!-- Tailwind -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <!-- Font Awesome -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
+    integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA=="
+    crossorigin="anonymous" referrerpolicy="no-referrer" />
+</head>
+
+<body>
+  <div class="page">
+    <!-- Top Bar -->
+    <div class="top-bar hidden lg:block bg-blue-700 text-white text-sm">
+      <div class="container mx-auto">
+        <nav class="flex justify-between items-center py-2 px-4">
+          <div class="left-links flex items-center gap-6">
+            <a href="#" class="flex items-center gap-1 hover:text-blue-200 transition-colors whitespace-nowrap">
+              <i class="fas fa-truck text-xs"></i>
+              <span>Free Shipping</span>
+            </a>
+            <a href="#" class="flex items-center gap-1 hover:text-blue-200 transition-colors whitespace-nowrap">
+              <i class="fas fa-undo text-xs"></i>
+              <span>Easy Returns</span>
+            </a>
+            <a href="#" class="flex items-center gap-1 hover:text-blue-200 transition-colors whitespace-nowrap">
+              <i class="fas fa-map-marker-alt text-xs"></i>
+              <span>Track Order</span>
+            </a>
+          </div>
+        </nav>
+      </div>
+    </div>
+    <!-- End Top Bar -->
+    <!-- Main Header -->
+    <div class="header bg-white shadow-lg sticky top-0 z-50">
+      <!-- Container -->
+      <div class="container mx-auto">
+        <header class="flex justify-between items-center py-4 px-4">
+          <!-- Mobile Menu & Logo -->
+          <div class="nav flex justify-between items-center gap-4">
+            <button class="menu lg:hidden cursor-pointer p-2 hover:bg-gray-100 rounded-lg transition-colors"
+              id="mobileMenuBtn">
+              <div class="space-y-1">
+                <span class="block w-6 h-0.5 bg-gray-600 transition-all"></span>
+                <span class="block w-6 h-0.5 bg-gray-600 transition-all"></span>
+                <span class="block w-6 h-0.5 bg-gray-600 transition-all"></span>
+              </div>
+            </button>
+            <div class="logo">
+              <a href="index.html" class="flex items-center gap-2">
+                <img src="assests/img/electronic-store-logo.svg" alt="Electronic Store Logo"
+                  class="h-10 w-auto filter brightness-0" />
+                <span
+                  class="hidden xl:block text-3xl lg:text-4xl font-bold bg-gradient-to-r from-blue-600 to-blue-800 bg-clip-text text-transparent whitespace-nowrap tracking-wide hover:from-blue-700 hover:to-blue-900 transition-all duration-300 cursor-pointer">Electronic
+                  Store</span>
+              </a>
             </div>
-          </nav>
+          </div>
+
+          <!-- Search Bar (Desktop) -->
+          <div class="search-section hidden lg:flex flex-1 max-w-2xl mx-8">
+            <div class="relative w-full">
+              <input type="text"
+                class="w-full py-3 px-4 pr-12 border-2 border-gray-200 rounded-l-lg focus:border-blue-500 focus:outline-none transition-colors"
+                placeholder="Search for products, brands, categories..." id="searchInput" />
+              <button
+                class="absolute right-0 top-0 h-full px-4 bg-blue-600 text-white rounded-r-lg hover:bg-blue-700 transition-colors">
+                <i class="fas fa-search"></i>
+              </button>
+            </div>
+          </div>
+
+          <!-- Right Section -->
+          <div class="header-actions flex items-center gap-2">
+            <!-- Mobile Search Icon -->
+            <button class="lg:hidden p-2 hover:bg-gray-100 rounded-lg transition-colors" id="mobileSearchBtn">
+              <i class="fas fa-search text-gray-600 text-lg"></i>
+            </button>
+
+            <!-- Wishlist -->
+            <a href="#"
+              class="hidden sm:flex flex-col items-center p-2 hover:bg-gray-100 rounded-lg transition-colors group">
+              <div class="relative">
+                <i class="fas fa-heart text-gray-600 group-hover:text-red-500 text-lg transition-colors"></i>
+                <span
+                  class="absolute -top-2 -right-2 bg-red-500 text-white text-xs rounded-full h-5 w-5 flex items-center justify-center">3</span>
+              </div>
+              <span class="text-xs text-gray-600 mt-1 whitespace-nowrap">Wishlist</span>
+            </a>
+
+            <!-- Cart -->
+            <a href="#"
+              class="flex flex-col items-center p-2 hover:bg-gray-100 rounded-lg transition-colors group relative">
+              <div class="relative">
+                <i class="fas fa-shopping-cart text-gray-600 group-hover:text-blue-600 text-lg transition-colors"></i>
+                <span
+                  class="absolute -top-2 -right-2 bg-blue-600 text-white text-xs rounded-full h-5 w-5 flex items-center justify-center"
+                  id="cartCount">0</span>
+              </div>
+              <span class="text-xs text-gray-600 mt-1 hidden sm:block whitespace-nowrap">Cart</span>
+            </a>
+
+            <!-- Auth Links -->
+            <div class="auth-links flex items-center gap-1 ml-2">
+              <a href="signin.html"
+                class="text-sm px-3 py-2 text-gray-700 hover:text-blue-600 hover:bg-blue-50 rounded-lg transition-colors whitespace-nowrap">
+                <i class="fas fa-sign-in-alt mr-1"></i>
+                <span class="hidden sm:inline">Sign In</span>
+              </a>
+              <span class="text-gray-300 hidden sm:inline">|</span>
+              <a href="signup.html"
+                class="text-sm px-3 py-2 bg-blue-600 text-white hover:bg-blue-700 rounded-lg transition-colors whitespace-nowrap">
+                <i class="fas fa-user-plus mr-1"></i>
+                <span class="hidden sm:inline">Sign Up</span>
+              </a>
+            </div>
+          </div>
+        </header>
+
+        <!-- Mobile Search Bar -->
+        <div class="mobile-search hidden lg:hidden border-t bg-gray-50 p-4" id="mobileSearchBar">
+          <div class="relative">
+            <input type="text"
+              class="w-full py-3 px-4 pr-12 border border-gray-300 rounded-lg focus:border-blue-500 focus:outline-none"
+              placeholder="Search products..." />
+            <button class="absolute right-3 top-1/2 transform -translate-y-1/2 text-gray-400">
+              <i class="fas fa-search"></i>
+            </button>
+          </div>
         </div>
       </div>
-      <!-- End Nav -->
-      <!-- Header -->
-      <div class="header bg-blue-600">
-        <!-- Container -->
+      <!-- End Container -->
+
+      <!-- Mobile Categories Button (shown on mobile only) -->
+      <div class="mobile-categories lg:hidden bg-blue-600 border-t border-blue-500">
         <div class="container mx-auto">
-          <header class="flex justify-between items-center p-4 text-white">
-            <div class="nav flex justify-between items-center gap-4">
-              <div class="menu lg:hidden cursor-pointer">
-                <span class="spanone"></span><span class="spantwo"></span
-                ><span class="spanthree"></span>
-              </div>
-              <div class="logo text-xl font-bold">
+          <div class="categories-dropdown relative">
+            <button
+              class="flex items-center gap-2 px-6 py-4 bg-blue-700 hover:bg-blue-800 transition-colors w-full text-sm md:text-base whitespace-nowrap"
+              id="mobileCategoriesBtn">
+              <i class="fas fa-bars text-sm md:text-base"></i>
+              <span class="font-medium text-sm md:text-base text-white">All Categories</span>
+              <i class="fas fa-chevron-down ml-auto transition-transform text-sm md:text-base text-white"
+                id="mobileCategoriesIcon"></i>
+            </button>
+
+            <!-- Mobile Categories Dropdown Menu -->
+            <div class="categories-menu hidden bg-white shadow-xl w-full z-50" id="mobileCategoriesDropdown">
+              <div class="border-t-2 border-blue-600">
                 <a href="#"
-                  ><img src="assests/img/electronic-store-logo.svg" alt="Logo"
-                /></a>
-              </div>
-            </div>
-            <div class="search">
-              <div class="cart-icon px-4 cursor-pointer lg:hidden">
-                <i class="fa-solid fa-basket-shopping"></i>
-                <span class="badge text-xs bg-white rounded-full text-blue-600"
-                  >0</span
-                >
-              </div>
-              <div
-                class="search-cart hidden lg:flex justify-center items-center"
-              >
-                <input
-                  class="px-4 py-1 border-0 outline-none text-slate-600"
-                  type="text"
-                  placeholder="Search Products"
-                />
-                <i class="fa-solid fa-magnifying-glass text-blue-600"></i>
-              </div>
-            </div>
-          </header>
-        </div>
-        <!-- End Container -->
-        <hr class="border-b-0 border-gray-600" />
-        <!-- Menu -->
-        <nav
-          class="nav-menu hidden desactive lg:block bg-white lg:bg-blue-600 font-bold text-blue-500 lg:text-white"
-        >
-          <!-- Container -->
-          <div class="container mx-auto">
-            <div class="p-4 lg:flex justify-between items-center">
-              <div>
-                <ul
-                  class="menu-items flex flex-col lg:flex-row gap-4 justify-between"
-                >
-                  <li class="flex flex-col justify-between items-start gap-2">
-                    <div
-                      class="subMenu cursor-pointer text flex-row gap-4 justify-between"
-                    >
-                      All Products
-                      <i
-                        class="fa-solid fa-angle-down rotate-90 transition-all"
-                      ></i>
-                    </div>
-                    <ul
-                      class="sub-menu truncate h-0 lg:h-auto flex-col justify-between items-start px-4 lg:py-3 lg:bg-blue-600 gap-4"
-                    >
-                      <li>
-                        <a href="#" class="hover:underline">- All Products</a>
-                      </li>
-                      <li>
-                        <a href="#" class="hover:underline"
-                          >- Home Appliances</a
-                        >
-                      </li>
-                      <li>
-                        <a href="#" class="hover:underline">- Audio & Video</a>
-                      </li>
-                      <li>
-                        <a href="#" class="hover:underline">- Refrigerator</a>
-                      </li>
-                    </ul>
-                  </li>
-                  <li>
-                    <a href="#" class="hover:underline">Home Appliances</a>
-                  </li>
-                  <li><a href="#" class="hover:underline">Audio & Video</a></li>
-                  <li><a href="#" class="hover:underline">Refrigerator</a></li>
-                  <li><a href="#" class="hover:underline">New Arrivals</a></li>
-                  <li><a href="#" class="hover:underline">Today's Deals</a></li>
-                  <li><a href="#" class="hover:underline">Gift Cards</a></li>
-                </ul>
-              </div>
-              <div
-                class="cart-login flex justify-end lg:justify-between items-center"
-              >
-                <div class="cart-icon px-4 cursor-pointer">
-                  <i class="fa-solid fa-basket-shopping"></i>
-                  <span
-                    class="badge text-xs bg-white rounded-full text-blue-600"
-                    >0</span
-                  >
-                </div>
-                <a href="#" class="text-lg px-4 hover:underline">Log In</a>
+                  class="flex items-center gap-3 px-6 py-3 text-gray-700 hover:bg-blue-50 hover:text-blue-600 transition-colors border-b border-gray-100">
+                  <i class="fas fa-snowflake text-blue-500 w-4"></i>
+                  <span class="whitespace-nowrap">Air Conditioner</span>
+                  <span class="ml-auto text-xs text-gray-400">(4)</span>
+                </a>
+                <a href="#"
+                  class="flex items-center gap-3 px-6 py-3 text-gray-700 hover:bg-blue-50 hover:text-blue-600 transition-colors border-b border-gray-100">
+                  <i class="fas fa-headphones text-blue-500 w-4"></i>
+                  <span class="whitespace-nowrap">Audio & Video</span>
+                  <span class="ml-auto text-xs text-gray-400">(10)</span>
+                </a>
+                <a href="#"
+                  class="flex items-center gap-3 px-6 py-3 text-gray-700 hover:bg-blue-50 hover:text-blue-600 transition-colors border-b border-gray-100">
+                  <i class="fas fa-mobile-alt text-blue-500 w-4"></i>
+                  <span class="whitespace-nowrap">Mobile Phones</span>
+                  <span class="ml-auto text-xs text-gray-400">(19)</span>
+                </a>
+                <a href="#"
+                  class="flex items-center gap-3 px-6 py-3 text-gray-700 hover:bg-blue-50 hover:text-blue-600 transition-colors border-b border-gray-100">
+                  <i class="fas fa-blender text-blue-500 w-4"></i>
+                  <span class="whitespace-nowrap">Home Appliances</span>
+                  <span class="ml-auto text-xs text-gray-400">(3)</span>
+                </a>
+                <a href="#"
+                  class="flex items-center gap-3 px-6 py-3 text-gray-700 hover:bg-blue-50 hover:text-blue-600 transition-colors border-b border-gray-100">
+                  <i class="fas fa-laptop text-blue-500 w-4"></i>
+                  <span class="whitespace-nowrap">Computers & Laptops</span>
+                  <span class="ml-auto text-xs text-gray-400">(34)</span>
+                </a>
+                <a href="#"
+                  class="flex items-center gap-3 px-6 py-3 text-gray-700 hover:bg-blue-50 hover:text-blue-600 transition-colors">
+                  <i class="fas fa-home text-blue-500 w-4"></i>
+                  <span class="whitespace-nowrap">Smart Home</span>
+                  <span class="ml-auto text-xs text-gray-400">(6)</span>
+                </a>
               </div>
             </div>
           </div>
-          <!-- End Container -->
-        </nav>
-        <!-- End Menu -->
+        </div>
       </div>
-      <!-- End Header -->
 
-      <!-- Product Page -->
-      <div class="product my-5 p-4">
+      <!-- Navigation Menu -->
+      <nav class="nav-menu bg-blue-600 text-white border-t border-blue-500" id="navigationMenu">
         <div class="container mx-auto">
-          <div class="product">
-            <!-- Links -->
-            <div
-              class="links text-sm text-gray-600 flex flex-col justify-center gap-4"
-            >
-              <p class="flex justify-start items-center flex-wrap gap-4">
-                <a
-                  href="index.html"
-                  class="flex justify-start items-center gap-1 hover:font-medium transition-all"
-                  ><i
-                    class="fa-solid fa-chevron-left w-5 h-5 text-xs flex justify-center items-center bg-gray-400 rounded-full p-1 text-black"
-                  ></i
-                  ><span class="text-black underline"
-                    >Back to Home Page</span
-                  ></a
-                >
-                &bull;
-                <a href="#" class="hover:underline">Electronics</a
-                ><i class="fa-solid fa-chevron-right text-xs"></i>
-                <a href="#" class="hover:underline">Video Games</a
-                ><i class="fa-solid fa-chevron-right text-xs"></i>
-                <a href="#" class="hover:underline">PlayStation</a>
-              </p>
-              <p class="flex justify-end items-center gap-2">
-                <a href="#" class="hover:underline">Share</a>
-                &bull;
-                <a href="#" class="hover:underline">Add to WatchList</a>
-              </p>
-            </div>
-            <!-- End Links -->
-            <!-- Product  -->
-            <div class="image-info my-5 flex flex-col lg:flex-row justify-center lg:justify-between items-stretch lg:items-start gap-6 lg:gap-10">
+          <div class="flex flex-col lg:flex-row lg:justify-between lg:items-center">
+            <!-- Categories Dropdown -->
+            <div class="categories-dropdown relative w-full lg:w-auto">
+              <button
+                class="flex items-center gap-2 px-6 py-4 bg-blue-700 hover:bg-blue-800 transition-colors w-full lg:w-auto text-sm md:text-base whitespace-nowrap"
+                id="categoriesBtn">
+                <i class="fas fa-bars text-sm md:text-base"></i>
+                <span class="font-medium text-sm md:text-base">All Categories</span>
+                <i class="fas fa-chevron-down ml-auto lg:ml-2 transition-transform text-sm md:text-base"
+                  id="categoriesIcon"></i>
+              </button>
+
+              <!-- Categories Dropdown Menu -->
               <div
-                class="images flex lg:basis-1/2 flex-col lg:flex-row-reverse justify-center lg:justify-end items-center lg:items-start gap-4"
-              >
-                <div
-                  class="image w-full bg-slate-200 border-2 truncate rounded-3xl relative group"
-                >
-                  <img 
-                    id="mainProductImage" 
-                    class="w-full h-full object-cover transition-all duration-500 ease-in-out" 
-                    src="./assests/img/electronic-store-product-image-1-300x300.jpg" 
-                    alt="PlayStation 5 - Main View" 
-                  />
-                  <!-- Zoom overlay for desktop -->
-                  <div class="absolute inset-0 bg-black bg-opacity-0 group-hover:bg-opacity-10 transition-all duration-300 rounded-3xl flex items-center justify-center">
-                    <div class="text-white opacity-0 group-hover:opacity-100 transition-all duration-300">
-                      <i class="fas fa-search-plus text-2xl"></i>
-                    </div>
-                  </div>
-                </div>
-                <div class="carousel p-4 overflow-x-auto lg:overflow-y-auto w-full lg:w-auto h-full px-2 py-2 lg:px-0 lg:py-0">
-                  <div
-                    class="imagesCarousel !p-8 flex flex-row lg:flex-col justify-start items-center gap-2 lg:gap-1 px-2 lg:px-0"
-                  >
-                    <button
-                      class="thumbnail-btn min-w-20 w-20 h-20 lg:min-w-24 lg:w-24 lg:h-24 rounded-2xl lg:rounded-3xl bg-slate-200 border-2 hover:border-blue-600 transition-all duration-300 truncate active flex-shrink-0"
-                      data-image="./assests/img/electronic-store-product-image-1-300x300.jpg"
-                    >
-                      <img
-                        class="w-full h-full object-cover rounded-xl lg:rounded-2xl"
-                        src="./assests/img/electronic-store-product-image-1-300x300.jpg"
-                        alt="PlayStation 5 - View 1"
-                      />
-                    </button>
-                    <button
-                      class="thumbnail-btn min-w-20 w-20 h-20 lg:min-w-24 lg:w-24 lg:h-24 rounded-2xl lg:rounded-3xl bg-slate-200 border-2 hover:border-blue-600 transition-all duration-300 truncate flex-shrink-0"
-                      data-image="./assests/img/electronic-store-product-image-2-300x300.jpg"
-                    >
-                      <img
-                        class="w-full h-full object-cover rounded-xl lg:rounded-2xl"
-                        src="./assests/img/electronic-store-product-image-2-300x300.jpg"
-                        alt="PlayStation 5 - View 2"
-                      />
-                    </button>
-                    <button
-                      class="thumbnail-btn min-w-20 w-20 h-20 lg:min-w-24 lg:w-24 lg:h-24 rounded-2xl lg:rounded-3xl bg-slate-200 border-2 hover:border-blue-600 transition-all duration-300 truncate flex-shrink-0"
-                      data-image="./assests/img/electronic-store-product-image-3-300x300.jpg"
-                    >
-                      <img
-                        class="w-full h-full object-cover rounded-xl lg:rounded-2xl"
-                        src="./assests/img/electronic-store-product-image-3-300x300.jpg"
-                        alt="PlayStation 5 - View 3"
-                      />
-                    </button>
-                    <button
-                      class="thumbnail-btn min-w-20 w-20 h-20 lg:min-w-24 lg:w-24 lg:h-24 rounded-2xl lg:rounded-3xl bg-slate-200 border-2 hover:border-blue-600 transition-all duration-300 truncate flex-shrink-0"
-                      data-image="./assests/img/electronic-store-product-image-4-300x300.jpg"
-                    >
-                      <img
-                        class="w-full h-full object-cover rounded-xl lg:rounded-2xl"
-                        src="./assests/img/electronic-store-product-image-4-300x300.jpg"
-                        alt="PlayStation 5 - View 4"
-                      />
-                    </button>
-                    <button
-                      class="thumbnail-btn min-w-20 w-20 h-20 lg:min-w-24 lg:w-24 lg:h-24 rounded-2xl lg:rounded-3xl bg-slate-200 border-2 hover:border-blue-600 transition-all duration-300 truncate flex-shrink-0"
-                      data-image="./assests/img/electronic-store-product-image-5-300x300.jpg"
-                    >
-                      <img
-                        class="w-full h-full object-cover rounded-xl lg:rounded-2xl"
-                        src="./assests/img/electronic-store-product-image-5-300x300.jpg"
-                        alt="PlayStation 5 - View 5"
-                      />
-                    </button>
-                    <button
-                      class="thumbnail-btn min-w-20 w-20 h-20 lg:min-w-24 lg:w-24 lg:h-24 rounded-2xl lg:rounded-3xl bg-slate-200 border-2 hover:border-blue-600 transition-all duration-300 truncate flex-shrink-0"
-                      data-image="./assests/img/electronic-store-product-image-6-300x300.jpg"
-                    >
-                      <img
-                        class="w-full h-full object-cover rounded-xl lg:rounded-2xl"
-                        src="./assests/img/electronic-store-product-image-6-300x300.jpg"
-                        alt="PlayStation 5 - View 6"
-                      />
-                    </button>
-                  </div>
-                </div>
-              </div>
-              <div class="info lg:basis-1/2 flex flex-col gap-2 justify-center my-5">
-                <div class="title flex justify-between items-center">
-                  <div>
-                    <h2 class="text-3xl font-bold">PlayStation 5</h2>
-                    <h4 class="text-lg font-semibold text-gray-500">
-                      + Xbox Wireless Controller Robot White
-                    </h4>
-                  </div>
-                  <div class="share">
-                    <i class="fa-solid fa-share text-2xl"></i>
-                  </div>
-                </div>
-                <div class="info flex justify-between items-center gap-4">
-                  <div
-                    class="info-buyer flex justify-between items-center gap-2"
-                  >
-                    <div class="sold">32K+ sold</div>
-                    <div class="buyer">
-                      Provided by
-                      <i class="fa-solid fa-star text-yellow-400"></i>
-                    </div>
-                  </div>
-                  <div class="rating">
-                    <span>4.5</span>
-                    <i class="fa-solid fa-star text-yellow-400"></i>
-                    <i class="fa-solid fa-star text-yellow-400"></i>
-                    <i class="fa-solid fa-star text-yellow-400"></i>
-                    <i class="fa-solid fa-star text-yellow-400"></i>
-                  </div>
-                </div>
-                <div
-                  class="price flex flex-col justify-center items-start gap-0"
-                >
-                  <div class="price flex justify-start items-center gap-2">
-                    <div class="newPrice">
-                      <span class="text-3xl font-bold">$499.00</span>
-                    </div>
-                    <div class="discount">
-                      <span
-                        class="text-xs p-0.5 border rounded-md border-amber-400 text-amber-400"
-                        >-20%</span
-                      >
-                    </div>
-                    <div class="oldPrice">
-                      <span class="text-lg line-through text-gray-500"
-                        >$599.00</span
-                      >
-                    </div>
-                  </div>
-                  <div class="saveUs text-gray-600 text-sm">
-                    Save up to $100.99 (20% off)
-                  </div>
-                </div>
-                <div
-                  class="details flex flex-col justify-center items-start gap-2"
-                >
-                  <h4 class="text-lg font-semibold">
-                    Color: <span class="text-xl font-bold">Black</span>
-                  </h4>
-                  <div class="colors flex justify-start items-center gap-2">
-                    <span
-                      class="w-10 h-10 rounded-full outline outline-1 outline-red-600 bg-slate-950 border-2 border-white cursor-pointer"
-                    ></span>
-                    <span
-                      class="w-10 h-10 rounded-full outline outline-1 outline-red-600 bg-slate-950 border-2 border-white cursor-pointer"
-                    ></span>
-                    <span
-                      class="w-10 h-10 rounded-full outline outline-1 outline-red-600 bg-slate-950 border-2 border-white cursor-pointer"
-                    ></span>
-                    <span
-                      class="w-10 h-10 rounded-full outline outline-1 outline-red-600 bg-slate-950 border-2 border-white cursor-pointer"
-                    ></span>
-                  </div>
-                  <h4 class="text-lg font-semibold">
-                    Size: <span class="text-xl font-bold">S</span>
-                  </h4>
-                  <div class="sizes flex justify-start items-center gap-2">
-                    <span
-                      class="w-10 border border-black font-bold text-xl rounded-md flex items-center justify-center hover:shadow-lg cursor-pointer"
-                      >S</span
-                    >
-                    <span
-                      class="w-10 border border-black font-bold text-xl rounded-md flex items-center justify-center hover:shadow-lg cursor-pointer"
-                      >M</span
-                    >
-                    <span
-                      class="w-10 border border-black font-bold text-xl rounded-md flex items-center justify-center hover:shadow-lg cursor-pointer"
-                      >L</span
-                    >
-                    <span
-                      class="w-10 border border-black font-bold text-xl rounded-md flex items-center justify-center hover:shadow-lg cursor-pointer"
-                      >XL</span
-                    >
-                  </div>
-                  <h4 class="text-lg font-semibold">
-                    Condition: <span class="text-xl font-bold">New</span>
-                  </h4>
-                  <h4 class="text-lg font-semibold">
-                    Quantity: <span class="text-xl font-bold">100</span>
-                  </h4>
-                </div>
-                <!-- Enhanced Buy Section -->
-                <div class="buy w-full flex flex-col justify-center gap-4 mt-6">
-                  <!-- Quantity Selector -->
-                  <div class="qty-section">
-                    <label class="text-sm font-semibold text-gray-700 mb-2 block">Quantity:</label>
-                    <div class="qty flex justify-start items-center w-fit">
-                      <button
-                        class="minus cursor-pointer font-bold h-12 w-12 border border-gray-300 flex justify-center items-center bg-white hover:bg-gray-50 text-xl rounded-l-lg transition-all duration-200"
-                        >-</button
-                      >
-                      <input
-                        type="text"
-                        value="1"
-                        min="1"
-                        disabled
-                        class="input w-16 text-center font-bold h-12 border-t border-b border-gray-300 bg-gray-50"
-                      />
-                      <button
-                        class="plus cursor-pointer font-bold h-12 w-12 border border-gray-300 flex justify-center items-center bg-white hover:bg-gray-50 text-xl rounded-r-lg transition-all duration-200"
-                        >+</button
-                      >
-                    </div>
-                  </div>
-                  
-                  <!-- Action Buttons -->
-                  <div class="actions flex flex-col gap-3">
-                    <button
-                      class="add-to-cart w-full p-4 font-bold text-lg rounded-2xl hover:shadow-xl bg-gradient-to-r from-blue-600 to-blue-700 hover:from-blue-700 hover:to-blue-800 text-white transition-all duration-300 transform hover:scale-105"
-                    >
-                      <i class="fas fa-shopping-cart mr-2"></i>
-                      Add to Cart - $499.00
-                    </button>
-                    
-                    <button
-                      class="buy-now w-full p-4 font-bold text-lg rounded-2xl bg-gradient-to-r from-green-600 to-green-700 hover:from-green-700 hover:to-green-800 text-white transition-all duration-300 transform hover:scale-105"
-                    >
-                      <i class="fas fa-bolt mr-2"></i>
-                      Buy Now
-                    </button>
-                    
-                    <div class="secondary-actions flex gap-2">
-                      <button
-                        class="flex-1 p-3 font-semibold rounded-xl border-2 border-gray-300 hover:border-blue-600 hover:text-blue-600 transition-all duration-200"
-                      >
-                        <i class="far fa-heart mr-2"></i>
-                        Wishlist
-                      </button>
-                      <button
-                        class="flex-1 p-3 font-semibold rounded-xl border-2 border-gray-300 hover:border-blue-600 hover:text-blue-600 transition-all duration-200"
-                      >
-                        <i class="fas fa-compare mr-2"></i>
-                        Compare
-                      </button>
-                    </div>
-                  </div>
-                  
-                  <!-- Delivery Info -->
-                  <div class="delivery-info bg-gray-50 p-4 rounded-xl border">
-                    <h5 class="font-semibold text-gray-800 mb-3">Delivery & Returns</h5>
-                    <div class="info-items space-y-2">
-                      <div class="flex items-center gap-3">
-                        <i class="fas fa-truck text-green-600"></i>
-                        <span class="text-sm text-gray-600">Free delivery on orders over $50</span>
-                      </div>
-                      <div class="flex items-center gap-3">
-                        <i class="fas fa-undo text-blue-600"></i>
-                        <span class="text-sm text-gray-600">30-day return policy</span>
-                      </div>
-                      <div class="flex items-center gap-3">
-                        <i class="fas fa-shield-alt text-purple-600"></i>
-                        <span class="text-sm text-gray-600">2-year warranty included</span>
-                      </div>
-                    </div>
-                  </div>
-                  
-                  
+                class="categories-menu hidden bg-white shadow-xl rounded-b-lg lg:min-w-64 w-full lg:absolute lg:top-full lg:left-0 z-50"
+                id="categoriesDropdown">
+                <div class="border-t-2 border-blue-600">
+                  <a href="#"
+                    class="flex items-center gap-3 px-6 py-3 text-gray-700 hover:bg-blue-50 hover:text-blue-600 transition-colors border-b border-gray-100">
+                    <i class="fas fa-snowflake text-blue-500 w-4"></i>
+                    <span class="whitespace-nowrap">Air Conditioner</span>
+                    <span class="ml-auto text-xs text-gray-400">(4)</span>
+                  </a>
+                  <a href="#"
+                    class="flex items-center gap-3 px-6 py-3 text-gray-700 hover:bg-blue-50 hover:text-blue-600 transition-colors border-b border-gray-100">
+                    <i class="fas fa-headphones text-blue-500 w-4"></i>
+                    <span class="whitespace-nowrap">Audio & Video</span>
+                    <span class="ml-auto text-xs text-gray-400">(10)</span>
+                  </a>
+                  <a href="#"
+                    class="flex items-center gap-3 px-6 py-3 text-gray-700 hover:bg-blue-50 hover:text-blue-600 transition-colors border-b border-gray-100">
+                    <i class="fas fa-mobile-alt text-blue-500 w-4"></i>
+                    <span class="whitespace-nowrap">Mobile Phones</span>
+                    <span class="ml-auto text-xs text-gray-400">(19)</span>
+                  </a>
+                  <a href="#"
+                    class="flex items-center gap-3 px-6 py-3 text-gray-700 hover:bg-blue-50 hover:text-blue-600 transition-colors border-b border-gray-100">
+                    <i class="fas fa-blender text-blue-500 w-4"></i>
+                    <span class="whitespace-nowrap">Home Appliances</span>
+                    <span class="ml-auto text-xs text-gray-400">(3)</span>
+                  </a>
+                  <a href="#"
+                    class="flex items-center gap-3 px-6 py-3 text-gray-700 hover:bg-blue-50 hover:text-blue-600 transition-colors border-b border-gray-100">
+                    <i class="fas fa-laptop text-blue-500 w-4"></i>
+                    <span class="whitespace-nowrap">Computers & Laptops</span>
+                    <span class="ml-auto text-xs text-gray-400">(34)</span>
+                  </a>
+                  <a href="#"
+                    class="flex items-center gap-3 px-6 py-3 text-gray-700 hover:bg-blue-50 hover:text-blue-600 transition-colors">
+                    <i class="fas fa-home text-blue-500 w-4"></i>
+                    <span class="whitespace-nowrap">Smart Home</span>
+                    <span class="ml-auto text-xs text-gray-400">(6)</span>
+                  </a>
                 </div>
               </div>
             </div>
-            <!-- End Product -->
-            <!-- Enhanced Details & Reviews -->
-            <div class="details-reviews mt-12 flex flex-col gap-6 justify-center items-start">
-              <!-- Tab Navigation -->
-              <div class="tab-navigation w-full">
-                <div class="head w-full flex flex-col sm:flex-row justify-start items-stretch sm:items-center border-b-2 border-gray-200 overflow-x-auto">
-                  <button 
-                    class="tab-btn active text-base sm:text-xl pt-3 pb-3 px-3 sm:px-6 font-bold text-blue-600 border-b-2 border-blue-600 transition-all duration-300 whitespace-nowrap flex-shrink-0"
-                    data-tab="details"
-                  >
-                    Details
+
+            <!-- Main Navigation -->
+            <div class="main-nav flex-1">
+              <ul class="menu-items flex flex-col lg:flex-row lg:justify-center lg:gap-8">
+                <li><a href="index.html"
+                    class="block px-6 py-4 lg:py-4 lg:px-4 hover:bg-blue-700 lg:hover:bg-transparent lg:hover:text-blue-200 transition-colors font-medium text-sm md:text-base whitespace-nowrap">Home</a>
+                </li>
+                <li><a href="#"
+                    class="block px-6 py-4 lg:py-4 lg:px-4 hover:bg-blue-700 lg:hover:bg-transparent lg:hover:text-blue-200 transition-colors font-medium text-sm md:text-base whitespace-nowrap">Shop</a>
+                </li>
+                <li><a href="productPage.html"
+                    class="block px-6 py-4 lg:py-4 lg:px-4 hover:bg-blue-700 lg:hover:bg-transparent lg:hover:text-blue-200 transition-colors font-medium text-sm md:text-base whitespace-nowrap bg-blue-700 lg:bg-transparent lg:text-blue-200">Products</a>
+                </li>
+                <li><a href="#"
+                    class="block px-6 py-4 lg:py-4 lg:px-4 hover:bg-blue-700 lg:hover:bg-transparent lg:hover:text-blue-200 transition-colors font-medium text-sm md:text-base whitespace-nowrap">New
+                    Arrivals</a></li>
+                <li><a href="#"
+                    class="block px-6 py-4 lg:py-4 lg:px-4 hover:bg-blue-700 lg:hover:bg-transparent lg:hover:text-blue-200 transition-colors font-medium text-sm md:text-base whitespace-nowrap">Today's
+                    Deals</a></li>
+                <li><a href="#"
+                    class="block px-6 py-4 lg:py-4 lg:px-4 hover:bg-blue-700 lg:hover:bg-transparent lg:hover:text-blue-200 transition-colors font-medium text-sm md:text-base whitespace-nowrap">Contact</a>
+                </li>
+              </ul>
+            </div>
+
+            <!-- Right Side Actions -->
+            <div class="nav-actions hidden lg:flex items-center gap-4 px-6">
+              <div class="help-info hidden xl:flex items-center gap-2 text-xs lg:text-sm">
+                <i class="fas fa-phone text-blue-200 text-xs lg:text-sm"></i>
+                <div>
+                  <div class="text-blue-200 text-xs whitespace-nowrap">Need Help?</div>
+                  <div class="font-semibold text-xs lg:text-sm whitespace-nowrap">1-800-234-5678</div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </nav>
+
+      <!-- Mobile Menu Overlay -->
+      <div class="mobile-menu-overlay hidden fixed inset-0 bg-black bg-opacity-50 z-40 lg:hidden"
+        id="mobileMenuOverlay"></div>
+
+      <!-- Mobile Menu -->
+      <div
+        class="mobile-menu fixed left-0 top-0 h-full w-80 bg-white transform -translate-x-full transition-transform duration-300 z-50 lg:hidden"
+        id="mobileMenu">
+        <div class="p-6 border-b">
+          <div class="flex items-center justify-between">
+            <img src="assests/img/electronic-store-logo.svg" alt="Logo" class="h-8" />
+            <button class="p-2 hover:bg-gray-100 rounded-lg" id="closeMobileMenu">
+              <i class="fas fa-times text-gray-600"></i>
+            </button>
+          </div>
+        </div>
+        <div class="p-6">
+          <div class="space-y-4">
+            <a href="index.html" class="block py-2 text-gray-700 hover:text-blue-600 font-medium">Home</a>
+            <a href="#" class="block py-2 text-gray-700 hover:text-blue-600 font-medium">Shop</a>
+            <a href="productPage.html" class="block py-2 text-blue-600 font-medium">Products</a>
+            <a href="#" class="block py-2 text-gray-700 hover:text-blue-600 font-medium">New Arrivals</a>
+            <a href="#" class="block py-2 text-gray-700 hover:text-blue-600 font-medium">Today's Deals</a>
+            <a href="#" class="block py-2 text-gray-700 hover:text-blue-600 font-medium">Contact</a>
+          </div>
+          <div class="mt-8 pt-6 border-t">
+            <div class="space-y-3">
+              <a href="signin.html" class="flex items-center gap-3 py-2 text-gray-700 hover:text-blue-600">
+                <i class="fas fa-sign-in-alt"></i>
+                <span>Sign In</span>
+              </a>
+              <a href="signup.html" class="flex items-center gap-3 py-2 text-gray-700 hover:text-blue-600">
+                <i class="fas fa-user-plus"></i>
+                <span>Sign Up</span>
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- End Header -->
+
+
+    <!-- Product Page -->
+    <div class="w-full bg-white">
+      <div class="container mx-auto py-8 px-4">
+        <div class="product">
+          <!-- Links -->
+          <div class="links text-sm text-gray-600 flex flex-col justify-center gap-4">
+            <p class="flex justify-start items-center flex-wrap gap-4">
+              <a href="index.html" class="flex justify-start items-center gap-1 hover:font-medium transition-all"><i
+                  class="fa-solid fa-chevron-left w-5 h-5 text-xs flex justify-center items-center bg-gray-400 rounded-full p-1 text-black"></i><span
+                  class="text-black underline">Back to Home Page</span></a>
+              &bull;
+              <a href="#" class="hover:underline">Electronics</a><i class="fa-solid fa-chevron-right text-xs"></i>
+              <a href="#" class="hover:underline">Video Games</a><i class="fa-solid fa-chevron-right text-xs"></i>
+              <a href="#" class="hover:underline">PlayStation</a>
+            </p>
+            <p class="flex justify-end items-center gap-2">
+              <a href="#" class="hover:underline">Share</a>
+              &bull;
+              <a href="#" class="hover:underline">Add to WatchList</a>
+            </p>
+          </div>
+          <!-- End Links -->
+          <!-- Product  -->
+          <div
+            class="image-info my-5 flex flex-col lg:flex-row justify-center lg:justify-between items-stretch lg:items-start gap-6 lg:gap-10">
+            <div
+              class="images flex lg:basis-1/2 flex-col lg:flex-row-reverse justify-center lg:justify-end items-center lg:items-start gap-4">
+              <div class="image w-full bg-slate-200 border-2 truncate rounded-3xl relative group">
+                <img id="mainProductImage" class="w-full h-full object-cover transition-all duration-500 ease-in-out"
+                  src="./assests/img/electronic-store-product-image-1-300x300.jpg" alt="PlayStation 5 - Main View" />
+                <!-- Zoom overlay for desktop -->
+                <div
+                  class="absolute inset-0 bg-black bg-opacity-0 group-hover:bg-opacity-10 transition-all duration-300 rounded-3xl flex items-center justify-center">
+                  <div class="text-white opacity-0 group-hover:opacity-100 transition-all duration-300">
+                    <i class="fas fa-search-plus text-2xl"></i>
+                  </div>
+                </div>
+              </div>
+              <div
+                class="carousel p-4 overflow-x-auto lg:overflow-y-auto w-full lg:w-auto h-full px-2 py-2 lg:px-0 lg:py-0">
+                <div
+                  class="imagesCarousel !p-8 flex flex-row lg:flex-col justify-start items-center gap-2 lg:gap-1 px-2 lg:px-0">
+                  <button
+                    class="thumbnail-btn min-w-20 w-20 h-20 lg:min-w-24 lg:w-24 lg:h-24 rounded-2xl lg:rounded-3xl bg-slate-200 border-2 hover:border-blue-600 transition-all duration-300 truncate active flex-shrink-0"
+                    data-image="./assests/img/electronic-store-product-image-1-300x300.jpg">
+                    <img class="w-full h-full object-cover rounded-xl lg:rounded-2xl"
+                      src="./assests/img/electronic-store-product-image-1-300x300.jpg" alt="PlayStation 5 - View 1" />
                   </button>
-                  <button 
-                    class="tab-btn text-base sm:text-xl pt-3 pb-3 px-3 sm:px-6 font-medium text-gray-600 hover:text-blue-600 transition-all duration-300 whitespace-nowrap flex-shrink-0"
-                    data-tab="reviews"
-                  >
-                    Reviews (156)
+                  <button
+                    class="thumbnail-btn min-w-20 w-20 h-20 lg:min-w-24 lg:w-24 lg:h-24 rounded-2xl lg:rounded-3xl bg-slate-200 border-2 hover:border-blue-600 transition-all duration-300 truncate flex-shrink-0"
+                    data-image="./assests/img/electronic-store-product-image-2-300x300.jpg">
+                    <img class="w-full h-full object-cover rounded-xl lg:rounded-2xl"
+                      src="./assests/img/electronic-store-product-image-2-300x300.jpg" alt="PlayStation 5 - View 2" />
                   </button>
-                  <button 
-                    class="tab-btn text-base sm:text-xl pt-3 pb-3 px-3 sm:px-6 font-medium text-gray-600 hover:text-blue-600 transition-all duration-300 whitespace-nowrap flex-shrink-0"
-                    data-tab="shipping"
-                  >
-                    Shipping & Returns
+                  <button
+                    class="thumbnail-btn min-w-20 w-20 h-20 lg:min-w-24 lg:w-24 lg:h-24 rounded-2xl lg:rounded-3xl bg-slate-200 border-2 hover:border-blue-600 transition-all duration-300 truncate flex-shrink-0"
+                    data-image="./assests/img/electronic-store-product-image-3-300x300.jpg">
+                    <img class="w-full h-full object-cover rounded-xl lg:rounded-2xl"
+                      src="./assests/img/electronic-store-product-image-3-300x300.jpg" alt="PlayStation 5 - View 3" />
+                  </button>
+                  <button
+                    class="thumbnail-btn min-w-20 w-20 h-20 lg:min-w-24 lg:w-24 lg:h-24 rounded-2xl lg:rounded-3xl bg-slate-200 border-2 hover:border-blue-600 transition-all duration-300 truncate flex-shrink-0"
+                    data-image="./assests/img/electronic-store-product-image-4-300x300.jpg">
+                    <img class="w-full h-full object-cover rounded-xl lg:rounded-2xl"
+                      src="./assests/img/electronic-store-product-image-4-300x300.jpg" alt="PlayStation 5 - View 4" />
+                  </button>
+                  <button
+                    class="thumbnail-btn min-w-20 w-20 h-20 lg:min-w-24 lg:w-24 lg:h-24 rounded-2xl lg:rounded-3xl bg-slate-200 border-2 hover:border-blue-600 transition-all duration-300 truncate flex-shrink-0"
+                    data-image="./assests/img/electronic-store-product-image-5-300x300.jpg">
+                    <img class="w-full h-full object-cover rounded-xl lg:rounded-2xl"
+                      src="./assests/img/electronic-store-product-image-5-300x300.jpg" alt="PlayStation 5 - View 5" />
+                  </button>
+                  <button
+                    class="thumbnail-btn min-w-20 w-20 h-20 lg:min-w-24 lg:w-24 lg:h-24 rounded-2xl lg:rounded-3xl bg-slate-200 border-2 hover:border-blue-600 transition-all duration-300 truncate flex-shrink-0"
+                    data-image="./assests/img/electronic-store-product-image-6-300x300.jpg">
+                    <img class="w-full h-full object-cover rounded-xl lg:rounded-2xl"
+                      src="./assests/img/electronic-store-product-image-6-300x300.jpg" alt="PlayStation 5 - View 6" />
                   </button>
                 </div>
               </div>
+            </div>
+            <div class="info lg:basis-1/2 flex flex-col gap-6 justify-center my-5 p-6 lg:p-8">
+              <!-- Product Title & Share -->
+              <div class="title-section">
+                <div class="flex justify-between items-start mb-4">
+                  <div class="flex-1">
+                    <div
+                      class="product-badge inline-block bg-gradient-to-r from-blue-100 to-purple-100 text-blue-800 text-xs font-semibold px-3 py-1 rounded-full mb-3">
+                      ⚡ Best Seller
+                    </div>
+                    <h1 class="text-3xl lg:text-4xl font-bold text-gray-900 leading-tight mb-2">PlayStation 5</h1>
+                    <h2 class="text-lg font-medium text-gray-600 leading-relaxed">
+                      + Xbox Wireless Controller Robot White
+                    </h2>
+                  </div>
+                  <div class="share-section ml-4">
+                    <button class="group p-3 rounded-full bg-gray-100 hover:bg-blue-100 transition-all duration-300">
+                      <i
+                        class="fa-solid fa-share text-xl text-gray-600 group-hover:text-blue-600 transition-colors"></i>
+                    </button>
+                  </div>
+                </div>
 
-              <!-- Tab Content -->
-              <div class="tab-content w-full">
-                <!-- Details Tab -->
-                <div id="details-tab" class="tab-pane active">
-                  <div class="details-content flex flex-col gap-6 justify-center items-start">
-                    <div class="product-overview bg-gradient-to-r from-blue-50 to-purple-50 p-6 rounded-xl">
-                      <h3 class="text-2xl font-bold text-gray-800 mb-4">
-                        About the PlayStation 5
-                      </h3>
-                      <p class="text-gray-700 leading-relaxed mb-4">
-                        Experience lightning-fast loading with an ultra-high speed SSD, deeper immersion with support for haptic feedback, adaptive triggers and 3D Audio, and an all-new generation of incredible PlayStation games.
-                      </p>
-                      <p class="text-gray-700 leading-relaxed">
-                        The PS5 console unleashes new gaming possibilities that you never anticipated. Experience lightning fast loading with an ultra-high speed SSD, deeper immersion with support for haptic feedback, adaptive triggers, and 3D Audio.
-                      </p>
+                <!-- Social Proof & Rating -->
+                <div
+                  class="social-proof flex flex-wrap justify-between items-center gap-4 p-4 bg-gradient-to-r from-green-50 to-blue-50 rounded-xl border border-green-200">
+                  <div class="sales-info flex items-center gap-4">
+                    <div class="flex items-center gap-2">
+                      <div class="w-2 h-2 bg-green-500 rounded-full animate-pulse"></div>
+                      <span class="text-sm font-semibold text-green-700">32K+ sold</span>
                     </div>
-                    
-                    <div class="product-image-showcase">
-                      <img
-                        class="w-full rounded-xl shadow-lg"
-                        src="./assests/img/electronic-store-category-image-02.jpg"
-                        alt="PlayStation 5 Showcase"
-                      />
+                    <div class="text-sm text-gray-600">
+                      Provided by
+                      <span class="font-semibold text-blue-600">TechStore Pro</span>
+                      <i class="fa-solid fa-star text-yellow-400 ml-1"></i>
                     </div>
-                    
-                    <div class="product-features bg-white border border-gray-200 rounded-xl p-6">
-                      <h3 class="text-2xl font-bold text-gray-800 mb-4">
-                        Key Features
-                      </h3>
-                      <div class="features-grid grid md:grid-cols-2 gap-4">
-                        <div class="feature-item flex items-start gap-3 p-3 bg-gray-50 rounded-lg">
-                          <i class="fas fa-microchip text-blue-600 text-xl mt-1"></i>
-                          <div>
-                            <h4 class="font-semibold text-gray-800">Custom CPU</h4>
-                            <p class="text-sm text-gray-600">AMD Zen 2-based CPU with 8 cores at 3.5GHz</p>
-                          </div>
-                        </div>
-                        <div class="feature-item flex items-start gap-3 p-3 bg-gray-50 rounded-lg">
-                          <i class="fas fa-memory text-green-600 text-xl mt-1"></i>
-                          <div>
-                            <h4 class="font-semibold text-gray-800">Ultra-Fast SSD</h4>
-                            <p class="text-sm text-gray-600">825GB SSD with 5.5GB/s raw throughput</p>
-                          </div>
-                        </div>
-                        <div class="feature-item flex items-start gap-3 p-3 bg-gray-50 rounded-lg">
-                          <i class="fas fa-tv text-purple-600 text-xl mt-1"></i>
-                          <div>
-                            <h4 class="font-semibold text-gray-800">4K Gaming</h4>
-                            <p class="text-sm text-gray-600">Up to 4K at 120fps with 120Hz display</p>
-                          </div>
-                        </div>
-                        <div class="feature-item flex items-start gap-3 p-3 bg-gray-50 rounded-lg">
-                          <i class="fas fa-headphones text-red-600 text-xl mt-1"></i>
-                          <div>
-                            <h4 class="font-semibold text-gray-800">3D Audio</h4>
-                            <p class="text-sm text-gray-600">Immersive 3D audio with compatible headphones</p>
-                          </div>
-                        </div>
+                  </div>
+                  <div class="rating-section flex items-center gap-2">
+                    <div class="flex items-center gap-1">
+                      <span class="text-lg font-bold text-gray-900">4.5</span>
+                      <div class="flex">
+                        <i class="fa-solid fa-star text-yellow-400 text-sm"></i>
+                        <i class="fa-solid fa-star text-yellow-400 text-sm"></i>
+                        <i class="fa-solid fa-star text-yellow-400 text-sm"></i>
+                        <i class="fa-solid fa-star text-yellow-400 text-sm"></i>
+                        <i class="fa-solid fa-star-half-alt text-yellow-400 text-sm"></i>
                       </div>
                     </div>
-                    
-                    <div class="specifications bg-white border border-gray-200 rounded-xl p-6">
-                      <h3 class="text-2xl font-bold text-gray-800 mb-4">Specifications</h3>
-                      <div class="specs-table">
-                        <div class="spec-row flex py-3 border-b border-gray-100">
-                          <div class="spec-label w-1/3 font-semibold text-gray-700">Dimensions</div>
-                          <div class="spec-value w-2/3 text-gray-600">390mm x 104mm x 260mm</div>
-                        </div>
-                        <div class="spec-row flex py-3 border-b border-gray-100">
-                          <div class="spec-label w-1/3 font-semibold text-gray-700">Weight</div>
-                          <div class="spec-value w-2/3 text-gray-600">4.5 kg</div>
-                        </div>
-                        <div class="spec-row flex py-3 border-b border-gray-100">
-                          <div class="spec-label w-1/3 font-semibold text-gray-700">Storage</div>
-                          <div class="spec-value w-2/3 text-gray-600">825GB SSD</div>
-                        </div>
-                        <div class="spec-row flex py-3">
-                          <div class="spec-label w-1/3 font-semibold text-gray-700">Connectivity</div>
-                          <div class="spec-value w-2/3 text-gray-600">Wi-Fi 6, Bluetooth 5.1, Ethernet</div>
-                        </div>
+                    <span class="text-sm text-gray-500">(156 reviews)</span>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Pricing Section -->
+              <div class="pricing-section bg-white p-6 rounded-2xl border-2 border-gray-100 shadow-sm">
+                <div class="price-main flex flex-wrap items-center gap-3 mb-3">
+                  <div class="current-price">
+                    <span class="text-4xl font-bold text-gray-900">$499.00</span>
+                  </div>
+                  <div class="discount-badge">
+                    <span
+                      class="inline-block bg-gradient-to-r from-orange-400 to-red-400 text-white text-sm font-bold px-3 py-1 rounded-full">
+                      -20% OFF
+                    </span>
+                  </div>
+                  <div class="original-price">
+                    <span class="text-xl line-through text-gray-400">$599.00</span>
+                  </div>
+                </div>
+                <div class="savings-info">
+                  <p class="text-green-600 font-semibold text-lg">💰 Save $100.00 (20% off)</p>
+                  <p class="text-sm text-gray-500 mt-1">Limited time offer • Ends in 2 days</p>
+                </div>
+              </div>
+
+              <!-- Product Options -->
+              <div class="options-section space-y-6">
+                <!-- Color Selection -->
+                <div class="color-selection">
+                  <h3 class="text-lg font-semibold text-gray-900 mb-3">
+                    Color: <span class="text-blue-600">Midnight Black</span>
+                  </h3>
+                  <div class="color-options flex gap-3">
+                    <button
+                      class="color-option w-12 h-12 rounded-full bg-gray-900 border-4 border-blue-500 shadow-lg hover:scale-110 transition-transform duration-200 relative">
+                      <div class="absolute inset-0 rounded-full border-2 border-white"></div>
+                    </button>
+                    <button
+                      class="color-option w-12 h-12 rounded-full bg-white border-2 border-gray-300 shadow-md hover:scale-110 hover:border-blue-500 transition-all duration-200"></button>
+                    <button
+                      class="color-option w-12 h-12 rounded-full bg-blue-600 border-2 border-gray-300 shadow-md hover:scale-110 hover:border-blue-500 transition-all duration-200"></button>
+                    <button
+                      class="color-option w-12 h-12 rounded-full bg-red-600 border-2 border-gray-300 shadow-md hover:scale-110 hover:border-blue-500 transition-all duration-200"></button>
+                  </div>
+                </div>
+
+                <!-- Storage Selection -->
+                <div class="storage-selection">
+                  <h3 class="text-lg font-semibold text-gray-900 mb-3">
+                    Storage: <span class="text-blue-600">825GB SSD</span>
+                  </h3>
+                  <div class="storage-options flex gap-3">
+                    <button
+                      class="storage-option px-4 py-3 border-2 border-blue-500 bg-blue-50 text-blue-700 font-semibold rounded-xl hover:bg-blue-100 transition-all duration-200">
+                      825GB
+                    </button>
+                    <button
+                      class="storage-option px-4 py-3 border-2 border-gray-300 text-gray-700 font-semibold rounded-xl hover:border-blue-500 hover:text-blue-600 transition-all duration-200">
+                      1TB
+                    </button>
+                    <button
+                      class="storage-option px-4 py-3 border-2 border-gray-300 text-gray-700 font-semibold rounded-xl hover:border-blue-500 hover:text-blue-600 transition-all duration-200">
+                      2TB
+                    </button>
+                  </div>
+                </div>
+
+                <!-- Product Info -->
+                <div class="product-info grid grid-cols-2 gap-4">
+                  <div class="info-item p-3 bg-gray-50 rounded-lg">
+                    <span class="text-sm text-gray-600">Condition:</span>
+                    <p class="font-semibold text-gray-900">Brand New</p>
+                  </div>
+                  <div class="info-item p-3 bg-gray-50 rounded-lg">
+                    <span class="text-sm text-gray-600">In Stock:</span>
+                    <p class="font-semibold text-green-600">100 units</p>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Enhanced Buy Section -->
+              <div class="purchase-section space-y-4">
+                <!-- Quantity Selector -->
+                <div class="quantity-selector">
+                  <label class="text-sm font-semibold text-gray-700 mb-3 block">Quantity:</label>
+                  <div
+                    class="qty-controls inline-flex bg-white border-2 border-gray-200 rounded-xl overflow-hidden shadow-sm">
+                    <button
+                      class="minus-btn px-4 py-3 bg-gray-50 hover:bg-gray-100 text-gray-700 font-bold text-xl border-r border-gray-200 transition-colors duration-200">
+                      −
+                    </button>
+                    <input type="text" value="1" min="1"
+                      class="qty-input w-16 text-center font-bold py-3 bg-white border-0 focus:outline-none" readonly />
+                    <button
+                      class="plus-btn px-4 py-3 bg-gray-50 hover:bg-gray-100 text-gray-700 font-bold text-xl border-l border-gray-200 transition-colors duration-200">
+                      +
+                    </button>
+                  </div>
+                </div>
+
+                <!-- Action Buttons -->
+                <div class="action-buttons space-y-3">
+                  <button
+                    class="add-to-cart-btn w-full py-4 px-6 bg-gradient-to-r from-blue-600 to-blue-700 hover:from-blue-700 hover:to-blue-800 text-white font-bold text-lg rounded-2xl shadow-lg hover:shadow-xl transform hover:scale-[1.02] transition-all duration-300">
+                    <i class="fas fa-shopping-cart mr-3"></i>
+                    Add to Cart - $499.00
+                  </button>
+
+                  <button
+                    class="buy-now-btn w-full py-4 px-6 bg-gradient-to-r from-green-600 to-green-700 hover:from-green-700 hover:to-green-800 text-white font-bold text-lg rounded-2xl shadow-lg hover:shadow-xl transform hover:scale-[1.02] transition-all duration-300">
+                    <i class="fas fa-bolt mr-3"></i>
+                    Buy Now - Fast Checkout
+                  </button>
+
+                  <div class="secondary-actions grid grid-cols-2 gap-3 mt-4">
+                    <button
+                      class="wishlist-btn flex items-center justify-center py-3 px-4 border-2 border-gray-300 hover:border-pink-500 hover:text-pink-600 hover:bg-pink-50 text-gray-700 font-semibold rounded-xl transition-all duration-300">
+                      <i class="far fa-heart mr-2"></i>
+                      Wishlist
+                    </button>
+                    <button
+                      class="compare-btn flex items-center justify-center py-3 px-4 border-2 border-gray-300 hover:border-purple-500 hover:text-purple-600 hover:bg-purple-50 text-gray-700 font-semibold rounded-xl transition-all duration-300">
+                      <i class="""fas fa-balance-scale mr-2"></i>
+                      Compare
+                    </button>
+                  </div>
+                </div>
+
+                <!-- Delivery & Service Info -->
+                <div
+                  class="service-info bg-gradient-to-r from-gray-50 to-blue-50 p-6 rounded-2xl border border-gray-200">
+                  <h4 class="font-bold text-gray-900 mb-4 text-lg">🚚 Delivery & Service</h4>
+                  <div class="service-items grid gap-3">
+                    <div class="service-item flex items-center gap-4 p-3 bg-white rounded-lg shadow-sm">
+                      <div class="icon-wrapper w-10 h-10 bg-green-100 rounded-full flex items-center justify-center">
+                        <i class="fas fa-shipping-fast text-green-600"></i>
+                      </div>
+                      <div>
+                        <p class="font-semibold text-gray-900">Free Express Delivery</p>
+                        <p class="text-sm text-gray-600">On orders over $50 • Arrives in 2-3 days</p>
+                      </div>
+                    </div>
+
+                    <div class="service-item flex items-center gap-4 p-3 bg-white rounded-lg shadow-sm">
+                      <div class="icon-wrapper w-10 h-10 bg-blue-100 rounded-full flex items-center justify-center">
+                        <i class="fas fa-undo-alt text-blue-600"></i>
+                      </div>
+                      <div>
+                        <p class="font-semibold text-gray-900">Easy Returns</p>
+                        <p class="text-sm text-gray-600">30-day hassle-free return policy</p>
+                      </div>
+                    </div>
+
+                    <div class="service-item flex items-center gap-4 p-3 bg-white rounded-lg shadow-sm">
+                      <div class="icon-wrapper w-10 h-10 bg-purple-100 rounded-full flex items-center justify-center">
+                        <i class="fas fa-shield-alt text-purple-600"></i>
+                      </div>
+                      <div>
+                        <p class="font-semibold text-gray-900">Extended Warranty</p>
+                        <p class="text-sm text-gray-600">2-year manufacturer warranty included</p>
                       </div>
                     </div>
                   </div>
                 </div>
 
-                <!-- Reviews Tab -->
-                <div id="reviews-tab" class="tab-pane hidden">
-                  <div class="reviews-content">
-                    <!-- Reviews Summary -->
-                    <div class="reviews-summary bg-gradient-to-r from-yellow-50 to-orange-50 p-4 sm:p-6 rounded-xl mb-6">
-                      <div class="summary-header flex flex-col lg:flex-row gap-4 sm:gap-6 items-start lg:items-center">
-                        <div class="rating-overview text-center lg:text-left w-full lg:w-auto">
-                          <h1 class="text-3xl sm:text-4xl font-bold text-gray-800 mb-2">4.5</h1>
-                          <div class="stars mb-2">
-                            <i class="fas fa-star text-yellow-400 text-lg sm:text-xl"></i>
-                            <i class="fas fa-star text-yellow-400 text-lg sm:text-xl"></i>
-                            <i class="fas fa-star text-yellow-400 text-lg sm:text-xl"></i>
-                            <i class="fas fa-star text-yellow-400 text-lg sm:text-xl"></i>
-                            <i class="fas fa-star-half-alt text-yellow-400 text-lg sm:text-xl"></i>
-                          </div>
-                          <p class="text-gray-600">Based on 156 reviews</p>
+                <!-- Trust Indicators -->
+                <div class="trust-indicators flex justify-center gap-6 py-4">
+                  <div class="trust-item flex items-center gap-2">
+                    <i class="fas fa-lock text-green-600"></i>
+                    <span class="text-sm text-gray-600">Secure Payment</span>
+                  </div>
+                  <div class="trust-item flex items-center gap-2">
+                    <i class="fas fa-certificate text-blue-600"></i>
+                    <span class="text-sm text-gray-600">Verified Seller</span>
+                  </div>
+                  <div class="trust-item flex items-center gap-2">
+                    <i class="fas fa-award text-purple-600"></i>
+                    <span class="text-sm text-gray-600">Quality Guaranteed</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <!-- End Product -->
+          <!-- Enhanced Details & Reviews -->
+          <div class="details-reviews mt-12 flex flex-col gap-6 justify-center items-start">
+            <!-- Tab Navigation -->
+            <div class="tab-navigation w-full">
+              <div
+                class="head w-full flex flex-col sm:flex-row justify-start items-stretch sm:items-center border-b-2 border-gray-200 overflow-x-auto">
+                <button
+                  class="tab-btn active text-base sm:text-xl pt-3 pb-3 px-3 sm:px-6 font-bold text-blue-600 border-b-2 border-blue-600 transition-all duration-300 whitespace-nowrap flex-shrink-0"
+                  data-tab="details">
+                  Details
+                </button>
+                <button
+                  class="tab-btn text-base sm:text-xl pt-3 pb-3 px-3 sm:px-6 font-medium text-gray-600 hover:text-blue-600 transition-all duration-300 whitespace-nowrap flex-shrink-0"
+                  data-tab="reviews">
+                  Reviews (156)
+                </button>
+                <button
+                  class="tab-btn text-base sm:text-xl pt-3 pb-3 px-3 sm:px-6 font-medium text-gray-600 hover:text-blue-600 transition-all duration-300 whitespace-nowrap flex-shrink-0"
+                  data-tab="shipping">
+                  Shipping & Returns
+                </button>
+              </div>
+            </div>
+
+            <!-- Tab Content -->
+            <div class="tab-content w-full">
+              <!-- Details Tab -->
+              <div id="details-tab" class="tab-pane active">
+                <div class="details-content flex flex-col gap-6 justify-center items-start">
+                  <div class="product-overview bg-gradient-to-r from-blue-50 to-purple-50 p-6 rounded-xl">
+                    <h3 class="text-2xl font-bold text-gray-800 mb-4">
+                      About the PlayStation 5
+                    </h3>
+                    <p class="text-gray-700 leading-relaxed mb-4">
+                      Experience lightning-fast loading with an ultra-high speed SSD, deeper immersion with support for
+                      haptic feedback, adaptive triggers and 3D Audio, and an all-new generation of incredible
+                      PlayStation games.
+                    </p>
+                    <p class="text-gray-700 leading-relaxed">
+                      The PS5 console unleashes new gaming possibilities that you never anticipated. Experience
+                      lightning fast loading with an ultra-high speed SSD, deeper immersion with support for haptic
+                      feedback, adaptive triggers, and 3D Audio.
+                    </p>
+                  </div>
+
+                  <div class="product-image-showcase">
+                    <img class="w-full rounded-xl shadow-lg" src="./assests/img/electronic-store-category-image-02.jpg"
+                      alt="PlayStation 5 Showcase" />
+                  </div>
+
+                  <div class="product-features bg-white border border-gray-200 rounded-xl p-6">
+                    <h3 class="text-2xl font-bold text-gray-800 mb-4">
+                      Key Features
+                    </h3>
+                    <div class="features-grid grid md:grid-cols-2 gap-4">
+                      <div class="feature-item flex items-start gap-3 p-3 bg-gray-50 rounded-lg">
+                        <i class="fas fa-microchip text-blue-600 text-xl mt-1"></i>
+                        <div>
+                          <h4 class="font-semibold text-gray-800">Custom CPU</h4>
+                          <p class="text-sm text-gray-600">AMD Zen 2-based CPU with 8 cores at 3.5GHz</p>
                         </div>
-                        
-                        <div class="rating-breakdown flex-1 w-full">
-                          <div class="breakdown-item flex items-center gap-2 sm:gap-3 mb-2">
-                            <span class="text-sm font-medium w-6 sm:w-8">5★</span>
-                            <div class="flex-1 bg-gray-200 rounded-full h-2">
-                              <div class="bg-yellow-400 h-2 rounded-full" style="width: 75%"></div>
-                            </div>
-                            <span class="text-sm text-gray-600 w-8 sm:w-12 text-right">117</span>
+                      </div>
+                      <div class="feature-item flex items-start gap-3 p-3 bg-gray-50 rounded-lg">
+                        <i class="fas fa-memory text-green-600 text-xl mt-1"></i>
+                        <div>
+                          <h4 class="font-semibold text-gray-800">Ultra-Fast SSD</h4>
+                          <p class="text-sm text-gray-600">825GB SSD with 5.5GB/s raw throughput</p>
+                        </div>
+                      </div>
+                      <div class="feature-item flex items-start gap-3 p-3 bg-gray-50 rounded-lg">
+                        <i class="fas fa-tv text-purple-600 text-xl mt-1"></i>
+                        <div>
+                          <h4 class="font-semibold text-gray-800">4K Gaming</h4>
+                          <p class="text-sm text-gray-600">Up to 4K at 120fps with 120Hz display</p>
+                        </div>
+                      </div>
+                      <div class="feature-item flex items-start gap-3 p-3 bg-gray-50 rounded-lg">
+                        <i class="fas fa-headphones text-red-600 text-xl mt-1"></i>
+                        <div>
+                          <h4 class="font-semibold text-gray-800">3D Audio</h4>
+                          <p class="text-sm text-gray-600">Immersive 3D audio with compatible headphones</p>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+
+                  <div class="specifications bg-white border border-gray-200 rounded-xl p-6">
+                    <h3 class="text-2xl font-bold text-gray-800 mb-4">Specifications</h3>
+                    <div class="specs-table">
+                      <div class="spec-row flex py-3 border-b border-gray-100">
+                        <div class="spec-label w-1/3 font-semibold text-gray-700">Dimensions</div>
+                        <div class="spec-value w-2/3 text-gray-600">390mm x 104mm x 260mm</div>
+                      </div>
+                      <div class="spec-row flex py-3 border-b border-gray-100">
+                        <div class="spec-label w-1/3 font-semibold text-gray-700">Weight</div>
+                        <div class="spec-value w-2/3 text-gray-600">4.5 kg</div>
+                      </div>
+                      <div class="spec-row flex py-3 border-b border-gray-100">
+                        <div class="spec-label w-1/3 font-semibold text-gray-700">Storage</div>
+                        <div class="spec-value w-2/3 text-gray-600">825GB SSD</div>
+                      </div>
+                      <div class="spec-row flex py-3">
+                        <div class="spec-label w-1/3 font-semibold text-gray-700">Connectivity</div>
+                        <div class="spec-value w-2/3 text-gray-600">Wi-Fi 6, Bluetooth 5.1, Ethernet</div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Reviews Tab -->
+              <div id="reviews-tab" class="tab-pane hidden">
+                <div class="reviews-content">
+                  <!-- Reviews Summary -->
+                  <div class="reviews-summary bg-gradient-to-r from-yellow-50 to-orange-50 p-4 sm:p-6 rounded-xl mb-6">
+                    <div class="summary-header flex flex-col lg:flex-row gap-4 sm:gap-6 items-start lg:items-center">
+                      <div class="rating-overview text-center lg:text-left w-full lg:w-auto">
+                        <h1 class="text-3xl sm:text-4xl font-bold text-gray-800 mb-2">4.5</h1>
+                        <div class="stars mb-2">
+                          <i class="fas fa-star text-yellow-400 text-lg sm:text-xl"></i>
+                          <i class="fas fa-star text-yellow-400 text-lg sm:text-xl"></i>
+                          <i class="fas fa-star text-yellow-400 text-lg sm:text-xl"></i>
+                          <i class="fas fa-star text-yellow-400 text-lg sm:text-xl"></i>
+                          <i class="fas fa-star-half-alt text-yellow-400 text-lg sm:text-xl"></i>
+                        </div>
+                        <p class="text-gray-600">Based on 156 reviews</p>
+                      </div>
+
+                      <div class="rating-breakdown flex-1 w-full">
+                        <div class="breakdown-item flex items-center gap-2 sm:gap-3 mb-2">
+                          <span class="text-sm font-medium w-6 sm:w-8">5★</span>
+                          <div class="flex-1 bg-gray-200 rounded-full h-2">
+                            <div class="bg-yellow-400 h-2 rounded-full" style="width: 75%"></div>
                           </div>
-                          <div class="breakdown-item flex items-center gap-2 sm:gap-3 mb-2">
-                            <span class="text-sm font-medium w-6 sm:w-8">4★</span>
-                            <div class="flex-1 bg-gray-200 rounded-full h-2">
-                              <div class="bg-yellow-400 h-2 rounded-full" style="width: 15%"></div>
-                            </div>
-                            <span class="text-sm text-gray-600 w-8 sm:w-12 text-right">23</span>
+                          <span class="text-sm text-gray-600 w-8 sm:w-12 text-right">117</span>
+                        </div>
+                        <div class="breakdown-item flex items-center gap-2 sm:gap-3 mb-2">
+                          <span class="text-sm font-medium w-6 sm:w-8">4★</span>
+                          <div class="flex-1 bg-gray-200 rounded-full h-2">
+                            <div class="bg-yellow-400 h-2 rounded-full" style="width: 15%"></div>
                           </div>
-                          <div class="breakdown-item flex items-center gap-2 sm:gap-3 mb-2">
-                            <span class="text-sm font-medium w-6 sm:w-8">3★</span>
-                            <div class="flex-1 bg-gray-200 rounded-full h-2">
-                              <div class="bg-yellow-400 h-2 rounded-full" style="width: 6%"></div>
-                            </div>
-                            <span class="text-sm text-gray-600 w-8 sm:w-12 text-right">9</span>
+                          <span class="text-sm text-gray-600 w-8 sm:w-12 text-right">23</span>
+                        </div>
+                        <div class="breakdown-item flex items-center gap-2 sm:gap-3 mb-2">
+                          <span class="text-sm font-medium w-6 sm:w-8">3★</span>
+                          <div class="flex-1 bg-gray-200 rounded-full h-2">
+                            <div class="bg-yellow-400 h-2 rounded-full" style="width: 6%"></div>
                           </div>
-                          <div class="breakdown-item flex items-center gap-2 sm:gap-3 mb-2">
-                            <span class="text-sm font-medium w-6 sm:w-8">2★</span>
-                            <div class="flex-1 bg-gray-200 rounded-full h-2">
-                              <div class="bg-yellow-400 h-2 rounded-full" style="width: 3%"></div>
-                            </div>
-                            <span class="text-sm text-gray-600 w-8 sm:w-12 text-right">5</span>
+                          <span class="text-sm text-gray-600 w-8 sm:w-12 text-right">9</span>
+                        </div>
+                        <div class="breakdown-item flex items-center gap-2 sm:gap-3 mb-2">
+                          <span class="text-sm font-medium w-6 sm:w-8">2★</span>
+                          <div class="flex-1 bg-gray-200 rounded-full h-2">
+                            <div class="bg-yellow-400 h-2 rounded-full" style="width: 3%"></div>
                           </div>
-                          <div class="breakdown-item flex items-center gap-2 sm:gap-3">
-                            <span class="text-sm font-medium w-6 sm:w-8">1★</span>
-                            <div class="flex-1 bg-gray-200 rounded-full h-2">
-                              <div class="bg-yellow-400 h-2 rounded-full" style="width: 1%"></div>
-                            </div>
-                            <span class="text-sm text-gray-600 w-8 sm:w-12 text-right">2</span>
+                          <span class="text-sm text-gray-600 w-8 sm:w-12 text-right">5</span>
+                        </div>
+                        <div class="breakdown-item flex items-center gap-2 sm:gap-3">
+                          <span class="text-sm font-medium w-6 sm:w-8">1★</span>
+                          <div class="flex-1 bg-gray-200 rounded-full h-2">
+                            <div class="bg-yellow-400 h-2 rounded-full" style="width: 1%"></div>
+                          </div>
+                          <span class="text-sm text-gray-600 w-8 sm:w-12 text-right">2</span>
+                        </div>
+                      </div>
+
+                      <div class="write-review w-full lg:w-auto">
+                        <button
+                          class="w-full lg:w-auto bg-blue-600 hover:bg-blue-700 text-white px-4 sm:px-6 py-2 sm:py-3 rounded-xl font-semibold transition-all duration-300">
+                          Write a Review
+                        </button>
+                      </div>
+                    </div>
+                  </div>
+
+                  <!-- Review Filters -->
+                  <div class="review-filters mb-6">
+                    <div class="filters flex flex-wrap gap-2 overflow-x-auto pb-2">
+                      <button
+                        class="filter-btn active bg-blue-600 text-white px-3 sm:px-4 py-2 rounded-lg text-sm font-medium whitespace-nowrap flex-shrink-0">All
+                        Reviews</button>
+                      <button
+                        class="filter-btn bg-gray-100 hover:bg-gray-200 text-gray-700 px-3 sm:px-4 py-2 rounded-lg text-sm font-medium whitespace-nowrap flex-shrink-0">5
+                        Stars</button>
+                      <button
+                        class="filter-btn bg-gray-100 hover:bg-gray-200 text-gray-700 px-3 sm:px-4 py-2 rounded-lg text-sm font-medium whitespace-nowrap flex-shrink-0">4
+                        Stars</button>
+                      <button
+                        class="filter-btn bg-gray-100 hover:bg-gray-200 text-gray-700 px-3 sm:px-4 py-2 rounded-lg text-sm font-medium whitespace-nowrap flex-shrink-0">With
+                        Photos</button>
+                      <button
+                        class="filter-btn bg-gray-100 hover:bg-gray-200 text-gray-700 px-3 sm:px-4 py-2 rounded-lg text-sm font-medium whitespace-nowrap flex-shrink-0">Verified
+                        Purchase</button>
+                    </div>
+                  </div>
+
+                  <!-- Individual Reviews -->
+                  <div class="reviews-list space-y-6">
+                    <!-- Review 1 -->
+                    <div class="review-item bg-white border border-gray-200 rounded-xl p-4 sm:p-6">
+                      <div
+                        class="review-header flex flex-col sm:flex-row items-start justify-between mb-4 gap-3 sm:gap-0">
+                        <div class="reviewer-info flex items-center gap-3 sm:gap-4">
+                          <img src="./assests/img/electronic-store-reviewer-avatar-image-1.jpg" alt="Reviewer"
+                            class="w-10 h-10 sm:w-12 sm:h-12 rounded-full object-cover" />
+                          <div>
+                            <h4 class="font-semibold text-gray-800 text-sm sm:text-base">Alex Johnson</h4>
+                            <p class="text-xs sm:text-sm text-gray-500">Verified Purchase</p>
                           </div>
                         </div>
-                        
-                        <div class="write-review w-full lg:w-auto">
-                          <button class="w-full lg:w-auto bg-blue-600 hover:bg-blue-700 text-white px-4 sm:px-6 py-2 sm:py-3 rounded-xl font-semibold transition-all duration-300">
-                            Write a Review
+                        <div class="review-meta text-left sm:text-right">
+                          <div class="stars mb-1">
+                            <i class="fas fa-star text-yellow-400 text-sm"></i>
+                            <i class="fas fa-star text-yellow-400 text-sm"></i>
+                            <i class="fas fa-star text-yellow-400 text-sm"></i>
+                            <i class="fas fa-star text-yellow-400 text-sm"></i>
+                            <i class="fas fa-star text-yellow-400 text-sm"></i>
+                          </div>
+                          <p class="text-xs sm:text-sm text-gray-500">2 days ago</p>
+                        </div>
+                      </div>
+                      <div class="review-content">
+                        <h5 class="font-semibold text-gray-800 mb-2 text-sm sm:text-base">Amazing gaming experience!
+                        </h5>
+                        <p class="text-gray-700 mb-3 text-sm sm:text-base leading-relaxed">
+                          The PlayStation 5 exceeded my expectations. The loading times are incredibly fast, and the
+                          graphics are stunning. The DualSense controller's haptic feedback adds a whole new dimension
+                          to gaming.
+                        </p>
+                        <div class="review-actions flex items-center gap-4">
+                          <button class="text-gray-500 hover:text-blue-600 text-xs sm:text-sm">
+                            <i class="fas fa-thumbs-up mr-1"></i> Helpful (12)
+                          </button>
+                          <button class="text-gray-500 hover:text-blue-600 text-xs sm:text-sm">
+                            <i class="fas fa-reply mr-1"></i> Reply
                           </button>
                         </div>
                       </div>
                     </div>
 
-                    <!-- Review Filters -->
-                    <div class="review-filters mb-6">
-                      <div class="filters flex flex-wrap gap-2 overflow-x-auto pb-2">
-                        <button class="filter-btn active bg-blue-600 text-white px-3 sm:px-4 py-2 rounded-lg text-sm font-medium whitespace-nowrap flex-shrink-0">All Reviews</button>
-                        <button class="filter-btn bg-gray-100 hover:bg-gray-200 text-gray-700 px-3 sm:px-4 py-2 rounded-lg text-sm font-medium whitespace-nowrap flex-shrink-0">5 Stars</button>
-                        <button class="filter-btn bg-gray-100 hover:bg-gray-200 text-gray-700 px-3 sm:px-4 py-2 rounded-lg text-sm font-medium whitespace-nowrap flex-shrink-0">4 Stars</button>
-                        <button class="filter-btn bg-gray-100 hover:bg-gray-200 text-gray-700 px-3 sm:px-4 py-2 rounded-lg text-sm font-medium whitespace-nowrap flex-shrink-0">With Photos</button>
-                        <button class="filter-btn bg-gray-100 hover:bg-gray-200 text-gray-700 px-3 sm:px-4 py-2 rounded-lg text-sm font-medium whitespace-nowrap flex-shrink-0">Verified Purchase</button>
-                      </div>
-                    </div>
-
-                    <!-- Individual Reviews -->
-                    <div class="reviews-list space-y-6">
-                      <!-- Review 1 -->
-                      <div class="review-item bg-white border border-gray-200 rounded-xl p-4 sm:p-6">
-                        <div class="review-header flex flex-col sm:flex-row items-start justify-between mb-4 gap-3 sm:gap-0">
-                          <div class="reviewer-info flex items-center gap-3 sm:gap-4">
-                            <img 
-                              src="./assests/img/electronic-store-reviewer-avatar-image-1.jpg" 
-                              alt="Reviewer" 
-                              class="w-10 h-10 sm:w-12 sm:h-12 rounded-full object-cover"
-                            />
-                            <div>
-                              <h4 class="font-semibold text-gray-800 text-sm sm:text-base">Alex Johnson</h4>
-                              <p class="text-xs sm:text-sm text-gray-500">Verified Purchase</p>
-                            </div>
-                          </div>
-                          <div class="review-meta text-left sm:text-right">
-                            <div class="stars mb-1">
-                              <i class="fas fa-star text-yellow-400 text-sm"></i>
-                              <i class="fas fa-star text-yellow-400 text-sm"></i>
-                              <i class="fas fa-star text-yellow-400 text-sm"></i>
-                              <i class="fas fa-star text-yellow-400 text-sm"></i>
-                              <i class="fas fa-star text-yellow-400 text-sm"></i>
-                            </div>
-                            <p class="text-xs sm:text-sm text-gray-500">2 days ago</p>
+                    <!-- Review 2 -->
+                    <div class="review-item bg-white border border-gray-200 rounded-xl p-4 sm:p-6">
+                      <div
+                        class="review-header flex flex-col sm:flex-row items-start justify-between mb-4 gap-3 sm:gap-0">
+                        <div class="reviewer-info flex items-center gap-3 sm:gap-4">
+                          <img src="./assests/img/electronic-store-reviewer-avatar-image-2.jpg" alt="Reviewer"
+                            class="w-10 h-10 sm:w-12 sm:h-12 rounded-full object-cover" />
+                          <div>
+                            <h4 class="font-semibold text-gray-800 text-sm sm:text-base">Sarah Chen</h4>
+                            <p class="text-xs sm:text-sm text-gray-500">Verified Purchase</p>
                           </div>
                         </div>
-                        <div class="review-content">
-                          <h5 class="font-semibold text-gray-800 mb-2 text-sm sm:text-base">Amazing gaming experience!</h5>
-                          <p class="text-gray-700 mb-3 text-sm sm:text-base leading-relaxed">
-                            The PlayStation 5 exceeded my expectations. The loading times are incredibly fast, and the graphics are stunning. The DualSense controller's haptic feedback adds a whole new dimension to gaming.
-                          </p>
-                          <div class="review-actions flex items-center gap-4">
-                            <button class="text-gray-500 hover:text-blue-600 text-xs sm:text-sm">
-                              <i class="fas fa-thumbs-up mr-1"></i> Helpful (12)
-                            </button>
-                            <button class="text-gray-500 hover:text-blue-600 text-xs sm:text-sm">
-                              <i class="fas fa-reply mr-1"></i> Reply
-                            </button>
+                        <div class="review-meta text-left sm:text-right">
+                          <div class="stars mb-1">
+                            <i class="fas fa-star text-yellow-400 text-sm"></i>
+                            <i class="fas fa-star text-yellow-400 text-sm"></i>
+                            <i class="fas fa-star text-yellow-400 text-sm"></i>
+                            <i class="fas fa-star text-yellow-400 text-sm"></i>
+                            <i class="far fa-star text-gray-300 text-sm"></i>
                           </div>
+                          <p class="text-xs sm:text-sm text-gray-500">1 week ago</p>
                         </div>
                       </div>
-
-                      <!-- Review 2 -->
-                      <div class="review-item bg-white border border-gray-200 rounded-xl p-4 sm:p-6">
-                        <div class="review-header flex flex-col sm:flex-row items-start justify-between mb-4 gap-3 sm:gap-0">
-                          <div class="reviewer-info flex items-center gap-3 sm:gap-4">
-                            <img 
-                              src="./assests/img/electronic-store-reviewer-avatar-image-2.jpg" 
-                              alt="Reviewer" 
-                              class="w-10 h-10 sm:w-12 sm:h-12 rounded-full object-cover"
-                            />
-                            <div>
-                              <h4 class="font-semibold text-gray-800 text-sm sm:text-base">Sarah Chen</h4>
-                              <p class="text-xs sm:text-sm text-gray-500">Verified Purchase</p>
-                            </div>
-                          </div>
-                          <div class="review-meta text-left sm:text-right">
-                            <div class="stars mb-1">
-                              <i class="fas fa-star text-yellow-400 text-sm"></i>
-                              <i class="fas fa-star text-yellow-400 text-sm"></i>
-                              <i class="fas fa-star text-yellow-400 text-sm"></i>
-                              <i class="fas fa-star text-yellow-400 text-sm"></i>
-                              <i class="far fa-star text-gray-300 text-sm"></i>
-                            </div>
-                            <p class="text-xs sm:text-sm text-gray-500">1 week ago</p>
-                          </div>
-                        </div>
-                        <div class="review-content">
-                          <h5 class="font-semibold text-gray-800 mb-2 text-sm sm:text-base">Great console, minor issues</h5>
-                          <p class="text-gray-700 mb-3 text-sm sm:text-base leading-relaxed">
-                            Love the performance and game library. The SSD makes everything lightning fast. Only complaint is that it's quite large and the storage fills up quickly. Overall very satisfied with the purchase.
-                          </p>
-                          <div class="review-actions flex items-center gap-4">
-                            <button class="text-gray-500 hover:text-blue-600 text-xs sm:text-sm">
-                              <i class="fas fa-thumbs-up mr-1"></i> Helpful (8)
-                            </button>
-                            <button class="text-gray-500 hover:text-blue-600 text-xs sm:text-sm">
-                              <i class="fas fa-reply mr-1"></i> Reply
-                            </button>
-                          </div>
-                        </div>
-                      </div>
-
-                      <!-- Review 3 -->
-                      <div class="review-item bg-white border border-gray-200 rounded-xl p-4 sm:p-6">
-                        <div class="review-header flex flex-col sm:flex-row items-start justify-between mb-4 gap-3 sm:gap-0">
-                          <div class="reviewer-info flex items-center gap-3 sm:gap-4">
-                            <img 
-                              src="./assests/img/electronic-store-reviewer-avatar-image-3.jpg" 
-                              alt="Reviewer" 
-                              class="w-10 h-10 sm:w-12 sm:h-12 rounded-full object-cover"
-                            />
-                            <div>
-                              <h4 class="font-semibold text-gray-800 text-sm sm:text-base">Mike Rodriguez</h4>
-                              <p class="text-xs sm:text-sm text-gray-500">Verified Purchase</p>
-                            </div>
-                          </div>
-                          <div class="review-meta text-left sm:text-right">
-                            <div class="stars mb-1">
-                              <i class="fas fa-star text-yellow-400 text-sm"></i>
-                              <i class="fas fa-star text-yellow-400 text-sm"></i>
-                              <i class="fas fa-star text-yellow-400 text-sm"></i>
-                              <i class="fas fa-star text-yellow-400 text-sm"></i>
-                              <i class="fas fa-star text-yellow-400 text-sm"></i>
-                            </div>
-                            <p class="text-xs sm:text-sm text-gray-500">2 weeks ago</p>
-                          </div>
-                        </div>
-                        <div class="review-content">
-                          <h5 class="font-semibold text-gray-800 mb-2 text-sm sm:text-base">Next-gen gaming at its finest</h5>
-                          <p class="text-gray-700 mb-3 text-sm sm:text-base leading-relaxed">
-                            This console is a game-changer! The ray tracing capabilities are incredible, and the 3D audio with my headphones is immersive. Fast shipping and excellent packaging. Highly recommended!
-                          </p>
-                          <div class="review-photos flex gap-2 mb-3 overflow-x-auto">
-                            <img src="./assests/img/electronic-store-product-image-1-300x300.jpg" alt="Review photo" class="w-12 h-12 sm:w-16 sm:h-16 object-cover rounded-lg flex-shrink-0">
-                            <img src="./assests/img/electronic-store-product-image-2-300x300.jpg" alt="Review photo" class="w-12 h-12 sm:w-16 sm:h-16 object-cover rounded-lg flex-shrink-0">
-                          </div>
-                          <div class="review-actions flex items-center gap-4">
-                            <button class="text-gray-500 hover:text-blue-600 text-xs sm:text-sm">
-                              <i class="fas fa-thumbs-up mr-1"></i> Helpful (15)
-                            </button>
-                            <button class="text-gray-500 hover:text-blue-600 text-xs sm:text-sm">
-                              <i class="fas fa-reply mr-1"></i> Reply
-                            </button>
-                          </div>
+                      <div class="review-content">
+                        <h5 class="font-semibold text-gray-800 mb-2 text-sm sm:text-base">Great console, minor issues
+                        </h5>
+                        <p class="text-gray-700 mb-3 text-sm sm:text-base leading-relaxed">
+                          Love the performance and game library. The SSD makes everything lightning fast. Only complaint
+                          is that it's quite large and the storage fills up quickly. Overall very satisfied with the
+                          purchase.
+                        </p>
+                        <div class="review-actions flex items-center gap-4">
+                          <button class="text-gray-500 hover:text-blue-600 text-xs sm:text-sm">
+                            <i class="fas fa-thumbs-up mr-1"></i> Helpful (8)
+                          </button>
+                          <button class="text-gray-500 hover:text-blue-600 text-xs sm:text-sm">
+                            <i class="fas fa-reply mr-1"></i> Reply
+                          </button>
                         </div>
                       </div>
                     </div>
 
-                    <!-- Load More Reviews -->
-                    <div class="load-more text-center mt-6">
-                      <button class="w-full sm:w-auto bg-gray-100 hover:bg-gray-200 text-gray-700 px-4 sm:px-6 py-2 sm:py-3 rounded-xl font-semibold transition-all duration-300">
-                        Load More Reviews
-                      </button>
+                    <!-- Review 3 -->
+                    <div class="review-item bg-white border border-gray-200 rounded-xl p-4 sm:p-6">
+                      <div
+                        class="review-header flex flex-col sm:flex-row items-start justify-between mb-4 gap-3 sm:gap-0">
+                        <div class="reviewer-info flex items-center gap-3 sm:gap-4">
+                          <img src="./assests/img/electronic-store-reviewer-avatar-image-3.jpg" alt="Reviewer"
+                            class="w-10 h-10 sm:w-12 sm:h-12 rounded-full object-cover" />
+                          <div>
+                            <h4 class="font-semibold text-gray-800 text-sm sm:text-base">Mike Rodriguez</h4>
+                            <p class="text-xs sm:text-sm text-gray-500">Verified Purchase</p>
+                          </div>
+                        </div>
+                        <div class="review-meta text-left sm:text-right">
+                          <div class="stars mb-1">
+                            <i class="fas fa-star text-yellow-400 text-sm"></i>
+                            <i class="fas fa-star text-yellow-400 text-sm"></i>
+                            <i class="fas fa-star text-yellow-400 text-sm"></i>
+                            <i class="fas fa-star text-yellow-400 text-sm"></i>
+                            <i class="fas fa-star text-yellow-400 text-sm"></i>
+                          </div>
+                          <p class="text-xs sm:text-sm text-gray-500">2 weeks ago</p>
+                        </div>
+                      </div>
+                      <div class="review-content">
+                        <h5 class="font-semibold text-gray-800 mb-2 text-sm sm:text-base">Next-gen gaming at its finest
+                        </h5>
+                        <p class="text-gray-700 mb-3 text-sm sm:text-base leading-relaxed">
+                          This console is a game-changer! The ray tracing capabilities are incredible, and the 3D audio
+                          with my headphones is immersive. Fast shipping and excellent packaging. Highly recommended!
+                        </p>
+                        <div class="review-photos flex gap-2 mb-3 overflow-x-auto">
+                          <img src="./assests/img/electronic-store-product-image-1-300x300.jpg" alt="Review photo"
+                            class="w-12 h-12 sm:w-16 sm:h-16 object-cover rounded-lg flex-shrink-0">
+                          <img src="./assests/img/electronic-store-product-image-2-300x300.jpg" alt="Review photo"
+                            class="w-12 h-12 sm:w-16 sm:h-16 object-cover rounded-lg flex-shrink-0">
+                        </div>
+                        <div class="review-actions flex items-center gap-4">
+                          <button class="text-gray-500 hover:text-blue-600 text-xs sm:text-sm">
+                            <i class="fas fa-thumbs-up mr-1"></i> Helpful (15)
+                          </button>
+                          <button class="text-gray-500 hover:text-blue-600 text-xs sm:text-sm">
+                            <i class="fas fa-reply mr-1"></i> Reply
+                          </button>
+                        </div>
+                      </div>
                     </div>
                   </div>
-                </div>
 
-                <!-- Shipping Tab -->
-                <div id="shipping-tab" class="tab-pane hidden">
-                  <div class="shipping-content">
-                    <div class="shipping-info bg-white border border-gray-200 rounded-xl p-6">
-                      <h3 class="text-2xl font-bold text-gray-800 mb-6">Shipping & Returns</h3>
-                      
-                      <div class="info-sections grid md:grid-cols-2 gap-6">
-                        <div class="shipping-section">
-                          <h4 class="text-lg font-semibold text-gray-800 mb-3 flex items-center gap-2">
-                            <i class="fas fa-shipping-fast text-blue-600"></i>
-                            Shipping Information
-                          </h4>
-                          <ul class="space-y-2 text-gray-600">
-                            <li>• Free standard shipping on orders over $50</li>
-                            <li>• Express shipping available for $9.99</li>
-                            <li>• Standard delivery: 3-5 business days</li>
-                            <li>• Express delivery: 1-2 business days</li>
-                            <li>• Ships from our warehouse in California</li>
-                          </ul>
-                        </div>
-                        
-                        <div class="returns-section">
-                          <h4 class="text-lg font-semibold text-gray-800 mb-3 flex items-center gap-2">
-                            <i class="fas fa-undo text-green-600"></i>
-                            Returns & Exchanges
-                          </h4>
-                          <ul class="space-y-2 text-gray-600">
-                            <li>• 30-day return policy</li>
-                            <li>• Free return shipping</li>
-                            <li>• Items must be in original condition</li>
-                            <li>• Original packaging required</li>
-                            <li>• Refund processed within 5-7 business days</li>
-                          </ul>
-                        </div>
+                  <!-- Load More Reviews -->
+                  <div class="load-more text-center mt-6">
+                    <button
+                      class="w-full sm:w-auto bg-gray-100 hover:bg-gray-200 text-gray-700 px-4 sm:px-6 py-2 sm:py-3 rounded-xl font-semibold transition-all duration-300">
+                      Load More Reviews
+                    </button>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Shipping Tab -->
+              <div id="shipping-tab" class="tab-pane hidden">
+                <div class="shipping-content">
+                  <div class="shipping-info bg-white border border-gray-200 rounded-xl p-6">
+                    <h3 class="text-2xl font-bold text-gray-800 mb-6">Shipping & Returns</h3>
+
+                    <div class="info-sections grid md:grid-cols-2 gap-6">
+                      <div class="shipping-section">
+                        <h4 class="text-lg font-semibold text-gray-800 mb-3 flex items-center gap-2">
+                          <i class="fas fa-shipping-fast text-blue-600"></i>
+                          Shipping Information
+                        </h4>
+                        <ul class="space-y-2 text-gray-600">
+                          <li>• Free standard shipping on orders over $50</li>
+                          <li>• Express shipping available for $9.99</li>
+                          <li>• Standard delivery: 3-5 business days</li>
+                          <li>• Express delivery: 1-2 business days</li>
+                          <li>• Ships from our warehouse in California</li>
+                        </ul>
+                      </div>
+
+                      <div class="returns-section">
+                        <h4 class="text-lg font-semibold text-gray-800 mb-3 flex items-center gap-2">
+                          <i class="fas fa-undo text-green-600"></i>
+                          Returns & Exchanges
+                        </h4>
+                        <ul class="space-y-2 text-gray-600">
+                          <li>• 30-day return policy</li>
+                          <li>• Free return shipping</li>
+                          <li>• Items must be in original condition</li>
+                          <li>• Original packaging required</li>
+                          <li>• Refund processed within 5-7 business days</li>
+                        </ul>
                       </div>
                     </div>
                   </div>
                 </div>
               </div>
             </div>
-            <!-- End Enhanced Details & Reviews -->
           </div>
-        </div>
-      </div>
-      <!-- End Product Page -->
+          <!-- End Enhanced Details & Reviews -->
 
-      <!-- Container -->
-      <div class="container mx-auto">
-        <hr />
-        <!-- Footer -->
-        <div
-          class="footer m-4 my-10 grid grid-cols-1 md:grid-cols-4 justify-center items-center gap-8 text-center"
-        >
-          <div class="logo">
-            <img
-              src="./assests/img/electronic-store-logo-mono.svg"
-              alt="Logo"
-            />
-          </div>
-          <div
-            class="shop flex flex-col justify-center items-center lg:items-start gap-6"
-          >
-            <h3 class="text-2xl font-semibold lg:font-bold">Shop</h3>
-            <div
-              class="links flex flex-col justify-center items-center lg:items-start gap-1"
-            >
-              <a
-                href="#"
-                class="text-blue-600 underline hover:no-underline text-sm lg:text-base transition-all"
-                >Hot deals</a
-              >
-              <a
-                href="#"
-                class="text-blue-600 underline hover:no-underline text-sm lg:text-base transition-all"
-                >Categories</a
-              >
-              <a
-                href="#"
-                class="text-blue-600 underline hover:no-underline text-sm lg:text-base transition-all"
-                >Brands</a
-              >
-              <a
-                href="#"
-                class="text-blue-600 underline hover:no-underline text-sm lg:text-base transition-all"
-                >Rebates</a
-              >
-              <a
-                href="#"
-                class="text-blue-600 underline hover:no-underline text-sm lg:text-base transition-all"
-                >Weekly deals</a
-              >
+          <!-- Similar Items Section -->
+          <div class="similar-items mt-16 mb-12">
+            <div class="section-header text-center mb-10">
+              <h2 class="text-3xl lg:text-4xl font-bold text-gray-900 mb-4">Similar Items You Might Like</h2>
+              <p class="text-gray-600 text-lg max-w-2xl mx-auto">Discover more amazing products that complement your
+                gaming experience</p>
+            </div>
+
+            <div class="products-grid grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+              <!-- Product 1 -->
+              <div
+                class="product-card bg-white rounded-2xl shadow-lg hover:shadow-xl transition-all duration-300 transform hover:-translate-y-2 overflow-hidden group">
+                <div class="product-image relative overflow-hidden">
+                  <img src="./assests/img/electronic-store-product-image-2-300x300.jpg" alt="DualSense Controller"
+                    class="w-full h-56 object-cover group-hover:scale-110 transition-transform duration-500" />
+                  <div
+                    class="absolute inset-0 bg-black bg-opacity-0 group-hover:bg-opacity-10 transition-all duration-300">
+                  </div>
+                  <div class="absolute top-3 left-3">
+                    <span class="bg-red-500 text-white text-xs font-bold px-2 py-1 rounded-full">HOT</span>
+                  </div>
+                  <div class="absolute top-3 right-3 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                    <button
+                      class="w-8 h-8 bg-white rounded-full flex items-center justify-center shadow-lg hover:bg-gray-100">
+                      <i class="far fa-heart text-gray-600"></i>
+                    </button>
+                  </div>
+                </div>
+                <div class="product-info p-5">
+                  <h3 class="font-semibold text-gray-900 mb-2 line-clamp-2">PlayStation 5 DualSense Wireless Controller
+                  </h3>
+                  <div class="rating flex items-center gap-1 mb-3">
+                    <div class="stars">
+                      <i class="fas fa-star text-yellow-400 text-sm"></i>
+                      <i class="fas fa-star text-yellow-400 text-sm"></i>
+                      <i class="fas fa-star text-yellow-400 text-sm"></i>
+                      <i class="fas fa-star text-yellow-400 text-sm"></i>
+                      <i class="far fa-star text-gray-300 text-sm"></i>
+                    </div>
+                    <span class="text-xs text-gray-500">(89)</span>
+                  </div>
+                  <div class="price-section mb-4">
+                    <div class="flex items-center gap-2">
+                      <span class="text-xl font-bold text-gray-900">$69.99</span>
+                      <span class="text-sm line-through text-gray-400">$79.99</span>
+                    </div>
+                    <span class="text-green-600 text-sm font-medium">Save $10</span>
+                  </div>
+                  <button
+                    class="w-full bg-blue-600 hover:bg-blue-700 text-white py-2.5 px-4 rounded-xl font-medium transition-colors duration-300">
+                    <i class="fas fa-cart-plus mr-2"></i>Add to Cart
+                  </button>
+                </div>
+              </div>
+
+              <!-- Product 2 -->
+              <div
+                class="product-card bg-white rounded-2xl shadow-lg hover:shadow-xl transition-all duration-300 transform hover:-translate-y-2 overflow-hidden group">
+                <div class="product-image relative overflow-hidden">
+                  <img src="./assests/img/electronic-store-product-image-3-300x300.jpg" alt="PlayStation Headset"
+                    class="w-full h-56 object-cover group-hover:scale-110 transition-transform duration-500" />
+                  <div
+                    class="absolute inset-0 bg-black bg-opacity-0 group-hover:bg-opacity-10 transition-all duration-300">
+                  </div>
+                  <div class="absolute top-3 left-3">
+                    <span class="bg-green-500 text-white text-xs font-bold px-2 py-1 rounded-full">NEW</span>
+                  </div>
+                  <div class="absolute top-3 right-3 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                    <button
+                      class="w-8 h-8 bg-white rounded-full flex items-center justify-center shadow-lg hover:bg-gray-100">
+                      <i class="far fa-heart text-gray-600"></i>
+                    </button>
+                  </div>
+                </div>
+                <div class="product-info p-5">
+                  <h3 class="font-semibold text-gray-900 mb-2 line-clamp-2">PlayStation 5 PULSE 3D Wireless Headset</h3>
+                  <div class="rating flex items-center gap-1 mb-3">
+                    <div class="stars">
+                      <i class="fas fa-star text-yellow-400 text-sm"></i>
+                      <i class="fas fa-star text-yellow-400 text-sm"></i>
+                      <i class="fas fa-star text-yellow-400 text-sm"></i>
+                      <i class="fas fa-star text-yellow-400 text-sm"></i>
+                      <i class="fas fa-star text-yellow-400 text-sm"></i>
+                    </div>
+                    <span class="text-xs text-gray-500">(124)</span>
+                  </div>
+                  <div class="price-section mb-4">
+                    <div class="flex items-center gap-2">
+                      <span class="text-xl font-bold text-gray-900">$99.99</span>
+                    </div>
+                    <span class="text-blue-600 text-sm font-medium">Free Shipping</span>
+                  </div>
+                  <button
+                    class="w-full bg-blue-600 hover:bg-blue-700 text-white py-2.5 px-4 rounded-xl font-medium transition-colors duration-300">
+                    <i class="fas fa-cart-plus mr-2"></i>Add to Cart
+                  </button>
+                </div>
+              </div>
+
+              <!-- Product 3 -->
+              <div
+                class="product-card bg-white rounded-2xl shadow-lg hover:shadow-xl transition-all duration-300 transform hover:-translate-y-2 overflow-hidden group">
+                <div class="product-image relative overflow-hidden">
+                  <img src="./assests/img/electronic-store-product-image-4-300x300.jpg" alt="PS5 Game"
+                    class="w-full h-56 object-cover group-hover:scale-110 transition-transform duration-500" />
+                  <div
+                    class="absolute inset-0 bg-black bg-opacity-0 group-hover:bg-opacity-10 transition-all duration-300">
+                  </div>
+                  <div class="absolute top-3 left-3">
+                    <span class="bg-purple-500 text-white text-xs font-bold px-2 py-1 rounded-full">BESTSELLER</span>
+                  </div>
+                  <div class="absolute top-3 right-3 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                    <button
+                      class="w-8 h-8 bg-white rounded-full flex items-center justify-center shadow-lg hover:bg-gray-100">
+                      <i class="far fa-heart text-gray-600"></i>
+                    </button>
+                  </div>
+                </div>
+                <div class="product-info p-5">
+                  <h3 class="font-semibold text-gray-900 mb-2 line-clamp-2">Spider-Man: Miles Morales - PS5 Game</h3>
+                  <div class="rating flex items-center gap-1 mb-3">
+                    <div class="stars">
+                      <i class="fas fa-star text-yellow-400 text-sm"></i>
+                      <i class="fas fa-star text-yellow-400 text-sm"></i>
+                      <i class="fas fa-star text-yellow-400 text-sm"></i>
+                      <i class="fas fa-star text-yellow-400 text-sm"></i>
+                      <i class="fas fa-star text-yellow-400 text-sm"></i>
+                    </div>
+                    <span class="text-xs text-gray-500">(267)</span>
+                  </div>
+                  <div class="price-section mb-4">
+                    <div class="flex items-center gap-2">
+                      <span class="text-xl font-bold text-gray-900">$39.99</span>
+                      <span class="text-sm line-through text-gray-400">$49.99</span>
+                    </div>
+                    <span class="text-green-600 text-sm font-medium">Save $10</span>
+                  </div>
+                  <button
+                    class="w-full bg-blue-600 hover:bg-blue-700 text-white py-2.5 px-4 rounded-xl font-medium transition-colors duration-300">
+                    <i class="fas fa-cart-plus mr-2"></i>Add to Cart
+                  </button>
+                </div>
+              </div>
+
+              <!-- Product 4 -->
+              <div
+                class="product-card bg-white rounded-2xl shadow-lg hover:shadow-xl transition-all duration-300 transform hover:-translate-y-2 overflow-hidden group">
+                <div class="product-image relative overflow-hidden">
+                  <img src="./assests/img/electronic-store-product-image-5-300x300.jpg" alt="PS5 Charging Station"
+                    class="w-full h-56 object-cover group-hover:scale-110 transition-transform duration-500" />
+                  <div
+                    class="absolute inset-0 bg-black bg-opacity-0 group-hover:bg-opacity-10 transition-all duration-300">
+                  </div>
+                  <div class="absolute top-3 right-3 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                    <button
+                      class="w-8 h-8 bg-white rounded-full flex items-center justify-center shadow-lg hover:bg-gray-100">
+                      <i class="far fa-heart text-gray-600"></i>
+                    </button>
+                  </div>
+                </div>
+                <div class="product-info p-5">
+                  <h3 class="font-semibold text-gray-900 mb-2 line-clamp-2">DualSense Charging Station for PS5</h3>
+                  <div class="rating flex items-center gap-1 mb-3">
+                    <div class="stars">
+                      <i class="fas fa-star text-yellow-400 text-sm"></i>
+                      <i class="fas fa-star text-yellow-400 text-sm"></i>
+                      <i class="fas fa-star text-yellow-400 text-sm"></i>
+                      <i class="fas fa-star text-yellow-400 text-sm"></i>
+                      <i class="far fa-star text-gray-300 text-sm"></i>
+                    </div>
+                    <span class="text-xs text-gray-500">(156)</span>
+                  </div>
+                  <div class="price-section mb-4">
+                    <div class="flex items-center gap-2">
+                      <span class="text-xl font-bold text-gray-900">$29.99</span>
+                    </div>
+                    <span class="text-blue-600 text-sm font-medium">Fast Delivery</span>
+                  </div>
+                  <button
+                    class="w-full bg-blue-600 hover:bg-blue-700 text-white py-2.5 px-4 rounded-xl font-medium transition-colors duration-300">
+                    <i class="fas fa-cart-plus mr-2"></i>Add to Cart
+                  </button>
+                </div>
+              </div>
+            </div>
+
+            <!-- View All Button -->
+            <div class="text-center mt-10">
+              <button
+                class="bg-gray-100 hover:bg-gray-200 text-gray-800 font-semibold py-3 px-8 rounded-xl transition-colors duration-300 inline-flex items-center gap-2">
+                <span>View All Similar Products</span>
+                <i class="fas fa-arrow-right"></i>
+              </button>
             </div>
           </div>
-          <div
-            class="shop flex flex-col justify-center items-center lg:items-start gap-6"
-          >
-            <h3 class="text-2xl font-semibold lg:font-bold">Need help?</h3>
-            <div
-              class="links flex flex-col justify-center items-center lg:items-start gap-1"
-            >
-              <a
-                href="#"
-                class="text-blue-600 underline hover:no-underline text-sm lg:text-base transition-all"
-                >Contact</a
-              >
-              <a
-                href="#"
-                class="text-blue-600 underline hover:no-underline text-sm lg:text-base transition-all"
-                >Order tracking</a
-              >
-              <a
-                href="#"
-                class="text-blue-600 underline hover:no-underline text-sm lg:text-base transition-all"
-                >FAQs</a
-              >
-              <a
-                href="#"
-                class="text-blue-600 underline hover:no-underline text-sm lg:text-base transition-all"
-                >Return policy</a
-              >
-              <a
-                href="#"
-                class="text-blue-600 underline hover:no-underline text-sm lg:text-base transition-all"
-                >Privacy policy</a
-              >
-            </div>
-          </div>
-          <div
-            class="shop flex flex-col justify-center items-center lg:items-start gap-6"
-          >
-            <h3 class="text-2xl font-semibold lg:font-bold">Contact</h3>
-            <div
-              class="links flex flex-col justify-center items-center lg:items-start lg:text-start gap-1"
-            >
-              <a href="#" class="text-blue-600 text-sm lg:text-base"
-                >123 Fifth Avenue, New York, NY 10160</a
-              >
-              <a href="#" class="text-blue-600 text-sm lg:text-base"
-                >contact@info.com</a
-              >
-              <a href="#" class="text-blue-600 text-sm lg:text-base"
-                >929-242-6868</a
-              >
-            </div>
-          </div>
+          <!-- End Similar Items Section -->
         </div>
-        <!-- End Footer -->
       </div>
-      <!-- End Container -->
-      <!-- Footer Two -->
-      <div class="footerTwo bg-slate-800">
-        <div
-          class="container mx-auto text-center px-4 md:p-8 py-8 flex flex-col md:flex-row justify-center md:justify-between items-center gap-4"
-        >
-          <p class="text-gray-400">
-            © 2024 Electronic Store. Powered by Electronic Store
-          </p>
-          <div class="img">
-            <img
-              src="./assests/img/electronic-store-footer-payment-gateway-icon.png"
-              alt="Payment"
-            />
-          </div>
-        </div>
-      </div>
-      <!-- End Footer Two -->
     </div>
-    <!-- End Page -->
 
-    <!-- Script -->
-    <script src="./assests/js/main.js"></script>
-  </body>
+    <footer class="bg-gray-900 text-white w-full">
+      <!-- Main Footer Content -->
+      <div class="w-full bg-gray-900 px-4 pt-12 pb-8">
+        <div class="container mx-auto">
+          <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+            <!-- Company Info -->
+            <div class="space-y-6">
+              <div>
+                <img src="./assests/img/electronic-store-logo.svg" alt="Electronic Store"
+                  class="h-10 mb-4 filter brightness-0 invert" />
+                <h3 class="text-xl font-bold mb-3">Electronic Store</h3>
+                <p class="text-gray-400 leading-relaxed">
+                  Your trusted destination for the latest electronics and technology.
+                  Quality products, competitive prices, and exceptional service since 2024.
+                </p>
+              </div>
+
+              <!-- Social Media -->
+              <div>
+                <h4 class="font-semibold mb-3">Follow Us</h4>
+                <div class="flex space-x-3">
+                  <a href="#"
+                    class="w-10 h-10 bg-blue-600 hover:bg-blue-700 rounded-full flex items-center justify-center transition-colors">
+                    <i class="fab fa-facebook-f"></i>
+                  </a>
+                  <a href="#"
+                    class="w-10 h-10 bg-blue-400 hover:bg-blue-500 rounded-full flex items-center justify-center transition-colors">
+                    <i class="fab fa-twitter"></i>
+                  </a>
+                  <a href="#"
+                    class="w-10 h-10 bg-pink-600 hover:bg-pink-700 rounded-full flex items-center justify-center transition-colors">
+                    <i class="fab fa-instagram"></i>
+                  </a>
+                  <a href="#"
+                    class="w-10 h-10 bg-red-600 hover:bg-red-700 rounded-full flex items-center justify-center transition-colors">
+                    <i class="fab fa-youtube"></i>
+                  </a>
+                </div>
+              </div>
+            </div>
+
+            <!-- Quick Links -->
+            <div>
+              <h3 class="text-lg font-bold mb-6">Quick Links</h3>
+              <ul class="space-y-3">
+                <li><a href="#" class="text-gray-400 hover:text-white flex items-center gap-2 transition-colors">
+                    <i class="fas fa-chevron-right text-xs text-blue-500"></i>
+                    About Us
+                  </a></li>
+                <li><a href="#" class="text-gray-400 hover:text-white flex items-center gap-2 transition-colors">
+                    <i class="fas fa-chevron-right text-xs text-blue-500"></i>
+                    Our Services
+                  </a></li>
+                <li><a href="#" class="text-gray-400 hover:text-white flex items-center gap-2 transition-colors">
+                    <i class="fas fa-chevron-right text-xs text-blue-500"></i>
+                    Privacy Policy
+                  </a></li>
+                <li><a href="#" class="text-gray-400 hover:text-white flex items-center gap-2 transition-colors">
+                    <i class="fas fa-chevron-right text-xs text-blue-500"></i>
+                    Terms & Conditions
+                  </a></li>
+                <li><a href="#" class="text-gray-400 hover:text-white flex items-center gap-2 transition-colors">
+                    <i class="fas fa-chevron-right text-xs text-blue-500"></i>
+                    Affiliate Program
+                  </a></li>
+                <li><a href="#" class="text-gray-400 hover:text-white flex items-center gap-2 transition-colors">
+                    <i class="fas fa-chevron-right text-xs text-blue-500"></i>
+                    Careers
+                  </a></li>
+              </ul>
+            </div>
+
+            <!-- Customer Service -->
+            <div>
+              <h3 class="text-lg font-bold mb-6">Customer Service</h3>
+              <ul class="space-y-3">
+                <li><a href="#" class="text-gray-400 hover:text-white flex items-center gap-2 transition-colors">
+                    <i class="fas fa-chevron-right text-xs text-blue-500"></i>
+                    Contact Us
+                  </a></li>
+                <li><a href="#" class="text-gray-400 hover:text-white flex items-center gap-2 transition-colors">
+                    <i class="fas fa-chevron-right text-xs text-blue-500"></i>
+                    Order Tracking
+                  </a></li>
+                <li><a href="#" class="text-gray-400 hover:text-white flex items-center gap-2 transition-colors">
+                    <i class="fas fa-chevron-right text-xs text-blue-500"></i>
+                    Shipping Info
+                  </a></li>
+                <li><a href="#" class="text-gray-400 hover:text-white flex items-center gap-2 transition-colors">
+                    <i class="fas fa-chevron-right text-xs text-blue-500"></i>
+                    Returns & Exchanges
+                  </a></li>
+                <li><a href="#" class="text-gray-400 hover:text-white flex items-center gap-2 transition-colors">
+                    <i class="fas fa-chevron-right text-xs text-blue-500"></i>
+                    Size Guide
+                  </a></li>
+                <li><a href="#" class="text-gray-400 hover:text-white flex items-center gap-2 transition-colors">
+                    <i class="fas fa-chevron-right text-xs text-blue-500"></i>
+                    FAQ
+                  </a></li>
+              </ul>
+            </div>
+
+            <!-- Contact Info -->
+            <div>
+              <h3 class="text-lg font-bold mb-6">Get In Touch</h3>
+              <div class="space-y-4">
+                <div class="flex items-start gap-3">
+                  <div class="w-8 h-8 bg-blue-600 rounded-full flex items-center justify-center flex-shrink-0 mt-1">
+                    <i class="fas fa-map-marker-alt text-sm"></i>
+                  </div>
+                  <div>
+                    <p class="text-gray-400">123 Fifth Avenue, New York, NY 10160, United States</p>
+                  </div>
+                </div>
+
+                <div class="flex items-center gap-3">
+                  <div class="w-8 h-8 bg-blue-600 rounded-full flex items-center justify-center flex-shrink-0">
+                    <i class="fas fa-phone text-sm"></i>
+                  </div>
+                  <div>
+                    <p class="text-gray-400">+1 (800) 234-5678</p>
+                    <p class="text-gray-500 text-sm">Mon-Fri 9am-6pm EST</p>
+                  </div>
+                </div>
+
+                <div class="flex items-center gap-3">
+                  <div class="w-8 h-8 bg-blue-600 rounded-full flex items-center justify-center flex-shrink-0">
+                    <i class="fas fa-envelope text-sm"></i>
+                  </div>
+                  <div>
+                    <a href="mailto:support@electronicstore.com"
+                      class="text-gray-400 hover:text-white transition-colors">
+                      support@electronicstore.com
+                    </a>
+                  </div>
+                </div>
+
+                <!-- Trust Badges -->
+                <div class="pt-4">
+                  <h4 class="font-semibold mb-3 text-sm">We Accept</h4>
+                  <img src="./assests/img/electronic-store-footer-payment-gateway-icon.png" alt="Payment Methods"
+                    class="h-8 opacity-80" />
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Newsletter Section -->
+          <div class="mt-12 pt-8 border-t border-gray-800">
+            <div class="text-center lg:text-left lg:flex lg:items-center lg:justify-between">
+              <div class="mb-6 lg:mb-0">
+                <h3 class="text-xl font-bold mb-2">Stay Updated</h3>
+                <p class="text-gray-400">Subscribe to our newsletter for the latest deals and updates</p>
+              </div>
+              <div class="flex flex-col sm:flex-row gap-3 lg:w-auto max-w-md mx-auto lg:mx-0">
+                <input type="email" placeholder="Enter your email address"
+                  class="flex-1 px-4 py-3 bg-gray-800 border border-gray-700 rounded-lg text-white placeholder-gray-400 focus:outline-none focus:border-blue-500 transition-colors" />
+                <button
+                  class="px-6 py-3 bg-blue-600 hover:bg-blue-700 text-white font-semibold rounded-lg transition-colors whitespace-nowrap">
+                  <i class="fas fa-paper-plane mr-2"></i>
+                  Subscribe
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Bottom Footer -->
+      <div class="w-full bg-gray-950 border-t border-gray-800">
+        <div class="container mx-auto px-4 py-6">
+          <div class="flex flex-col md:flex-row justify-between items-center gap-4">
+            <div class="text-gray-400 text-sm text-center md:text-left">
+              © 2024 Electronic Store. All rights reserved. Made with ❤️ for tech enthusiasts.
+            </div>
+            <div class="flex items-center gap-6 text-sm">
+              <a href="#" class="text-gray-400 hover:text-white transition-colors">Privacy Policy</a>
+              <a href="#" class="text-gray-400 hover:text-white transition-colors">Terms of Service</a>
+              <a href="#" class="text-gray-400 hover:text-white transition-colors">Cookie Policy</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </footer>
+  </div>
+  <!-- End Page -->
+
+  <!-- Script -->
+  <script src="./assests/js/main.js"></script>
+</body>
+
 </html>

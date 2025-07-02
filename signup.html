@@ -1,0 +1,885 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Sign Up - Electronic Store</title>
+    <!-- Icon -->
+    <link
+      rel="shortcut icon"
+      href="./assests/img/electronic-store-logo.svg"
+      type="image/x-icon"
+    />
+    <!-- CSS -->
+    <link rel="stylesheet" href="./assests/css/style.css" />
+    <!-- Tailwind -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Font Awesome -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
+      integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+  </head>
+  <body>
+    <div class="page">
+      <!-- Top Bar -->
+      <div class="top-bar hidden lg:block bg-blue-700 text-white text-sm">
+        <div class="container mx-auto">
+          <nav class="flex justify-between items-center py-2 px-4">
+            <div class="left-links flex items-center gap-6">
+              <a href="#" class="flex items-center gap-1 hover:text-blue-200 transition-colors whitespace-nowrap">
+                <i class="fas fa-truck text-xs"></i>
+                <span>Free Shipping</span>
+              </a>
+              <a href="#" class="flex items-center gap-1 hover:text-blue-200 transition-colors whitespace-nowrap">
+                <i class="fas fa-undo text-xs"></i>
+                <span>Easy Returns</span>
+              </a>
+              <a href="#" class="flex items-center gap-1 hover:text-blue-200 transition-colors whitespace-nowrap">
+                <i class="fas fa-map-marker-alt text-xs"></i>
+                <span>Track Order</span>
+              </a>
+            </div>
+          </nav>
+        </div>
+      </div>
+      <!-- End Top Bar -->
+      <!-- Main Header -->
+      <div class="header bg-white shadow-lg sticky top-0 z-50">
+        <!-- Container -->
+        <div class="container mx-auto">
+          <header class="flex justify-between items-center py-4 px-4">
+            <!-- Mobile Menu & Logo -->
+            <div class="nav flex justify-between items-center gap-4">
+              <button class="menu lg:hidden cursor-pointer p-2 hover:bg-gray-100 rounded-lg transition-colors" id="mobileMenuBtn">
+                <div class="space-y-1">
+                  <span class="block w-6 h-0.5 bg-gray-600 transition-all"></span>
+                  <span class="block w-6 h-0.5 bg-gray-600 transition-all"></span>
+                  <span class="block w-6 h-0.5 bg-gray-600 transition-all"></span>
+                </div>
+              </button>
+              <div class="logo">
+                <a href="index.html" class="flex items-center gap-2">
+                  <img src="assests/img/electronic-store-logo.svg" alt="Electronic Store Logo" class="h-10 w-auto" />
+                  <span class="hidden xl:block text-3xl lg:text-4xl font-bold bg-gradient-to-r from-blue-600 to-blue-800 bg-clip-text text-transparent whitespace-nowrap tracking-wide hover:from-blue-700 hover:to-blue-900 transition-all duration-300 cursor-pointer">Electronic Store</span>
+                </a>
+              </div>
+            </div>
+
+            <!-- Search Bar (Desktop) -->
+            <div class="search-section hidden lg:flex flex-1 max-w-2xl mx-8">
+              <div class="relative w-full">
+                <input
+                  type="text"
+                  class="w-full py-3 px-4 pr-12 border-2 border-gray-200 rounded-l-lg focus:border-blue-500 focus:outline-none transition-colors"
+                  placeholder="Search for products, brands, categories..."
+                  id="searchInput"
+                />
+                <button class="absolute right-0 top-0 h-full px-4 bg-blue-600 text-white rounded-r-lg hover:bg-blue-700 transition-colors">
+                  <i class="fas fa-search"></i>
+                </button>
+              </div>
+            </div>
+
+            <!-- Right Section -->
+            <div class="header-actions flex items-center gap-2">
+              <!-- Mobile Search Icon -->
+              <button class="lg:hidden p-2 hover:bg-gray-100 rounded-lg transition-colors" id="mobileSearchBtn">
+                <i class="fas fa-search text-gray-600 text-lg"></i>
+              </button>
+
+              <!-- Wishlist -->
+              <a href="#" class="hidden sm:flex flex-col items-center p-2 hover:bg-gray-100 rounded-lg transition-colors group">
+                <div class="relative">
+                  <i class="fas fa-heart text-gray-600 group-hover:text-red-500 text-lg transition-colors"></i>
+                  <span class="absolute -top-2 -right-2 bg-red-500 text-white text-xs rounded-full h-5 w-5 flex items-center justify-center">3</span>
+                </div>
+                <span class="text-xs text-gray-600 mt-1 whitespace-nowrap">Wishlist</span>
+              </a>
+
+              <!-- Cart -->
+              <a href="#" class="flex flex-col items-center p-2 hover:bg-gray-100 rounded-lg transition-colors group relative">
+                <div class="relative">
+                  <i class="fas fa-shopping-cart text-gray-600 group-hover:text-blue-600 text-lg transition-colors"></i>
+                  <span class="absolute -top-2 -right-2 bg-blue-600 text-white text-xs rounded-full h-5 w-5 flex items-center justify-center" id="cartCount">0</span>
+                </div>
+                <span class="text-xs text-gray-600 mt-1 hidden sm:block whitespace-nowrap">Cart</span>
+              </a>
+
+              <!-- Auth Links -->
+              <div class="auth-links flex items-center gap-1 ml-2">
+                <a href="signin.html" class="text-sm px-3 py-2 text-gray-700 hover:text-blue-600 hover:bg-blue-50 rounded-lg transition-colors whitespace-nowrap">
+                  <i class="fas fa-sign-in-alt mr-1"></i>
+                  <span class="hidden sm:inline">Sign In</span>
+                </a>
+                <span class="text-gray-300 hidden sm:inline">|</span>
+                <a href="signup.html" class="text-sm px-3 py-2 bg-blue-600 text-white hover:bg-blue-700 rounded-lg transition-colors whitespace-nowrap">
+                  <i class="fas fa-user-plus mr-1"></i>
+                  <span class="hidden sm:inline">Sign Up</span>
+                </a>
+              </div>
+            </div>
+          </header>
+
+          <!-- Mobile Search Bar -->
+          <div class="mobile-search hidden lg:hidden border-t bg-gray-50 p-4" id="mobileSearchBar">
+            <div class="relative">
+              <input
+                type="text"
+                class="w-full py-3 px-4 pr-12 border border-gray-300 rounded-lg focus:border-blue-500 focus:outline-none"
+                placeholder="Search products..."
+              />
+              <button class="absolute right-3 top-1/2 transform -translate-y-1/2 text-gray-400">
+                <i class="fas fa-search"></i>
+              </button>
+            </div>
+          </div>
+        </div>
+        <!-- End Container -->
+        
+        <!-- Mobile Categories Button (shown on mobile only) -->
+        <div class="mobile-categories lg:hidden bg-blue-600 border-t border-blue-500">
+          <div class="container mx-auto">
+            <div class="categories-dropdown relative">
+              <button class="flex items-center gap-2 px-6 py-4 bg-blue-700 hover:bg-blue-800 transition-colors w-full text-sm md:text-base whitespace-nowrap" id="mobileCategoriesBtn">
+                <i class="fas fa-bars text-sm md:text-base"></i>
+                <span class="font-medium text-sm md:text-base text-white">All Categories</span>
+                <i class="fas fa-chevron-down ml-auto transition-transform text-sm md:text-base text-white" id="mobileCategoriesIcon"></i>
+              </button>
+              
+              <!-- Mobile Categories Dropdown Menu -->
+              <div class="categories-menu hidden bg-white shadow-xl w-full z-50" id="mobileCategoriesDropdown">
+                <div class="border-t-2 border-blue-600">
+                  <a href="#" class="flex items-center gap-3 px-6 py-3 text-gray-700 hover:bg-blue-50 hover:text-blue-600 transition-colors border-b border-gray-100">
+                    <i class="fas fa-snowflake text-blue-500 w-4"></i>
+                    <span class="whitespace-nowrap">Air Conditioner</span>
+                    <span class="ml-auto text-xs text-gray-400">(4)</span>
+                  </a>
+                  <a href="#" class="flex items-center gap-3 px-6 py-3 text-gray-700 hover:bg-blue-50 hover:text-blue-600 transition-colors border-b border-gray-100">
+                    <i class="fas fa-headphones text-blue-500 w-4"></i>
+                    <span class="whitespace-nowrap">Audio & Video</span>
+                    <span class="ml-auto text-xs text-gray-400">(10)</span>
+                  </a>
+                  <a href="#" class="flex items-center gap-3 px-6 py-3 text-gray-700 hover:bg-blue-50 hover:text-blue-600 transition-colors border-b border-gray-100">
+                    <i class="fas fa-mobile-alt text-blue-500 w-4"></i>
+                    <span class="whitespace-nowrap">Mobile Phones</span>
+                    <span class="ml-auto text-xs text-gray-400">(19)</span>
+                  </a>
+                  <a href="#" class="flex items-center gap-3 px-6 py-3 text-gray-700 hover:bg-blue-50 hover:text-blue-600 transition-colors border-b border-gray-100">
+                    <i class="fas fa-blender text-blue-500 w-4"></i>
+                    <span class="whitespace-nowrap">Home Appliances</span>
+                    <span class="ml-auto text-xs text-gray-400">(3)</span>
+                  </a>
+                  <a href="#" class="flex items-center gap-3 px-6 py-3 text-gray-700 hover:bg-blue-50 hover:text-blue-600 transition-colors border-b border-gray-100">
+                    <i class="fas fa-laptop text-blue-500 w-4"></i>
+                    <span class="whitespace-nowrap">Computers & Laptops</span>
+                    <span class="ml-auto text-xs text-gray-400">(34)</span>
+                  </a>
+                  <a href="#" class="flex items-center gap-3 px-6 py-3 text-gray-700 hover:bg-blue-50 hover:text-blue-600 transition-colors">
+                    <i class="fas fa-home text-blue-500 w-4"></i>
+                    <span class="whitespace-nowrap">Smart Home</span>
+                    <span class="ml-auto text-xs text-gray-400">(6)</span>
+                  </a>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        
+        <!-- Navigation Menu -->
+        <nav class="nav-menu bg-blue-600 text-white border-t border-blue-500" id="navigationMenu">
+          <div class="container mx-auto">
+            <div class="flex flex-col lg:flex-row lg:justify-between lg:items-center">
+              <!-- Categories Dropdown -->
+              <div class="categories-dropdown relative w-full lg:w-auto">
+                <button class="flex items-center gap-2 px-6 py-4 bg-blue-700 hover:bg-blue-800 transition-colors w-full lg:w-auto text-sm md:text-base whitespace-nowrap" id="categoriesBtn">
+                  <i class="fas fa-bars text-sm md:text-base"></i>
+                  <span class="font-medium text-sm md:text-base">All Categories</span>
+                  <i class="fas fa-chevron-down ml-auto lg:ml-2 transition-transform text-sm md:text-base" id="categoriesIcon"></i>
+                </button>
+                
+                <!-- Categories Dropdown Menu -->
+                <div class="categories-menu hidden bg-white shadow-xl rounded-b-lg lg:min-w-64 w-full lg:absolute lg:top-full lg:left-0 z-50" id="categoriesDropdown">
+                  <div class="border-t-2 border-blue-600">
+                    <a href="#" class="flex items-center gap-3 px-6 py-3 text-gray-700 hover:bg-blue-50 hover:text-blue-600 transition-colors border-b border-gray-100">
+                      <i class="fas fa-snowflake text-blue-500 w-4"></i>
+                      <span class="whitespace-nowrap">Air Conditioner</span>
+                      <span class="ml-auto text-xs text-gray-400">(4)</span>
+                    </a>
+                    <a href="#" class="flex items-center gap-3 px-6 py-3 text-gray-700 hover:bg-blue-50 hover:text-blue-600 transition-colors border-b border-gray-100">
+                      <i class="fas fa-headphones text-blue-500 w-4"></i>
+                      <span class="whitespace-nowrap">Audio & Video</span>
+                      <span class="ml-auto text-xs text-gray-400">(10)</span>
+                    </a>
+                    <a href="#" class="flex items-center gap-3 px-6 py-3 text-gray-700 hover:bg-blue-50 hover:text-blue-600 transition-colors border-b border-gray-100">
+                      <i class="fas fa-mobile-alt text-blue-500 w-4"></i>
+                      <span class="whitespace-nowrap">Mobile Phones</span>
+                      <span class="ml-auto text-xs text-gray-400">(19)</span>
+                    </a>
+                    <a href="#" class="flex items-center gap-3 px-6 py-3 text-gray-700 hover:bg-blue-50 hover:text-blue-600 transition-colors border-b border-gray-100">
+                      <i class="fas fa-blender text-blue-500 w-4"></i>
+                      <span class="whitespace-nowrap">Home Appliances</span>
+                      <span class="ml-auto text-xs text-gray-400">(3)</span>
+                    </a>
+                    <a href="#" class="flex items-center gap-3 px-6 py-3 text-gray-700 hover:bg-blue-50 hover:text-blue-600 transition-colors border-b border-gray-100">
+                      <i class="fas fa-laptop text-blue-500 w-4"></i>
+                      <span class="whitespace-nowrap">Computers & Laptops</span>
+                      <span class="ml-auto text-xs text-gray-400">(34)</span>
+                    </a>
+                    <a href="#" class="flex items-center gap-3 px-6 py-3 text-gray-700 hover:bg-blue-50 hover:text-blue-600 transition-colors">
+                      <i class="fas fa-home text-blue-500 w-4"></i>
+                      <span class="whitespace-nowrap">Smart Home</span>
+                      <span class="ml-auto text-xs text-gray-400">(6)</span>
+                    </a>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Main Navigation -->
+              <div class="main-nav flex-1">
+                <ul class="menu-items flex flex-col lg:flex-row lg:justify-center lg:gap-8">
+                  <li><a href="index.html" class="block px-6 py-4 lg:py-4 lg:px-4 hover:bg-blue-700 lg:hover:bg-transparent lg:hover:text-blue-200 transition-colors font-medium text-sm md:text-base whitespace-nowrap">Home</a></li>
+                  <li><a href="#" class="block px-6 py-4 lg:py-4 lg:px-4 hover:bg-blue-700 lg:hover:bg-transparent lg:hover:text-blue-200 transition-colors font-medium text-sm md:text-base whitespace-nowrap">Shop</a></li>
+                  <li><a href="productPage.html" class="block px-6 py-4 lg:py-4 lg:px-4 hover:bg-blue-700 lg:hover:bg-transparent lg:hover:text-blue-200 transition-colors font-medium text-sm md:text-base whitespace-nowrap">Products</a></li>
+                  <li><a href="#" class="block px-6 py-4 lg:py-4 lg:px-4 hover:bg-blue-700 lg:hover:bg-transparent lg:hover:text-blue-200 transition-colors font-medium text-sm md:text-base whitespace-nowrap">New Arrivals</a></li>
+                  <li><a href="#" class="block px-6 py-4 lg:py-4 lg:px-4 hover:bg-blue-700 lg:hover:bg-transparent lg:hover:text-blue-200 transition-colors font-medium text-sm md:text-base whitespace-nowrap">Today's Deals</a></li>
+                  <li><a href="#" class="block px-6 py-4 lg:py-4 lg:px-4 hover:bg-blue-700 lg:hover:bg-transparent lg:hover:text-blue-200 transition-colors font-medium text-sm md:text-base whitespace-nowrap">Contact</a></li>
+                </ul>
+              </div>
+
+              <!-- Right Side Actions -->
+              <div class="nav-actions hidden lg:flex items-center gap-4 px-6">
+                <div class="help-info hidden xl:flex items-center gap-2 text-xs lg:text-sm">
+                  <i class="fas fa-phone text-blue-200 text-xs lg:text-sm"></i>
+                  <div>
+                    <div class="text-blue-200 text-xs whitespace-nowrap">Need Help?</div>
+                    <div class="font-semibold text-xs lg:text-sm whitespace-nowrap">1-800-234-5678</div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </nav>
+
+        <!-- Mobile Menu Overlay -->
+        <div class="mobile-menu-overlay hidden fixed inset-0 bg-black bg-opacity-50 z-40 lg:hidden" id="mobileMenuOverlay"></div>
+        
+        <!-- Mobile Menu -->
+        <div class="mobile-menu fixed left-0 top-0 h-full w-80 bg-white transform -translate-x-full transition-transform duration-300 z-50 lg:hidden" id="mobileMenu">
+          <div class="p-6 border-b">
+            <div class="flex items-center justify-between">
+              <img src="assests/img/electronic-store-logo.svg" alt="Logo" class="h-8" />
+              <button class="p-2 hover:bg-gray-100 rounded-lg" id="closeMobileMenu">
+                <i class="fas fa-times text-gray-600"></i>
+              </button>
+            </div>
+          </div>
+          <div class="p-6">
+            <div class="space-y-4">
+              <a href="index.html" class="block py-2 text-gray-700 hover:text-blue-600 font-medium">Home</a>
+              <a href="#" class="block py-2 text-gray-700 hover:text-blue-600 font-medium">Shop</a>
+              <a href="productPage.html" class="block py-2 text-gray-700 hover:text-blue-600 font-medium">Products</a>
+              <a href="#" class="block py-2 text-gray-700 hover:text-blue-600 font-medium">New Arrivals</a>
+              <a href="#" class="block py-2 text-gray-700 hover:text-blue-600 font-medium">Today's Deals</a>
+              <a href="#" class="block py-2 text-gray-700 hover:text-blue-600 font-medium">Contact</a>
+            </div>
+            <div class="mt-8 pt-6 border-t">
+              <div class="space-y-3">
+                <a href="signin.html" class="flex items-center gap-3 py-2 text-gray-700 hover:text-blue-600">
+                  <i class="fas fa-sign-in-alt"></i>
+                  <span>Sign In</span>
+                </a>
+                <a href="signup.html" class="flex items-center gap-3 py-2 text-blue-600 font-medium">
+                  <i class="fas fa-user-plus"></i>
+                  <span>Sign Up</span>
+                </a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <!-- End Header -->
+
+      <!-- Sign Up Form -->
+      <div class="signup-container bg-gradient-to-br from-green-50 to-blue-100 min-h-screen flex items-center justify-center px-4 py-12">
+        <div class="signup-card bg-white rounded-2xl shadow-2xl p-8 w-full max-w-lg">
+          <!-- Logo Section -->
+          <div class="text-center mb-8">
+            <div class="mx-auto w-16 h-16 bg-green-600 rounded-full flex items-center justify-center mb-4">
+              <i class="fas fa-user-plus text-white text-2xl"></i>
+            </div>
+            <h1 class="text-3xl font-bold text-gray-800 mb-2">Create Account</h1>
+            <p class="text-gray-600">Join us today and start your shopping journey</p>
+          </div>
+
+          <!-- Sign Up Form -->
+          <form class="signup-form space-y-6" id="signupForm">
+            <!-- Name Fields -->
+            <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+              <!-- First Name -->
+              <div class="form-group">
+                <label for="firstName" class="block text-sm font-semibold text-gray-700 mb-2">
+                  First Name
+                </label>
+                <div class="relative">
+                  <div class="absolute inset-y-0 left-0 pl-3 flex items-center pointer-events-none">
+                    <i class="fas fa-user text-gray-400"></i>
+                  </div>
+                  <input
+                    type="text"
+                    id="firstName"
+                    name="firstName"
+                    required
+                    class="w-full pl-10 pr-4 py-3 border border-gray-300 rounded-xl focus:ring-2 focus:ring-green-500 focus:border-green-500 outline-none transition-all duration-200"
+                    placeholder="First name"
+                  />
+                </div>
+              </div>
+
+              <!-- Last Name -->
+              <div class="form-group">
+                <label for="lastName" class="block text-sm font-semibold text-gray-700 mb-2">
+                  Last Name
+                </label>
+                <div class="relative">
+                  <div class="absolute inset-y-0 left-0 pl-3 flex items-center pointer-events-none">
+                    <i class="fas fa-user text-gray-400"></i>
+                  </div>
+                  <input
+                    type="text"
+                    id="lastName"
+                    name="lastName"
+                    required
+                    class="w-full pl-10 pr-4 py-3 border border-gray-300 rounded-xl focus:ring-2 focus:ring-green-500 focus:border-green-500 outline-none transition-all duration-200"
+                    placeholder="Last name"
+                  />
+                </div>
+              </div>
+            </div>
+
+            <!-- Email Field -->
+            <div class="form-group">
+              <label for="email" class="block text-sm font-semibold text-gray-700 mb-2">
+                Email Address
+              </label>
+              <div class="relative">
+                <div class="absolute inset-y-0 left-0 pl-3 flex items-center pointer-events-none">
+                  <i class="fas fa-envelope text-gray-400"></i>
+                </div>
+                <input
+                  type="email"
+                  id="email"
+                  name="email"
+                  required
+                  class="w-full pl-10 pr-4 py-3 border border-gray-300 rounded-xl focus:ring-2 focus:ring-green-500 focus:border-green-500 outline-none transition-all duration-200"
+                  placeholder="Enter your email address"
+                />
+              </div>
+            </div>
+
+            <!-- Phone Number -->
+            <div class="form-group">
+              <label for="phone" class="block text-sm font-semibold text-gray-700 mb-2">
+                Phone Number
+              </label>
+              <div class="relative">
+                <div class="absolute inset-y-0 left-0 pl-3 flex items-center pointer-events-none">
+                  <i class="fas fa-phone text-gray-400"></i>
+                </div>
+                <input
+                  type="tel"
+                  id="phone"
+                  name="phone"
+                  class="w-full pl-10 pr-4 py-3 border border-gray-300 rounded-xl focus:ring-2 focus:ring-green-500 focus:border-green-500 outline-none transition-all duration-200"
+                  placeholder="Enter your phone number"
+                />
+              </div>
+            </div>
+
+            <!-- Password Fields -->
+            <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+              <!-- Password -->
+              <div class="form-group">
+                <label for="password" class="block text-sm font-semibold text-gray-700 mb-2">
+                  Password
+                </label>
+                <div class="relative">
+                  <div class="absolute inset-y-0 left-0 pl-3 flex items-center pointer-events-none">
+                    <i class="fas fa-lock text-gray-400"></i>
+                  </div>
+                  <input
+                    type="password"
+                    id="password"
+                    name="password"
+                    required
+                    class="w-full pl-10 pr-12 py-3 border border-gray-300 rounded-xl focus:ring-2 focus:ring-green-500 focus:border-green-500 outline-none transition-all duration-200"
+                    placeholder="Password"
+                  />
+                  <button
+                    type="button"
+                    class="absolute inset-y-0 right-0 pr-3 flex items-center"
+                    onclick="togglePassword('password')"
+                  >
+                    <i class="fas fa-eye text-gray-400 hover:text-gray-600" id="togglePassword"></i>
+                  </button>
+                </div>
+              </div>
+
+              <!-- Confirm Password -->
+              <div class="form-group">
+                <label for="confirmPassword" class="block text-sm font-semibold text-gray-700 mb-2">
+                  Confirm Password
+                </label>
+                <div class="relative">
+                  <div class="absolute inset-y-0 left-0 pl-3 flex items-center pointer-events-none">
+                    <i class="fas fa-lock text-gray-400"></i>
+                  </div>
+                  <input
+                    type="password"
+                    id="confirmPassword"
+                    name="confirmPassword"
+                    required
+                    class="w-full pl-10 pr-12 py-3 border border-gray-300 rounded-xl focus:ring-2 focus:ring-green-500 focus:border-green-500 outline-none transition-all duration-200"
+                    placeholder="Confirm password"
+                  />
+                  <button
+                    type="button"
+                    class="absolute inset-y-0 right-0 pr-3 flex items-center"
+                    onclick="togglePassword('confirmPassword')"
+                  >
+                    <i class="fas fa-eye text-gray-400 hover:text-gray-600" id="toggleConfirmPassword"></i>
+                  </button>
+                </div>
+              </div>
+            </div>
+
+            <!-- Password Strength Indicator -->
+            <div class="password-strength hidden" id="passwordStrength">
+              <div class="text-sm text-gray-600 mb-2">Password strength:</div>
+              <div class="flex gap-1">
+                <div class="strength-bar h-2 flex-1 bg-gray-200 rounded" id="strength1"></div>
+                <div class="strength-bar h-2 flex-1 bg-gray-200 rounded" id="strength2"></div>
+                <div class="strength-bar h-2 flex-1 bg-gray-200 rounded" id="strength3"></div>
+                <div class="strength-bar h-2 flex-1 bg-gray-200 rounded" id="strength4"></div>
+              </div>
+              <div class="text-xs text-gray-500 mt-1" id="strengthText">Enter a password</div>
+            </div>
+
+            <!-- Terms and Conditions -->
+            <div class="flex items-start gap-3">
+              <input
+                type="checkbox"
+                id="terms"
+                name="terms"
+                required
+                class="mt-1 h-4 w-4 text-green-600 focus:ring-green-500 border-gray-300 rounded"
+              />
+              <label for="terms" class="text-sm text-gray-700 leading-relaxed">
+                I agree to the
+                <a href="#" class="text-green-600 hover:text-green-800 font-medium">Terms of Service</a>
+                and
+                <a href="#" class="text-green-600 hover:text-green-800 font-medium">Privacy Policy</a>
+              </label>
+            </div>
+
+            <!-- Newsletter Subscription -->
+            <div class="flex items-center gap-3">
+              <input
+                type="checkbox"
+                id="newsletter"
+                name="newsletter"
+                class="h-4 w-4 text-green-600 focus:ring-green-500 border-gray-300 rounded"
+              />
+              <label for="newsletter" class="text-sm text-gray-700">
+                Subscribe to our newsletter for exclusive offers and updates
+              </label>
+            </div>
+
+            <!-- Sign Up Button -->
+            <button
+              type="submit"
+              class="w-full bg-gradient-to-r from-green-600 to-green-700 hover:from-green-700 hover:to-green-800 text-white font-bold py-3 px-4 rounded-xl transition-all duration-300 transform hover:scale-105 focus:outline-none focus:ring-2 focus:ring-green-500 focus:ring-offset-2"
+            >
+              <i class="fas fa-user-plus mr-2"></i>
+              Create Account
+            </button>
+
+            <!-- Divider -->
+            <div class="relative my-6">
+              <div class="absolute inset-0 flex items-center">
+                <div class="w-full border-t border-gray-300"></div>
+              </div>
+              <div class="relative flex justify-center text-sm">
+                <span class="px-2 bg-white text-gray-500">Or sign up with</span>
+              </div>
+            </div>
+
+            <!-- Social Login Buttons -->
+            <div class="grid grid-cols-2 gap-3">
+              <button
+                type="button"
+                class="flex items-center justify-center px-4 py-2 border border-gray-300 rounded-xl shadow-sm bg-white text-sm font-medium text-gray-700 hover:bg-gray-50 transition-colors duration-200"
+              >
+                <i class="fab fa-google text-red-500 mr-2"></i>
+                Google
+              </button>
+              <button
+                type="button"
+                class="flex items-center justify-center px-4 py-2 border border-gray-300 rounded-xl shadow-sm bg-white text-sm font-medium text-gray-700 hover:bg-gray-50 transition-colors duration-200"
+              >
+                <i class="fab fa-facebook-f text-blue-600 mr-2"></i>
+                Facebook
+              </button>
+            </div>
+          </form>
+
+          <!-- Sign In Link -->
+          <div class="text-center mt-6 pt-6 border-t border-gray-200">
+            <p class="text-gray-600">
+              Already have an account?
+              <a href="signin.html" class="text-green-600 hover:text-green-800 font-semibold ml-1">
+                Sign in here
+              </a>
+            </p>
+          </div>
+        </div>
+      </div>
+      <!-- End Sign Up Form -->
+
+      <!-- Modern Footer -->
+      <footer class="bg-gray-900 text-white w-full">
+        <!-- Main Footer Content -->
+        <div class="container mx-auto px-4 pt-12 pb-8">
+              <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+                <!-- Company Info -->
+                <div class="space-y-6">
+                  <div>
+                    <img src="./assests/img/electronic-store-logo.svg" alt="Electronic Store" class="h-10 mb-4 filter brightness-0 invert" />
+                    <h3 class="text-xl font-bold mb-3">Electronic Store</h3>
+                    <p class="text-gray-400 leading-relaxed">
+                      Your trusted destination for the latest electronics and technology. 
+                      Quality products, competitive prices, and exceptional service since 2024.
+                    </p>
+                  </div>
+                  
+                  <!-- Social Media -->
+                  <div>
+                    <h4 class="font-semibold mb-3">Follow Us</h4>
+                    <div class="flex space-x-3">
+                      <a href="#" class="w-10 h-10 bg-blue-600 hover:bg-blue-700 rounded-full flex items-center justify-center transition-colors">
+                        <i class="fab fa-facebook-f"></i>
+                      </a>
+                      <a href="#" class="w-10 h-10 bg-blue-400 hover:bg-blue-500 rounded-full flex items-center justify-center transition-colors">
+                        <i class="fab fa-twitter"></i>
+                      </a>
+                      <a href="#" class="w-10 h-10 bg-pink-600 hover:bg-pink-700 rounded-full flex items-center justify-center transition-colors">
+                        <i class="fab fa-instagram"></i>
+                      </a>
+                      <a href="#" class="w-10 h-10 bg-red-600 hover:bg-red-700 rounded-full flex items-center justify-center transition-colors">
+                        <i class="fab fa-youtube"></i>
+                      </a>
+                    </div>
+                  </div>
+                </div>
+
+                <!-- Quick Links -->
+                <div>
+                  <h3 class="text-lg font-bold mb-6">Quick Links</h3>
+                  <ul class="space-y-3">
+                    <li><a href="#" class="text-gray-400 hover:text-white flex items-center gap-2 transition-colors">
+                      <i class="fas fa-chevron-right text-xs text-blue-500"></i>
+                      About Us
+                    </a></li>
+                    <li><a href="#" class="text-gray-400 hover:text-white flex items-center gap-2 transition-colors">
+                      <i class="fas fa-chevron-right text-xs text-blue-500"></i>
+                      Our Services
+                    </a></li>
+                    <li><a href="#" class="text-gray-400 hover:text-white flex items-center gap-2 transition-colors">
+                      <i class="fas fa-chevron-right text-xs text-blue-500"></i>
+                      Privacy Policy
+                    </a></li>
+                    <li><a href="#" class="text-gray-400 hover:text-white flex items-center gap-2 transition-colors">
+                      <i class="fas fa-chevron-right text-xs text-blue-500"></i>
+                      Terms & Conditions
+                    </a></li>
+                    <li><a href="#" class="text-gray-400 hover:text-white flex items-center gap-2 transition-colors">
+                      <i class="fas fa-chevron-right text-xs text-blue-500"></i>
+                      Affiliate Program
+                    </a></li>
+                    <li><a href="#" class="text-gray-400 hover:text-white flex items-center gap-2 transition-colors">
+                      <i class="fas fa-chevron-right text-xs text-blue-500"></i>
+                      Careers
+                    </a></li>
+                  </ul>
+                </div>
+
+                <!-- Customer Service -->
+                <div>
+                  <h3 class="text-lg font-bold mb-6">Customer Service</h3>
+                  <ul class="space-y-3">
+                    <li><a href="#" class="text-gray-400 hover:text-white flex items-center gap-2 transition-colors">
+                      <i class="fas fa-chevron-right text-xs text-blue-500"></i>
+                      Contact Us
+                    </a></li>
+                    <li><a href="#" class="text-gray-400 hover:text-white flex items-center gap-2 transition-colors">
+                      <i class="fas fa-chevron-right text-xs text-blue-500"></i>
+                      Order Tracking
+                    </a></li>
+                    <li><a href="#" class="text-gray-400 hover:text-white flex items-center gap-2 transition-colors">
+                      <i class="fas fa-chevron-right text-xs text-blue-500"></i>
+                      Shipping Info
+                    </a></li>
+                    <li><a href="#" class="text-gray-400 hover:text-white flex items-center gap-2 transition-colors">
+                      <i class="fas fa-chevron-right text-xs text-blue-500"></i>
+                      Returns & Exchanges
+                    </a></li>
+                    <li><a href="#" class="text-gray-400 hover:text-white flex items-center gap-2 transition-colors">
+                      <i class="fas fa-chevron-right text-xs text-blue-500"></i>
+                      Size Guide
+                    </a></li>
+                    <li><a href="#" class="text-gray-400 hover:text-white flex items-center gap-2 transition-colors">
+                      <i class="fas fa-chevron-right text-xs text-blue-500"></i>
+                      FAQ
+                    </a></li>
+                  </ul>
+                </div>
+
+                <!-- Contact Info -->
+                <div>
+                  <h3 class="text-lg font-bold mb-6">Get In Touch</h3>
+                  <div class="space-y-4">
+                    <div class="flex items-start gap-3">
+                      <div class="w-8 h-8 bg-blue-600 rounded-full flex items-center justify-center flex-shrink-0 mt-1">
+                        <i class="fas fa-map-marker-alt text-sm"></i>
+                      </div>
+                      <div>
+                        <p class="text-gray-400">123 Fifth Avenue, New York, NY 10160, United States</p>
+                      </div>
+                    </div>
+                    
+                    <div class="flex items-center gap-3">
+                      <div class="w-8 h-8 bg-blue-600 rounded-full flex items-center justify-center flex-shrink-0">
+                        <i class="fas fa-phone text-sm"></i>
+                      </div>
+                      <div>
+                        <p class="text-gray-400">+1 (800) 234-5678</p>
+                        <p class="text-gray-500 text-sm">Mon-Fri 9am-6pm EST</p>
+                      </div>
+                    </div>
+                    
+                    <div class="flex items-center gap-3">
+                      <div class="w-8 h-8 bg-blue-600 rounded-full flex items-center justify-center flex-shrink-0">
+                        <i class="fas fa-envelope text-sm"></i>
+                      </div>
+                      <div>
+                        <a href="mailto:support@electronicstore.com" class="text-gray-400 hover:text-white transition-colors">
+                          support@electronicstore.com
+                        </a>
+                      </div>
+                    </div>
+
+                    <!-- Trust Badges -->
+                    <div class="pt-4">
+                      <h4 class="font-semibold mb-3 text-sm">We Accept</h4>
+                      <img src="./assests/img/electronic-store-footer-payment-gateway-icon.png" alt="Payment Methods" class="h-8 opacity-80" />
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Newsletter Section -->
+              <div class="mt-12 pt-8 border-t border-gray-800">
+                <div class="text-center lg:text-left lg:flex lg:items-center lg:justify-between">
+                  <div class="mb-6 lg:mb-0">
+                    <h3 class="text-xl font-bold mb-2">Stay Updated</h3>
+                    <p class="text-gray-400">Subscribe to our newsletter for the latest deals and updates</p>
+                  </div>
+                  <div class="flex flex-col sm:flex-row gap-3 lg:w-auto max-w-md mx-auto lg:mx-0">
+                    <input
+                      type="email"
+                      placeholder="Enter your email address"
+                      class="flex-1 px-4 py-3 bg-gray-800 border border-gray-700 rounded-lg text-white placeholder-gray-400 focus:outline-none focus:border-blue-500 transition-colors"
+                    />
+                    <button class="px-6 py-3 bg-blue-600 hover:bg-blue-700 text-white font-semibold rounded-lg transition-colors whitespace-nowrap">
+                      <i class="fas fa-paper-plane mr-2"></i>
+                      Subscribe
+                    </button>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <!-- Bottom Footer -->
+            <div class="bg-gray-950 border-t border-gray-800">
+              <div class="container mx-auto px-4 py-6">
+                <div class="flex flex-col md:flex-row justify-between items-center gap-4">
+                  <div class="text-gray-400 text-sm text-center md:text-left">
+                    © 2024 Electronic Store. All rights reserved. Made with ❤️ for tech enthusiasts.
+                  </div>
+                  <div class="flex items-center gap-6 text-sm">
+                    <a href="#" class="text-gray-400 hover:text-white transition-colors">Privacy Policy</a>
+                    <a href="#" class="text-gray-400 hover:text-white transition-colors">Terms of Service</a>
+                    <a href="#" class="text-gray-400 hover:text-white transition-colors">Cookie Policy</a>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </footer>
+    </div>
+
+    <!-- JavaScript -->
+    <script>
+      // Toggle password visibility
+      function togglePassword(fieldId) {
+        const passwordField = document.getElementById(fieldId);
+        const toggleIcon = document.getElementById(`toggle${fieldId.charAt(0).toUpperCase() + fieldId.slice(1)}`);
+        
+        if (passwordField.type === 'password') {
+          passwordField.type = 'text';
+          toggleIcon.classList.remove('fa-eye');
+          toggleIcon.classList.add('fa-eye-slash');
+        } else {
+          passwordField.type = 'password';
+          toggleIcon.classList.remove('fa-eye-slash');
+          toggleIcon.classList.add('fa-eye');
+        }
+      }
+
+      // Password strength checker
+      function checkPasswordStrength(password) {
+        const strengthIndicator = document.getElementById('passwordStrength');
+        const strengthText = document.getElementById('strengthText');
+        const strengthBars = document.querySelectorAll('.strength-bar');
+        
+        strengthIndicator.classList.remove('hidden');
+        
+        let strength = 0;
+        let feedback = '';
+        
+        if (password.length >= 8) strength++;
+        if (/[a-z]/.test(password)) strength++;
+        if (/[A-Z]/.test(password)) strength++;
+        if (/[0-9]/.test(password)) strength++;
+        if (/[^A-Za-z0-9]/.test(password)) strength++;
+        
+        // Reset all bars
+        strengthBars.forEach(bar => {
+          bar.classList.remove('bg-red-500', 'bg-yellow-500', 'bg-blue-500', 'bg-green-500');
+          bar.classList.add('bg-gray-200');
+        });
+        
+        // Update strength display
+        switch(strength) {
+          case 0:
+          case 1:
+            strengthBars[0].classList.remove('bg-gray-200');
+            strengthBars[0].classList.add('bg-red-500');
+            feedback = 'Very weak';
+            break;
+          case 2:
+            strengthBars[0].classList.remove('bg-gray-200');
+            strengthBars[0].classList.add('bg-red-500');
+            strengthBars[1].classList.remove('bg-gray-200');
+            strengthBars[1].classList.add('bg-yellow-500');
+            feedback = 'Weak';
+            break;
+          case 3:
+            for(let i = 0; i < 3; i++) {
+              strengthBars[i].classList.remove('bg-gray-200');
+              strengthBars[i].classList.add('bg-blue-500');
+            }
+            feedback = 'Good';
+            break;
+          case 4:
+          case 5:
+            strengthBars.forEach(bar => {
+              bar.classList.remove('bg-gray-200');
+              bar.classList.add('bg-green-500');
+            });
+            feedback = 'Strong';
+            break;
+        }
+        
+        strengthText.textContent = feedback;
+      }
+
+      // Form validation
+      function validateForm() {
+        const password = document.getElementById('password').value;
+        const confirmPassword = document.getElementById('confirmPassword').value;
+        const email = document.getElementById('email').value;
+        const firstName = document.getElementById('firstName').value;
+        const lastName = document.getElementById('lastName').value;
+        const terms = document.getElementById('terms').checked;
+        
+        // Check if passwords match
+        if (password !== confirmPassword) {
+          alert('Passwords do not match!');
+          return false;
+        }
+        
+        // Check password strength
+        if (password.length < 8) {
+          alert('Password must be at least 8 characters long!');
+          return false;
+        }
+        
+        // Check if terms are accepted
+        if (!terms) {
+          alert('You must accept the Terms of Service!');
+          return false;
+        }
+        
+        return true;
+      }
+
+      // Add event listeners
+      document.getElementById('password').addEventListener('input', function() {
+        checkPasswordStrength(this.value);
+      });
+
+      // Form submission
+      document.getElementById('signupForm').addEventListener('submit', function(e) {
+        e.preventDefault();
+        
+        if (!validateForm()) {
+          return;
+        }
+        
+        const submitBtn = this.querySelector('button[type="submit"]');
+        const originalText = submitBtn.innerHTML;
+        
+        // Show loading state
+        submitBtn.innerHTML = '<i class="fas fa-spinner fa-spin mr-2"></i>Creating Account...';
+        submitBtn.disabled = true;
+        
+        // Simulate API call
+        setTimeout(() => {
+          // Show success message
+          submitBtn.innerHTML = '<i class="fas fa-check mr-2"></i>Account Created!';
+          submitBtn.classList.remove('from-green-600', 'to-green-700');
+          submitBtn.classList.add('from-blue-600', 'to-blue-700');
+          
+          // Redirect after success
+          setTimeout(() => {
+            window.location.href = 'signin.html';
+          }, 1000);
+        }, 2500);
+      });
+
+      // Add input focus effects
+      document.querySelectorAll('input').forEach(input => {
+        input.addEventListener('focus', function() {
+          this.parentElement.classList.add('ring-2', 'ring-green-500');
+        });
+        
+        input.addEventListener('blur', function() {
+          this.parentElement.classList.remove('ring-2', 'ring-green-500');
+        });
+      });
+    </script>
+  </body>
+</html>
