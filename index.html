@@ -523,143 +523,155 @@
             <h2 class="font-bold text-2xl">Today's Deals</h2>
             <button class="btn font-bold text-blue-600">View All</button>
           </div>
-          <div class="body grid grid-cols-2 sm:grid-cols-3 md:p-4 lg:grid-cols-4 gap-4">
-            <div class="product flex flex-col justify-center gap-2">
-              <div class="img">
-                <a href="#">
-                  <img src="./assests/img/electronic-store-product-image-1-300x300.jpg" alt="" />
+          <div class="body grid grid-cols-2 sm:grid-cols-3 md:p-4 lg:grid-cols-4 gap-6">
+            <!-- Product 1 - PlayStation 5 -->
+            <div class="product bg-white rounded-xl shadow-lg hover:shadow-xl transition-all duration-300 transform hover:-translate-y-2 overflow-hidden group">
+              <div class="img relative overflow-hidden">
+                <a href="productPage.html" class="block relative">
+                  <img src="./assests/img/electronic-store-product-image-1-300x300.jpg" alt="PlayStation 5" class="w-full h-48 sm:h-56 object-cover group-hover:scale-110 transition-transform duration-500" />
+                  <div class="absolute top-3 left-3">
+                    <span class="bg-red-500 text-white text-xs font-bold px-2 py-1 rounded-full">-20% OFF</span>
+                  </div>
+                  <div class="absolute top-3 right-3 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                    <button class="bg-white text-gray-600 hover:text-red-500 w-8 h-8 rounded-full flex items-center justify-center shadow-md transition-colors">
+                      <i class="fas fa-heart text-sm"></i>
+                    </button>
+                  </div>
+                  <div class="absolute inset-0 bg-black bg-opacity-0 group-hover:bg-opacity-10 transition-all duration-300"></div>
                 </a>
               </div>
-              <div class="inf flex flex-col gap-1 p-4">
-                <div class="rating text-sm sm:text-base flex justify-start items-center text-yellow-400">
-                  <i class="fas fa-star"></i>
-                  <i class="fas fa-star"></i>
-                  <i class="fas fa-star"></i>
-                  <i class="fas fa-star"></i>
-                  <i class="fas fa-star"></i>
+              <div class="inf flex flex-col gap-3 p-4">
+                <div class="rating flex justify-start items-center text-yellow-400">
+                  <i class="fas fa-star text-sm"></i>
+                  <i class="fas fa-star text-sm"></i>
+                  <i class="fas fa-star text-sm"></i>
+                  <i class="fas fa-star text-sm"></i>
+                  <i class="fas fa-star text-sm"></i>
+                  <span class="text-gray-500 text-xs ml-2">(156)</span>
                 </div>
-                <h3 class="name font-medium text-lg sm:text-xl">
-                  <a href="#" class="hover:underline">Product Name</a>
+                <h3 class="name font-semibold text-gray-800 text-sm sm:text-base leading-tight">
+                  <a href="productPage.html" class="hover:text-blue-600 transition-colors">PlayStation 5 Console</a>
                 </h3>
-                <div class="price flex justify-start items-center gap-1">
-                  <span class="old text-gray-500 text-sm sm:text-base line-through">$49.00</span>
-                  <span class="new sm:text-lg font-medium">$44.00</span>
+                <div class="price flex justify-start items-center gap-2">
+                  <span class="old text-gray-400 text-sm line-through">$599.00</span>
+                  <span class="new text-lg font-bold text-gray-900">$499.00</span>
                 </div>
+                <button class="mt-2 w-full bg-blue-600 text-white py-2 px-4 rounded-lg hover:bg-blue-700 transition-colors text-sm font-medium">
+                  <i class="fas fa-shopping-cart mr-2"></i>Add to Cart
+                </button>
               </div>
             </div>
-            <div class="product flex flex-col justify-center gap-2">
-              <div class="img">
-                <a href="#">
-                  <img src="./assests/img/electronic-store-product-image-2-300x300.jpg" alt="" />
+            <!-- Product 2 - DualSense Controller -->
+            <div class="product bg-white rounded-xl shadow-lg hover:shadow-xl transition-all duration-300 transform hover:-translate-y-2 overflow-hidden group">
+              <div class="img relative overflow-hidden">
+                <a href="productPage.html" class="block relative">
+                  <img src="./assests/img/electronic-store-product-image-2-300x300.jpg" alt="DualSense Controller" class="w-full h-48 sm:h-56 object-cover group-hover:scale-110 transition-transform duration-500" />
+                  <div class="absolute top-3 left-3">
+                    <span class="bg-green-500 text-white text-xs font-bold px-2 py-1 rounded-full">NEW</span>
+                  </div>
+                  <div class="absolute top-3 right-3 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                    <button class="bg-white text-gray-600 hover:text-red-500 w-8 h-8 rounded-full flex items-center justify-center shadow-md transition-colors">
+                      <i class="fas fa-heart text-sm"></i>
+                    </button>
+                  </div>
+                  <div class="absolute inset-0 bg-black bg-opacity-0 group-hover:bg-opacity-10 transition-all duration-300"></div>
                 </a>
               </div>
-              <div class="inf flex flex-col gap-1 p-4">
-                <div class="rating text-sm sm:text-base flex justify-start items-center text-yellow-400">
-                  <i class="fas fa-star"></i>
-                  <i class="fas fa-star"></i>
-                  <i class="fas fa-star"></i>
-                  <i class="fas fa-star"></i>
-                  <i class="fas fa-star"></i>
+              <div class="inf flex flex-col gap-3 p-4">
+                <div class="rating flex justify-start items-center text-yellow-400">
+                  <i class="fas fa-star text-sm"></i>
+                  <i class="fas fa-star text-sm"></i>
+                  <i class="fas fa-star text-sm"></i>
+                  <i class="fas fa-star text-sm"></i>
+                  <i class="fas fa-star text-sm"></i>
+                  <span class="text-gray-500 text-xs ml-2">(89)</span>
                 </div>
-                <h3 class="name font-medium text-lg sm:text-xl">
-                  <a href="#" class="hover:underline">Product Name</a>
+                <h3 class="name font-semibold text-gray-800 text-sm sm:text-base leading-tight">
+                  <a href="productPage.html" class="hover:text-blue-600 transition-colors">DualSense Wireless Controller</a>
                 </h3>
-                <div class="price flex justify-start items-center gap-1">
-                  <span class="old text-gray-500 text-sm sm:text-base line-through">$49.00</span>
-                  <span class="new sm:text-lg font-medium">$44.00</span>
+                <div class="price flex justify-start items-center gap-2">
+                  <span class="old text-gray-400 text-sm line-through">$79.99</span>
+                  <span class="new text-lg font-bold text-gray-900">$69.99</span>
                 </div>
+                <button class="mt-2 w-full bg-blue-600 text-white py-2 px-4 rounded-lg hover:bg-blue-700 transition-colors text-sm font-medium">
+                  <i class="fas fa-shopping-cart mr-2"></i>Add to Cart
+                </button>
               </div>
             </div>
-            <div class="product flex flex-col justify-center gap-2">
-              <div class="img">
-                <a href="#">
-                  <img src="./assests/img/electronic-store-product-image-4-300x300.jpg" alt="" />
+            
+            <!-- Product 3 - Gaming Headset -->
+            <div class="product bg-white rounded-xl shadow-lg hover:shadow-xl transition-all duration-300 transform hover:-translate-y-2 overflow-hidden group">
+              <div class="img relative overflow-hidden">
+                <a href="productPage.html" class="block relative">
+                  <img src="./assests/img/electronic-store-product-image-4-300x300.jpg" alt="Gaming Headset" class="w-full h-48 sm:h-56 object-cover group-hover:scale-110 transition-transform duration-500" />
+                  <div class="absolute top-3 left-3">
+                    <span class="bg-blue-500 text-white text-xs font-bold px-2 py-1 rounded-full">BESTSELLER</span>
+                  </div>
+                  <div class="absolute top-3 right-3 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                    <button class="bg-white text-gray-600 hover:text-red-500 w-8 h-8 rounded-full flex items-center justify-center shadow-md transition-colors">
+                      <i class="fas fa-heart text-sm"></i>
+                    </button>
+                  </div>
+                  <div class="absolute inset-0 bg-black bg-opacity-0 group-hover:bg-opacity-10 transition-all duration-300"></div>
                 </a>
               </div>
-              <div class="inf flex flex-col gap-1 p-4">
-                <div class="rating text-sm sm:text-base flex justify-start items-center text-yellow-400">
-                  <i class="fas fa-star"></i>
-                  <i class="fas fa-star"></i>
-                  <i class="fas fa-star"></i>
-                  <i class="fas fa-star"></i>
-                  <i class="fas fa-star"></i>
+              <div class="inf flex flex-col gap-3 p-4">
+                <div class="rating flex justify-start items-center text-yellow-400">
+                  <i class="fas fa-star text-sm"></i>
+                  <i class="fas fa-star text-sm"></i>
+                  <i class="fas fa-star text-sm"></i>
+                  <i class="fas fa-star text-sm"></i>
+                  <i class="far fa-star text-sm"></i>
+                  <span class="text-gray-500 text-xs ml-2">(234)</span>
                 </div>
-                <h3 class="name font-medium text-lg sm:text-xl">
-                  <a href="#" class="hover:underline">Product Name</a>
+                <h3 class="name font-semibold text-gray-800 text-sm sm:text-base leading-tight">
+                  <a href="productPage.html" class="hover:text-blue-600 transition-colors">Wireless Gaming Headset</a>
                 </h3>
-                <div class="price flex justify-start items-center gap-1">
-                  <span class="old text-gray-500 text-sm sm:text-base line-through">$49.00</span>
-                  <span class="new sm:text-lg font-medium">$44.00</span>
+                <div class="price flex justify-start items-center gap-2">
+                  <span class="old text-gray-400 text-sm line-through">$149.99</span>
+                  <span class="new text-lg font-bold text-gray-900">$119.99</span>
                 </div>
+                <button class="mt-2 w-full bg-blue-600 text-white py-2 px-4 rounded-lg hover:bg-blue-700 transition-colors text-sm font-medium">
+                  <i class="fas fa-shopping-cart mr-2"></i>Add to Cart
+                </button>
               </div>
             </div>
-            <div class="product flex flex-col justify-center gap-2">
-              <div class="img">
-                <a href="#">
-                  <img src="./assests/img/electronic-store-product-image-5-300x300.jpg" alt="" />
+            
+            <!-- Product 4 - Smart Watch -->
+            <div class="product bg-white rounded-xl shadow-lg hover:shadow-xl transition-all duration-300 transform hover:-translate-y-2 overflow-hidden group">
+              <div class="img relative overflow-hidden">
+                <a href="productPage.html" class="block relative">
+                  <img src="./assests/img/electronic-store-product-image-5-300x300.jpg" alt="Smart Watch" class="w-full h-48 sm:h-56 object-cover group-hover:scale-110 transition-transform duration-500" />
+                  <div class="absolute top-3 left-3">
+                    <span class="bg-purple-500 text-white text-xs font-bold px-2 py-1 rounded-full">LIMITED</span>
+                  </div>
+                  <div class="absolute top-3 right-3 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                    <button class="bg-white text-gray-600 hover:text-red-500 w-8 h-8 rounded-full flex items-center justify-center shadow-md transition-colors">
+                      <i class="fas fa-heart text-sm"></i>
+                    </button>
+                  </div>
+                  <div class="absolute inset-0 bg-black bg-opacity-0 group-hover:bg-opacity-10 transition-all duration-300"></div>
                 </a>
               </div>
-              <div class="inf flex flex-col gap-1 p-4">
-                <div class="rating text-sm sm:text-base flex justify-start items-center text-yellow-400">
-                  <i class="fas fa-star"></i>
-                  <i class="fas fa-star"></i>
-                  <i class="fas fa-star"></i>
-                  <i class="fas fa-star"></i>
-                  <i class="fas fa-star"></i>
+              <div class="inf flex flex-col gap-3 p-4">
+                <div class="rating flex justify-start items-center text-yellow-400">
+                  <i class="fas fa-star text-sm"></i>
+                  <i class="fas fa-star text-sm"></i>
+                  <i class="fas fa-star text-sm"></i>
+                  <i class="fas fa-star text-sm"></i>
+                  <i class="fas fa-star-half-alt text-sm"></i>
+                  <span class="text-gray-500 text-xs ml-2">(412)</span>
                 </div>
-                <h3 class="name font-medium text-lg sm:text-xl">
-                  <a href="#" class="hover:underline">Product Name</a>
+                <h3 class="name font-semibold text-gray-800 text-sm sm:text-base leading-tight">
+                  <a href="productPage.html" class="hover:text-blue-600 transition-colors">Smart Fitness Watch</a>
                 </h3>
-                <div class="price flex justify-start items-center gap-1">
-                  <span class="old text-gray-500 text-sm sm:text-base line-through">$49.00</span>
-                  <span class="new sm:text-lg font-medium">$44.00</span>
+                <div class="price flex justify-start items-center gap-2">
+                  <span class="old text-gray-400 text-sm line-through">$299.99</span>
+                  <span class="new text-lg font-bold text-gray-900">$249.99</span>
                 </div>
-              </div>
-            </div>
-            <div class="product flex flex-col justify-center gap-2">
-              <div class="img">
-                <a href="#">
-                  <img src="./assests/img/electronic-store-product-image-3-300x300.jpg" alt="" />
-                </a>
-              </div>
-              <div class="inf flex flex-col gap-1 p-4">
-                <div class="rating text-sm sm:text-base flex justify-start items-center text-yellow-400">
-                  <i class="fas fa-star"></i>
-                  <i class="fas fa-star"></i>
-                  <i class="fas fa-star"></i>
-                  <i class="fas fa-star"></i>
-                  <i class="fas fa-star"></i>
-                </div>
-                <h3 class="name font-medium text-lg sm:text-xl">
-                  <a href="#" class="hover:underline">Product Name</a>
-                </h3>
-                <div class="price flex justify-start items-center gap-1">
-                  <span class="old text-gray-500 text-sm sm:text-base line-through">$49.00</span>
-                  <span class="new sm:text-lg font-medium">$44.00</span>
-                </div>
-              </div>
-            </div>
-            <div class="product flex flex-col justify-center gap-2">
-              <div class="img">
-                <a href="#">
-                  <img src="./assests/img/electronic-store-product-image-6-300x300.jpg" alt="" />
-                </a>
-              </div>
-              <div class="inf flex flex-col gap-1 p-4">
-                <div class="rating text-sm sm:text-base flex justify-start items-center text-yellow-400">
-                  <i class="fas fa-star"></i>
-                  <i class="fas fa-star"></i>
-                  <i class="fas fa-star"></i>
-                  <i class="fas fa-star"></i>
-                  <i class="fas fa-star"></i>
-                </div>
-                <h3 class="name font-medium text-lg sm:text-xl">
-                  <a href="#" class="hover:underline">Product Name</a>
-                </h3>
-                <div class="price flex justify-start items-center gap-1">
-                  <span class="old text-gray-500 text-sm sm:text-base line-through">$49.00</span>
-                  <span class="new sm:text-lg font-medium">$44.00</span>
-                </div>
+                <button class="mt-2 w-full bg-blue-600 text-white py-2 px-4 rounded-lg hover:bg-blue-700 transition-colors text-sm font-medium">
+                  <i class="fas fa-shopping-cart mr-2"></i>Add to Cart
+                </button>
               </div>
             </div>
           </div>

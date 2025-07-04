@@ -816,6 +816,10 @@ video {
   margin-top: -4rem;
 }
 
+.mt-2 {
+  margin-top: 0.5rem;
+}
+
 .line-clamp-2 {
   overflow: hidden;
   display: -webkit-box;
@@ -3807,6 +3811,10 @@ footer .container {
 
   .sm\:h-16 {
     height: 4rem;
+  }
+
+  .sm\:h-56 {
+    height: 14rem;
   }
 
   .sm\:w-12 {
