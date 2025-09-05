@@ -307,7 +307,7 @@ npm run watch        # Watch for changes
 ## 🌟 Demo
 
 ### 🔗 Live Demo
-**[View Live Demo](https://babdellghani.github.io/Ecommerce-Template-Tailwind/)**
+**[View Live Demo](https://abdelghanix10.github.io/Ecommerce-Template-Tailwind/)**
 
 Experience the full template functionality with the live demo hosted on GitHub Pages.
 
